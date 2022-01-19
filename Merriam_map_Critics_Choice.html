@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Critics' Choice</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.min.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.typekit.net/wue0dpu.css">
+
+	<style>
+		::-webkit-scrollbar {
+			width: 0px;
+			background: transparent;
+		}
+
+		.info {
+			padding: 6px 8px;
+			font: 5px; 
+            font-family: proxima-nova, proxima-nova;
+            font-weight: 700;
+			background: white;
+			background: rgba(255, 255, 255, 0.8);
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+			border-radius: 15px;
+		}
+
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+		.legend {
+			text-align: left;
+			line-height: 18px;
+			color: #555;
+		}
+
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+
+		body {
+			display: flex;
+			font-family: proxima-nova;
+            color: #D64E03;
+
+		}
+
+		#select-menu {
+			position: absolute;
+			left: 50px;
+			top: 10px;
+			z-index: 10;
+		}
+
+		#map {
+			flex: 2;
+			height: calc(100vh - 30px);
+		}
+		
+		h1 { 
+			flex: 1;
+			height: 70px;
+			overflow: scroll;
+			margin: 10px;
+			font-family: proxima-nova;
+            font-weight: 700;
+			font-size: 40px;
+			color: #D64E03;
+			width: 300px;
+
+		}
+		
+		h2 { 
+			font-family: proxima-nova;
+			font-size: 20px;
+            font-weight: 700;
+			color: #D64E03;
+			width: 350px;
+			height: 50px;
+            margin: 10px;
+		}
+
+		
+		#articlePlace {
+			flex: 1;
+            height: calc(100vh - 50px);
+			overflow: scroll;
+			margin: 15px;
+		}
+
+		#color-scale {
+			position: absolute;
+			bottom: 40px;
+			right: 10px;
+			z-index: 10;
+			background: rgba(255, 255, 255, 0.75);
+			padding: 5px;
+		}
+
+		#color-scale > div span {
+			display: inline-block;
+			height: 25px;
+			width: 20px;
+			margin-right: 5px;
+			vertical-align: middle;
+		}
+
+		#color-scale p {
+			font-weight: 'bold';
+			padding-bottom: 5px;
+			margin: 0;
+		}
+
+	</style>
+
+</head>
+
+
+<body>
+
+
+	<div id='map'>
+		<div id="dropdown">
+
+		</div>
+		<div id='color-scale'>
+			<p> Locations</p>
+			<div><span style='background-color: #FA9F2A' style="color: #0B0694"></span> Best International Feature Film</div>
+			
+		</div>
+
+	</div>
+
+    
+
+	<div id='articlePlace'> 
+		<h1>Critics' Choice</h1>
+        <h2>Speeches from the  
+            <a href="https://awardsdatabase.oscars.org/"  target="_blank" rel="noopener noreferrer" style="color: #3256D8;" "background: #lightblue" >Academy Award</a> Winners for International Feature Film from 1947 — 2020</h2>
+		
+	</div>
+
+	<script type="text/javascript" src="geo-data.js"></script>
+
+	<script type="text/javascript">
+
+		mapboxgl.accessToken = 'pk.eyJ1Ijoic21lcnJpYW0iLCJhIjoiY2t4NzJwNWw4MnM0dDJ4dDkzbXoxMW53ciJ9.IKN8A-GVlJCTMh3i3F5SSA';
+
+		// mapbox://styles/smerriam/ckx8j3re80n8y14rt23cmbr0q
+		// mapbox://styles/smerriam/ckx8l9p64012q14s586dpdzi0
+
+		var map = new mapboxgl.Map({
+			container: 'map', // HTML container ID
+			style: 'mapbox://styles/smerriam/ckx8j3re80n8y14rt23cmbr0q', // style URL
+			center: [-21.9270884, 64.1436456], // starting position as [lng, lat]
+			zoom: 13
+		});
+		map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+
+		var popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false });
+
+		let hoverCurrentId = null
+		var datalayer;
+
+		function updateArticle(e) {
+			let feature = e.features[0]
+			document.getElementById("articlePlace").innerHTML = feature.properties.article
+		}
+
+		function startHover(e) {
+			let feature = e.features[0]
+
+			if (hoverCurrentId) {
+				map.setFeatureState({ source: 'datalayer', id: hoverCurrentId }, { hover: false });
+			}
+			hoverCurrentId = feature.id
+			map.setFeatureState({ source: 'datalayer', id: hoverCurrentId }, { hover: true });
+		}
+
+		function stopHover(e) {
+			if (hoverCurrentId) {
+				map.setFeatureState({ source: 'datalayer', id: hoverCurrentId }, { hover: false });
+			}
+			hoverCurrentId = null;
+		}
+
+		function drawPopup(e) {
+			let feature = e.features[0]
+			map.getCanvas().style.cursor = 'pointer';
+
+			var coordinates = e.lngLat;//turf.centerOfMass(feature);
+			var headline = feature.properties.headline;
+
+			while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+				coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+			}
+
+			popup.setLngLat(coordinates)
+				.setHTML(`<h4>${headline}</h4>`)
+				.addTo(map);
+		}
+
+		function removePopup(e) {
+			map.getCanvas().style.cursor = '';
+			popup.remove();
+		}
+
+		map.on('load', function () {
+			for (let i = 0; i < infoData.features.length; i++) {
+				infoData.features[i]['id'] = i + 1
+			}
+
+
+			datalayer = map.addLayer({
+				id: "datalayer",
+				type: "fill",
+				source: {
+					type: "geojson",
+					data: infoData,
+				},
+				paint: {
+					'fill-color': ['get', 'color'],
+
+					'fill-outline-color': 'white',
+					'fill-opacity': [
+						'case',
+						['boolean', ['feature-state', 'hover'], false],
+						1,
+						0.5
+					]
+				}
+			});
+
+			map.on('mousemove', 'datalayer', function (e) {
+				startHover(e)
+				drawPopup(e)
+			});
+
+
+			map.on('mouseleave', 'datalayer', function (e) {
+				stopHover(e)
+				removePopup(e)
+			});
+
+			map.on('click', 'datalayer', function (e) {
+				updateArticle(e)
+			})
+			map.fitBounds(turf.bbox(infoData), { padding: 0, linear: true })
+		})
+
+
+	</script>
+	<script>
+		var groupsObj = {};
+
+		$(document).ready(function () {
+			infoData.features.forEach(function (feature) {
+				groupsObj[feature.properties.group_id] = feature.properties.group_name;
+			})
+
+			$.each(groupsObj, function (key, value) {
+				$('#select-menu')
+					.append($("<option></option>")
+						.attr("value", value)
+						.text(value));
+			});
+
+			$('#select-menu').change(function () {
+				var selectedGroup = $('#select-menu').val();
+
+				if (!selectedGroup) {
+					map.setFilter('datalayer', null);
+				} else {
+					map.setFilter('datalayer', ['==', ['get', 'group_name'], selectedGroup]);
+				}
+			});
+		});
+	</script>
+
+
+</body>
+
+</html>
