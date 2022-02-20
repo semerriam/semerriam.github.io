@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Susan Merriam</title>
+	<meta charset="utf-8">
+	<meta name="description" content="data journalism">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo&family=IBM+Plex+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet" type='text/css'>
+
+
+	<style>
+
+		@font-face {
+				font-family: 'TitilliumWeb-SemiBold';
+				src: url('TitilliumWeb-SemiBold.ttf'); /* IE9 Compat Modes */
+				src: url('TitilliumWeb-SemiBold.ttf')  format('truetype'), /* IE6-IE8 */
+					 url('TitilliumWeb-SemiBold.ttf')  format('truetype'), /* Super Modern Browsers */
+					 url('TitilliumWeb-SemiBold.ttf')  format('truetype'), /* Pretty Modern Browsers */
+					 url('TitilliumWeb-SemiBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+			  }
+	
+		
+              /* #make adjustments to most of text here */
+			body {
+			background-color: white;
+			margin: 0;
+			margin-left: 15px;
+            max-width: 700px;
+			padding: 0;
+			font-family: 'TitilliumWeb-SemiBold';
+			text-align: left;
+			text-rendering: optimizeLegibility;
+			font-feature-settings: "kern";
+			font-kerning: normal;
+	
+			}
+	
+			#nav h1 {
+			vertical-align: center;
+			text-align: left;
+			position: fixed;
+			z-index: 15;
+			margin-top: -140px;
+			margin-left: 15px;
+			width: 100%;
+			font-size: 20px;
+			line-height: 26px;
+			font-weight: normal;
+			color: black;			
+				}
+
+                #nav h1 a, h2 a {
+                    text-decoration: none;
+                    transition: all 0.2s ease-in-out;	
+                    color: black;		
+                }
+
+                    #nav h1 a:hover, h2 a:hover {
+                        text-decoration: none;
+                        color: white;  
+                        transition: all 0.2s ease-in-out;
+                    }
+
+
+            #nav h2 {
+                z-index: 500;
+                position: absolute;
+                right: 0;
+                margin-top: -140px;
+                max-width: 760px;
+                margin: 0 auto;
+                margin-right: 15px;
+                font-size: 20px;
+                line-height: 26px;
+                font-weight: normal;
+                color: black;		
+            }
+
+			span, th {
+			font-family: 'TitilliumWeb-SemiBold';
+			font-size: 20px;
+			line-height: 26px;
+			font-weight: normal;	
+			}
+				
+			#main h2 {
+			font-family: 'TitilliumWeb-SemiBold';
+			font-size: 20px;
+			line-height: 26px;
+			font-weight: normal;	
+			}
+	
+			#main h1 {
+				color: black;
+                font-size: 20px;
+			}
+	
+			#main a {
+				color: black;
+			}
+	
+			#main a:hover {
+                color: black;
+				background-color: #bfe6ff;
+			}
+	
+			#description h3 {
+				color: black;
+			}
+	
+			#description h3 a {
+				color: black;
+			}
+	
+			#description h3 a:hover {
+				color: black;
+				background-color: #bfe6ff;
+			}
+	
+	
+			#content span {
+				display: inline-block;
+				position: relative;
+				float: center;
+				width: 100%;
+                max-width: 700px;
+				color: black;
+				margin: 0 auto;
+				text-align: left;
+				
+			}
+	
+			#footer h2 {
+				color: black;
+			}
+	
+		</style>
+
+</head>
+
+<body>
+
+	<div id="main">
+		<h1><a href="../index.html">Susan Merriam<br></a>
+        </h1>
+		<h2>Investigating Census and DOC Population Counts<br>
+			Data Investigation<br>
+            2022
+		</h2>
+	</div>	
+
+	<div id="description">
+		<h3>
+			
+			<br>
+			<a href="https://github.com/semerriam/census-peculiarities/" target="_blank">Github Project</a><br>
+			Data: Python –⁠ Pandas, SQLite, Excel, Redistricting Hub API <br>
+			Graphs: Python –⁠ plotnine, Illustrator, Datawrapper <br>
+
+		</h3>
+	</div>
+
+	 <!-- 
+		<div id="footer">
+			<h2><span>2.25</span></h2>
+		</div>
+		--> 
+
+	<div id="content">
+		<br><br>
+		<span>Census Peculiarities in Incarcerated Populations</span>
+			<br>
+			<br>
+			<span>
+			There were zero people residing at Ray Brook Federal Correctional Institution on April 1st, 2020 according to the most recent U.S. Census. However, the New York State Department of Corrections and Community Supervision (DOCCS) counted prisoners at the facility on the same day. 
+			</span> 
+			<br>
+			<br>
+			<span>
+			The redistricting processes of some states revealed discrepancies between the incarcerated population counts of states’ departments of corrections (DOC) and the U.S. Census Bureau.
+			</span>
+			<br>
+			<br>
+			<span>
+			In 11 states— California, Colorado, Connecticut, Delaware, Maryland, Nevada, New Jersey, New York, Pennsylvania, Virginia, and Washington— demographers reallocated incarcerated populations according to state law or by decision by the redistricting committee for the 2020 redistricting cycle. The demographers used lists of names and addresses provided from the state’s department of corrections to reallocate the populations of incarcerated individuals from the census blocks of incarceration facilities to the census blocks of last known addresses before incarceration to avoid <a href="https://www.brennancenter.org/our-work/research-reports/prison-gerrymandering-undermines-our-democracy/" target="_blank">prison gerrymandering</a>.
+			</span>
+			<br>
+			<br>
+			<span>
+			When demographers attempted to reallocate individuals by subtracting incarcerated populations from the census block where the incarceration facility is located, demographers often discovered the census population count to be lower than that of the department of corrections’ list of names. In some cases, demographers found populations of zero.
+			</span>			
+			<br>
+			<br>
+			<span>
+			In an <a href="https://github.com/semerriam/census-peculiarities/" target="_blank">analysis</a> of three states’ incarcerated population counts— Delaware, Colorado, and New York— the DOC count exceeded the Census count in nearly 60 percent of all the census blocks with incarcerated facilities, a total of 4,008 people difference. Given census blocks also can include people living near an incarceration facility, it would seemingly be more likely for the Census to have a higher count than that of the DOC for a given location, making the difference in counts all the more puzzling.
+			</span>
+			<br>
+			<br>
+			<span>
+			In roughly 20 percent of the blocks with incarceration facilities, the DOC counted at least 30 people more than the Census. The most extreme example was the census block including Wyoming Correctional Facility, where the Census counted 227 people and New York DOCCS counted 1,165 incarcerated individuals, a difference of over 400 percent.
+			</span>				
+			<br>
+			<br>
+			<img src="../imgs/census-quirks-img1.png" style="width:800px;">
+			<br>
+			<br>
+			<span>
+			States’ Documentation
+			</span>	
+			<br>
+			<span>
+			Many states, where re-allocation processes occurred, recorded peculiarities in their process documentation— each state highlighting different challenges and unique inconsistencies. 
+			</span>	
+			<br>
+			<br>
+			<span>
+			New Jersey’s <a href="https://nj.gov/state/assets/2020-census-data/us-census-bureau-2020-census-pub_l_94-171-redistricting-data-and-nj-p_l_2019_c_385-reallocated-redistricting-data.pdf" target="_blank">documentation</a> revealed seven census blocks with population counts of zero where facilities can be found. 
+			</span>	
+			<br>
+			<br>
+			<img src="../imgs/census-quirks-img2.png" style="width:600px;">
+			<br>
+			<br>
+			<br>
+			<span>
+			The <a href="https://latfor.state.ny.us/data/?sec=2020amendpop/" target="_blank">documentation</a> from the New York State Legislative Task Force on Demographic Research and Reapportionments indicated demographers first subtracted populations from facilities and then added to prior addresses, recording the adjusted populations of each census block before maps could be drawn. In a number of census blocks, negative populations were reported as subtracting more persons listed in DOC’s count from the lower census count yielded negative figures. 
+			</span>	
+			<br>
+			<br>
+			<span>
+			On the subject of Ray Brook Correctional’s zero population, the task force wrote, “without additional guidance or population input from the Census Bureau, the Task Force technical staff are unable to subtract any people from that facility.” 
+			</span>	
+			<br>
+			<br>
+			<span>
+			One concerned resident in Virginia, a professor Charles Kromkowski submitted a <a href="https://www.vacourts.gov/courts/scv/districting/2021_1215_kromkowski_charles.pdf/" target="_blank">public comment</a> to Virginia’s Redistricting Committee highlighting 21 census blocks with negative populations in the state. “Unlike a typographical mistake, an error like this typically indicates a systemic data-processing problem,” he wrote. “If left uncorrected, this datafile will undermine the Court’s effort to comply with the U.S. and Virginia constitutional expectation for election district population equality.”
+			</span>	
+			<br>
+			<br>
+			<img src="../imgs/census-quirks-img3.png" style="width:600px;">
+			<br>
+			<br>
+			<span>
+			Washington state GIS analysts listed potential reasons for the negative populations in their <a href="https://ofm.wa.gov/washington-data-research/population-demographics/decennial-census/2020-census-everyone-counts/2020-census-what-you-need-know/2020-census-data-releases/" target="_blank">Adjusted Redistricting Data, Readme file</a>. “The facility data could be temporally out of sync with the Census,” the notes suggested. Other potential reasons included the challenge of facilities being assigned to more than one census block and the inclusion of “Differential Privacy” into the 2020 Count. Also the file simply includes, “the Census data could be incorrect. There could have been counting errors.”
+			</span>	
+			<br>
+			<br>
+			<img src="../imgs/census-quirks-img4.png" style="width:600px;">
+			<br>
+			<br>
+			<span>
+			While Washington analysts suggested that the differences could be a result of Differential Privacy, or the disclosure avoidance system added during the 2020 census, the Associate Director and Chief Scientist for the U.S. Census Bureau, John M. Abowd denies this as a possibility. He wrote, “this is not a feature of the disclosure avoidance system” in response to questions about the differences in population counts.
+			</span>	
+			<br>
+			<br>
+			<span>
+			Census Processes
+			</span>	
+			<br>
+			<span>
+			In general, the U.S. Census Bureau monitors the accuracy of the census with the <a href="https://www.census.gov/programs-surveys/decennial-census/about/coverage-measurement/pes.html/" target="_blank">Post-Enumeration Surveys</a>, which check the accuracy of the census in sample blocks. Although, incarcerated populations do not seem to be put through the same rigor.
+			</span>	
+			<br>
+			<br>
+			<span>
+			On March 10th, the Bureau is poised to share results of the 2020 Post-Enumeration Survey, though the <a href="https://www2.census.gov/about/partners/cac/nac/meetings/2021-05/presentation-post-enumeration-survey-overview.pdf/" target="_blank">survey universe</a> did not include group quarters of which incarcerated populations are considered. This follows past actions by the Bureau, which did not include group quarters in <a href="https://www2.census.gov/cac/sac/meetings/2020-09/presentation-post-enumeration-methodology.pdf/" target="_blank">surveys</a> in 2000 nor in 2010. 
+			</span>	
+			<br>
+			<br>
+			<span>
+				The Census Bureau gathered its 2020 data about incarcerated facilities from a number of methods. Most often, the Bureau <a href="https://www2.census.gov/programs-surveys/decennial/2020/program-management/planning-docs/GQ_detailed_operational_plan.pdf/" target="_blank">counted incarcerated populations</a> by self-enumeration, or the swearing in of a DOC officer as a census enumerator, the person taking the census; other methods employed required e-response or paper submissions.
+			</span>	
+			<br>
+			<br>
+			<span>
+			The process for self-enumeration included a step to “Collect Missing Data with the Help of GQ [Group Quarters] Administrator.”
+			</span>	
+			<br>
+			<br>
+			<img src="../imgs/census-quirks-img5.png" style="width:600px;">
+			<br>
+			<br>
+			<span>
+			Next Step in Project: The Effects
+			</span>	
+
+
+
+			<br>
+			<br>
+			<span>
+			
+			</span>	
+
+			
+
+			<a href="link" target="_blank"></a> 
+
+
+		<br><br><br>
+	</div>
+
+</body>
+
+</head>
