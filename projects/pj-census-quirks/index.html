@@ -1,0 +1,1492 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Susan Merriam</title>
+	<meta charset="utf-8">
+	<meta name="description" content="data journalism">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" type='text/css'>  
+
+
+	<style>
+
+@font-face {
+            font-family: 'Titillium Web';
+          }
+
+		
+              /* #make adjustments to most of text here */
+			body {
+			background-color: white;
+			margin: 0;
+			margin-left: 0px;
+            font-family: 'Titillium Web';
+			text-align: left;
+			text-rendering: optimizeLegibility;
+			font-feature-settings: "kern";
+			font-kerning: normal;
+			padding-left: 2%;
+	
+			}
+	
+			  #nav h1 {
+                vertical-align: center;
+                text-align: left;
+                position: fixed;
+                z-index: 15;
+                margin-top: -140px;
+                margin-left: 15px;
+                width: 100%;
+                font-size: 20px;
+				font-family: 'Titillium Web';
+                line-height: 26px;
+                font-weight: 600;
+                color: black;	
+
+            }
+
+                #nav h1 a, h2 a {
+                    text-decoration: none;
+                    transition: all 0.2s ease-in-out;	
+                    color: black;		
+                }
+
+                    #nav h1 a:hover, h2 a:hover {
+                        text-decoration: none;
+                        color: white;  
+                        transition: all 0.2s ease-in-out;
+                    }
+
+
+            #nav h2 {
+                z-index: 500;
+                position: absolute;
+                right: 0;
+                margin-top: -140px;
+                max-width: 760px;
+                margin: 0 auto;
+                margin-right: 15px;
+                font-size: 20px;
+                line-height: 26px;
+                font-weight: normal;
+                color: black;		
+            }
+
+			span, th {
+			font-family: 'Cairo';
+			font-size: 20px;
+			line-height: 26px;
+			font-weight: normal;	
+			}
+				
+			#main h2 {
+			font-family: 'Cairo';
+			font-size: 20px;
+			line-height: 26px;
+			font-weight: normal;	
+			}
+	
+			#main h1 {
+				color: black;
+                font-size: 20px;
+			}
+	
+			#main a {
+				color: black;
+			}
+	
+			#main a:hover {
+                color: black;
+				background-color: #bfe6ff;
+			}
+	
+			#description h3 {
+				color: black;
+			}
+	
+			#description h3 a {
+				color: black;
+			}
+	
+			#description h3 a:hover {
+				color: black;
+				background-color: #bfe6ff;
+			}
+	
+	
+			#content span {
+				display: inline-block;
+				position: relative;
+				float: center;
+				width: 100%;
+                max-width: 700px;
+				color: black;
+				margin: 0 auto;
+				text-align: left;
+				font-size: 14px;
+				padding-left: 15%;
+				
+			}
+
+	
+			#footer h2 {
+				color: black;
+			}
+	
+
+			#nav div {
+                z-index: 500;
+                position: absolute;
+                right: 0;
+                margin-top: -140px;
+                max-width: 760px;
+                margin: 0 auto;
+                margin-right: 15px;
+                font-size: 18px;
+                line-height: 26px;
+                font-weight: 200;
+                color: black;		
+            }
+		</style>
+
+</head>
+
+<body>
+
+	<div id="main">
+		<h1><a href="../../index.html">Susan Merriam<br></a>
+        </h1>
+		<h2>Investigating Census Peculiarities<br>
+			Data Project<br>
+            2022
+		</h2>
+	</div>	
+
+	<div id="description">
+		<h3>
+			
+			<br>
+			<a href="https://github.com/semerriam/census-peculiarities/" target="_blank">Github</a><br>
+			Data: Python –⁠ Pandas, SQLite, Excel, Redistricting Hub API <br>
+			Graphs: Python –⁠ plotnine, Illustrator, Datawrapper <br>
+
+		</h3>
+	</div>
+
+	 <!-- 
+		<div id="footer">
+			<h2><span>2.25</span></h2>
+		</div>
+		--> 
+
+	<div id="content">
+		<br><br>
+		<span>Census Peculiarities in Incarcerated Populations</span>
+			<br>
+			<br>
+			<span>
+			There were zero people residing at Ray Brook Federal Correctional Institution on April 1st, 2020 according to the most recent U.S. Census. However, the New York State Department of Corrections and Community Supervision (DOCCS) counted prisoners at the facility on the same day. 
+			</span> 
+			<br>
+			<br>
+			<span>
+			The redistricting processes of some states revealed discrepancies between the incarcerated population counts of states’ departments of corrections (DOC) and the U.S. Census Bureau.
+			</span>
+			<br>
+			<br>
+			<span>
+			In 11 states— California, Colorado, Connecticut, Delaware, Maryland, Nevada, New Jersey, New York, Pennsylvania, Virginia, and Washington— demographers reallocated incarcerated populations according to state law or by decision by the redistricting committee for the 2020 redistricting cycle. The demographers used lists of names and addresses provided from the state’s department of corrections to reallocate the populations of incarcerated individuals from the census blocks of incarceration facilities to the census blocks of last known addresses before incarceration to avoid <a href="https://www.brennancenter.org/our-work/research-reports/prison-gerrymandering-undermines-our-democracy/" target="_blank">prison gerrymandering</a>.
+			</span>
+			<br>
+			<br>
+			<span>
+			When demographers attempted to reallocate individuals by subtracting incarcerated populations from the census block where the incarceration facility is located, demographers often discovered the census population count to be lower than that of the department of corrections’ list of names. In some cases, demographers found populations of zero.
+			</span>			
+			<br>
+			<br>	
+			<span>
+			DOC Count exceeded Census Count in 54 out of 93 Census Blocks
+			</span>	
+			<br>
+			<br>	
+			<span>
+			Comparing incarcerated population counts of the U.S. Census and states’ department of corrections across Delaware, Colorado, New York
+			</span>		
+			<style>
+				.row-container {
+					 display: flex;
+					 flex-direction: row;
+					 flex-wrap: wrap;
+					 width: 100%;
+					 gap: 2em;
+				}
+		   
+				.column-container {
+					 display: flex;
+					 flex-direction: column;
+					 flex-basis: 100%;
+					 flex: 1;
+				}
+		   
+
+				@media (min-width: 620px) {
+					#g-pj_census_quirks_graph1-wide {
+						  flex-direction: column;
+					 }
+				}
+		   
+				@media (min-width: 400px) {
+					#g-pj_census_quirks_graph1-medium  {
+						  flex-direction: column;
+					 }
+				}
+
+				@media (max-width: 400px) {
+					#g-pj_census_quirks_graph1-mobile {
+						  flex-direction: column;
+					 }
+				}
+
+		   </style>
+			
+			
+		
+						
+			<!-- Generated by ai2html v0.106.0 - 2022-03-16 23:46 -->
+			<!-- ai file: pj_census_quirks_graph1.ai -->
+			<style media="screen,print">
+				#g-pj_census_quirks_graph1-box ,
+				#g-pj_census_quirks_graph1-box .g-artboard {
+					margin:0 auto;
+				}
+				#g-pj_census_quirks_graph1-box p {
+					margin:0;
+				}
+				#g-pj_census_quirks_graph1-box .g-aiAbs {
+					position:absolute;
+				}
+				#g-pj_census_quirks_graph1-box .g-aiImg {
+					position:absolute;
+					top:0;
+					display:block;
+					width:100% !important;
+				}
+				#g-pj_census_quirks_graph1-box .g-aiSymbol {
+					position: absolute;
+					box-sizing: border-box;
+				}
+				#g-pj_census_quirks_graph1-box .g-aiPointText p { white-space: nowrap; }
+				#g-pj_census_quirks_graph1-medium {
+					position:relative;
+					overflow:hidden;
+				}
+				#g-pj_census_quirks_graph1-medium p {
+					font-weight:500;
+					line-height:14px;
+					height:auto;
+					opacity:1;
+					letter-spacing:0em;
+					font-size:12px;
+					text-align:left;
+					color:rgb(0,0,0);
+					text-transform:none;
+					padding-bottom:0;
+					padding-top:0;
+					mix-blend-mode:normal;
+					font-style:normal;
+					position:static;
+				}
+				#g-pj_census_quirks_graph1-medium .g-pstyle0 {
+					height:14px;
+					opacity:0.5;
+				}
+				#g-pj_census_quirks_graph1-wide {
+					position:relative;
+					overflow:hidden;
+				}
+				#g-pj_census_quirks_graph1-wide p {
+					font-weight:500;
+					line-height:14px;
+					height:auto;
+					opacity:1;
+					letter-spacing:0em;
+					font-size:12px;
+					text-align:left;
+					color:rgb(0,0,0);
+					text-transform:none;
+					padding-bottom:0;
+					padding-top:0;
+					mix-blend-mode:normal;
+					font-style:normal;
+					position:static;
+				}
+				#g-pj_census_quirks_graph1-wide .g-pstyle0 {
+					height:14px;
+					opacity:0.5;
+				}
+				#g-pj_census_quirks_graph1-mobile {
+					position:relative;
+					overflow:hidden;
+				}
+				#g-pj_census_quirks_graph1-mobile p {
+					font-weight:500;
+					line-height:14px;
+					height:auto;
+					opacity:1;
+					letter-spacing:0em;
+					font-size:12px;
+					text-align:left;
+					color:rgb(0,0,0);
+					text-transform:none;
+					padding-bottom:0;
+					padding-top:0;
+					mix-blend-mode:normal;
+					font-style:normal;
+					position:static;
+				}
+				#g-pj_census_quirks_graph1-mobile .g-pstyle0 {
+					height:14px;
+					opacity:0.5;
+				}
+
+			</style>
+
+			<div id="g-pj_census_quirks_graph1-box" class="ai2html">
+
+				<!-- Artboard: medium -->
+				<div id="g-pj_census_quirks_graph1-medium" class="g-artboard" style="max-width: 350px;max-height: 320px" data-aspect-ratio="1.094" data-min-width="0" data-max-width="729">
+			<div style="padding: 0 0 91.4286% 0;"></div>
+					<img id="g-pj_census_quirks_graph1-medium-img" class="g-aiImg" alt="" src="imgs/pj_census_quirks_graph1-medium.png"/>
+					<div id="g-ai0-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:87.2861%;margin-top:-22.3px;left:7.8544%;width:275px;">
+						<p class="g-pstyle0">Source: U.S. Census 2020 PL 94-171, </p>
+						<p class="g-pstyle0">Colorado Independent Redistricting Commissions, </p>
+						<p class="g-pstyle0">Redistricting Data Hub, NYS LATFOR</p>
+					</div>
+				</div>
+
+				<!-- Artboard: wide -->
+				<div id="g-pj_census_quirks_graph1-wide" class="g-artboard" style="width:730px; height:413px;" data-aspect-ratio="1.768" data-min-width="730" data-max-width="815">
+			<div style=""></div>
+					<img id="g-pj_census_quirks_graph1-wide-img" class="g-aiImg" alt="" src="imgs/pj_census_quirks_graph1-wide.png"/>
+					<div id="g-ai1-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.2779%;margin-top:-8.1px;left:4.3268%;width:647px;">
+						<p class="g-pstyle0">Source: U.S. Census 2020 PL 94-171, Redistricting Data Hub, Colorado Independent Redistricting Commissions, NYS LATFOR</p>
+					</div>
+				</div>
+
+				<!-- Artboard: mobile -->
+				<div id="g-pj_census_quirks_graph1-mobile" class="g-artboard" style="width:816px; height:423px;" data-aspect-ratio="1.929" data-min-width="816">
+			<div style=""></div>
+					<img id="g-pj_census_quirks_graph1-mobile-img" class="g-aiImg" alt="" src="imgs/pj_census_quirks_graph1-mobile.png"/>
+					<div id="g-ai2-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:92.9333%;margin-top:-8.1px;left:5.6741%;width:647px;">
+						<p class="g-pstyle0">Source: U.S. Census 2020 PL 94-171, Redistricting Data Hub, Colorado Independent Redistricting Commissions, NYS LATFOR</p>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- End ai2html - 2022-03-16 23:46 -->
+
+
+
+
+			<script type="text/javascript">
+				(function() {
+					// only want one resizer on the page
+					if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+					document.documentElement.className += " g-resizer-v3-init";
+					// require IE9+
+					if (!("querySelector" in document)) return;
+					function resizer() {
+						var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+							widthById = {};
+						elements.forEach(function(el) {
+							var parent = el.parentNode,
+								width = widthById[parent.id] || parent.getBoundingClientRect().width,
+								minwidth = el.getAttribute("data-min-width"),
+								maxwidth = el.getAttribute("data-max-width");
+							widthById[parent.id] = width;
+			
+							if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+								el.style.display = "block";
+							} else {
+								el.style.display = "none";
+							}
+						});
+						try {
+							if (window.parent && window.parent.$) {
+								window.parent.$("body").trigger("resizedcontent", [window]);
+							}
+							if (window.require) {
+								require(['foundation/main'], function() {
+									require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+										AppCommunicator.triggerResize();
+									});
+								});
+							}
+						} catch(e) { console.log(e); }
+					}
+			
+					document.addEventListener('DOMContentLoaded', resizer);
+					// feel free to replace throttle with _.throttle, if available
+					window.addEventListener('resize', throttle(resizer, 200));        
+			
+					function throttle(func, wait) {
+						// from underscore.js
+						var _now = Date.now || function() { return new Date().getTime(); },
+							context, args, result, timeout = null, previous = 0;
+						var later = function() {
+							previous = _now();
+							timeout = null;
+							result = func.apply(context, args);
+							if (!timeout) context = args = null;
+						};
+						return function() {
+							var now = _now(), remaining = wait - (now - previous);
+							context = this;
+							args = arguments;
+							if (remaining <= 0 || remaining > wait) {
+								if (timeout) {
+									clearTimeout(timeout);
+									timeout = null;
+								}
+								previous = now;
+								result = func.apply(context, args);
+								if (!timeout) context = args = null;
+							} else if (!timeout && options.trailing !== false) {
+								timeout = setTimeout(later, remaining);
+							}
+							return result;
+						};
+					}
+			
+				   
+				})();
+			</script>
+
+
+			<br>
+			<br>
+			<span>
+			In an <a href="https://github.com/semerriam/census-peculiarities/" target="_blank">analysis</a> of three states’ incarcerated population counts— Delaware, Colorado, and New York— the DOC count exceeded the Census count in nearly 60 percent of all the census blocks with incarcerated facilities, a total of 4,008 people difference. Given census blocks also can include people living near an incarceration facility, it would seemingly be more likely for the Census to have a higher count than that of the DOC for a given location, making the difference in counts all the more puzzling.
+			</span>
+			<br>
+			<br>
+			<span>
+			In roughly 20 percent of the blocks with incarceration facilities, the DOC counted at least 30 people more than the Census. The most extreme example was the census block including Wyoming Correctional Facility, where the Census counted 227 people and New York DOCCS counted 1,165 incarcerated individuals, a difference of over 400 percent.
+			</span>				
+			<br>
+			<br>
+			<span>
+			The Census counted fewer incarcerated people than the DOC in some areas
+			</span>	
+			<br>
+			<br>		
+			<span>
+				
+			The Department of Corrections (DOC) count exceeded the Census count by more than 30 people in 19 out of the 93 Census blocks with incarceration facilities across Delaware, Colorado, and New York 
+			</span>	
+			
+
+			<style>
+				.row-container {
+					 display: flex;
+					 flex-direction: row;
+					 flex-wrap: wrap;
+					 width: 100%;
+					 gap: 2em;
+				}
+		   
+				.column-container {
+					 display: flex;
+					 flex-direction: column;
+					 flex-basis: 100%;
+					 flex: 1;
+				}
+		   
+
+				@media (min-width: 620px) {
+					#g-pj_census_quirks_graph2-wide {
+						  flex-direction: column;
+					 }
+				}
+		   
+				@media (min-width: 400px) {
+					#g-pj_census_quirks_graph2-medium  {
+						  flex-direction: column;
+					 }
+				}
+
+				@media (max-width: 400px) {
+					#g-pj_census_quirks_graph2-mobile {
+						  flex-direction: column;
+					 }
+				}
+				
+		   </style>
+
+			<!-- Generated by ai2html v0.106.0 - 2022-03-16 22:46 -->
+			<!-- ai file: pj_census_quirks_graph2.ai -->
+			<style media="screen,print">
+				#g-pj_census_quirks_graph2-box ,
+				#g-pj_census_quirks_graph2-box .g-artboard {
+					margin:0 auto;
+				}
+				#g-pj_census_quirks_graph2-box p {
+					margin:0;
+				}
+				#g-pj_census_quirks_graph2-box .g-aiAbs {
+					position:absolute;
+				}
+				#g-pj_census_quirks_graph2-box .g-aiImg {
+					position:absolute;
+					top:0;
+					display:block;
+					width:100% !important;
+				}
+				#g-pj_census_quirks_graph2-box .g-aiSymbol {
+					position: absolute;
+					box-sizing: border-box;
+				}
+				#g-pj_census_quirks_graph2-box .g-aiPointText p { white-space: nowrap; }
+				#g-pj_census_quirks_graph2-wide {
+					position:relative;
+					overflow:hidden;
+				}
+				#g-pj_census_quirks_graph2-wide p {
+					font-weight:500;
+					line-height:14px;
+					opacity:1;
+					letter-spacing:0em;
+					font-size:12px;
+					text-align:left;
+					color:rgb(0,0,0);
+					text-transform:none;
+					padding-bottom:0;
+					padding-top:0;
+					mix-blend-mode:normal;
+					font-style:normal;
+					height:auto;
+					position:static;
+				}
+				#g-pj_census_quirks_graph2-wide .g-pstyle0 {
+					font-weight:700;
+					line-height:17px;
+					height:17px;
+					font-size:14px;
+					text-align:center;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-wide .g-pstyle1 {
+					font-weight:700;
+					line-height:17px;
+					font-size:14px;
+					text-align:center;
+					color:rgb(53,89,104);
+				}
+				#g-pj_census_quirks_graph2-wide .g-pstyle2 {
+					line-height:15px;
+					opacity:0.5;
+					color:rgb(53,89,104);
+				}
+				#g-pj_census_quirks_graph2-wide .g-pstyle3 {
+					line-height:15px;
+					opacity:0.5;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-wide .g-pstyle4 {
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-wide .g-pstyle5 {
+					line-height:4px;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-wide .g-pstyle6 {
+					line-height:12px;
+					font-size:10px;
+					color:rgb(153,153,153);
+				}
+				#g-pj_census_quirks_graph2-medium {
+					position:relative;
+					overflow:hidden;
+				}
+				#g-pj_census_quirks_graph2-medium p {
+					font-weight:500;
+					line-height:14px;
+					height:auto;
+					opacity:1;
+					letter-spacing:0em;
+					font-size:12px;
+					text-align:left;
+					color:rgb(0,0,0);
+					text-transform:none;
+					padding-bottom:0;
+					padding-top:0;
+					mix-blend-mode:normal;
+					font-style:normal;
+					position:static;
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle0 {
+					font-weight:700;
+					line-height:17px;
+					font-size:14px;
+					text-align:center;
+					color:rgb(53,89,104);
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle1 {
+					font-weight:700;
+					line-height:17px;
+					font-size:14px;
+					text-align:center;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle2 {
+					line-height:15px;
+					opacity:0.5;
+					color:rgb(53,89,104);
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle3 {
+					line-height:15px;
+					opacity:0.5;
+					color:rgb(35,60,68);
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle4 {
+					height:14px;
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle5 {
+					letter-spacing:0.005em;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle6 {
+					height:14px;
+					letter-spacing:-0.005em;
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle7 {
+					line-height:4px;
+					letter-spacing:0.005em;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle8 {
+					letter-spacing:-0.019em;
+				}
+				#g-pj_census_quirks_graph2-medium .g-pstyle9 {
+					line-height:12px;
+					font-size:10px;
+					color:rgb(162,162,162);
+				}
+				#g-pj_census_quirks_graph2-mobile {
+					position:relative;
+					overflow:hidden;
+				}
+				#g-pj_census_quirks_graph2-mobile p {
+					font-weight:500;
+					line-height:14px;
+					opacity:1;
+					letter-spacing:0em;
+					font-size:12px;
+					text-align:left;
+					color:rgb(0,0,0);
+					text-transform:none;
+					padding-bottom:0;
+					padding-top:0;
+					mix-blend-mode:normal;
+					font-style:normal;
+					height:auto;
+					position:static;
+				}
+				#g-pj_census_quirks_graph2-mobile .g-pstyle0 {
+					font-weight:700;
+					line-height:17px;
+					height:17px;
+					font-size:14px;
+					text-align:center;
+					color:rgb(53,89,104);
+				}
+				#g-pj_census_quirks_graph2-mobile .g-pstyle1 {
+					font-weight:700;
+					line-height:17px;
+					height:17px;
+					font-size:14px;
+					text-align:center;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-mobile .g-pstyle2 {
+					line-height:15px;
+					height:15px;
+					opacity:0.5;
+					color:rgb(53,89,104);
+				}
+				#g-pj_census_quirks_graph2-mobile .g-pstyle3 {
+					line-height:15px;
+					height:15px;
+					opacity:0.5;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-mobile .g-pstyle4 {
+					height:14px;
+					letter-spacing:0.005em;
+					color:rgb(158,183,119);
+				}
+				#g-pj_census_quirks_graph2-mobile .g-pstyle5 {
+					letter-spacing:-0.019em;
+				}
+				#g-pj_census_quirks_graph2-mobile .g-pstyle6 {
+					line-height:12px;
+					font-size:10px;
+					color:rgb(162,162,162);
+				}
+
+			</style>
+
+			<div id="g-pj_census_quirks_graph2-box" class="ai2html">
+
+				<!-- Artboard: wide -->
+				<div id="g-pj_census_quirks_graph2-wide" class="g-artboard" style="width:900px; height:500px;" data-aspect-ratio="1.8" data-min-width="900">
+			<div style=""></div>
+					<img id="g-pj_census_quirks_graph2-wide-img" class="g-aiImg" alt="" src="imgs/pj_census_quirks_graph2-wide.png"/>
+					<div id="g-ai0-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:8.5061%;margin-top:-9.5px;left:70.6399%;margin-left:-43px;width:86px;">
+						<p class="g-pstyle0">DOC Count</p>
+					</div>
+					<div id="g-ai0-2" class="g-Layer_1 g-aiAbs" style="top:6.8%;left:37.1111%;margin-left:-5%;width:10%;">
+						<p class="g-pstyle1">Census Count</p>
+					</div>
+					<div id="g-ai0-3" class="g-Layer_1 g-aiAbs" style="top:10%;left:37.0124%;width:0.2222%;">
+						<p class="g-pstyle2">|</p>
+					</div>
+					<div id="g-ai0-4" class="g-Layer_1 g-aiAbs" style="top:10.2%;left:70.6477%;width:0.2222%;">
+						<p class="g-pstyle3">|</p>
+					</div>
+					<div id="g-ai0-5" class="g-Layer_1 g-aiAbs" style="top:12.4%;left:71.8614%;width:3.5556%;">
+						<p class="g-pstyle4">+938</p>
+					</div>
+					<div id="g-ai0-6" class="g-Layer_1 g-aiAbs" style="top:12.6%;left:2.9825%;width:20.6667%;">
+						<p>Wyoming Correctional Facility</p>
+					</div>
+					<div id="g-ai0-7" class="g-Layer_1 g-aiAbs" style="top:16%;left:53.1805%;width:3.1111%;">
+						<p class="g-pstyle4">+375</p>
+					</div>
+					<div id="g-ai0-8" class="g-Layer_1 g-aiAbs" style="top:16.2%;left:2.9797%;width:23%;">
+						<p>Bedford Hills Correctional Facility</p>
+					</div>
+					<div id="g-ai0-9" class="g-Layer_1 g-aiAbs" style="top:19.6%;left:62.7149%;width:3.3333%;">
+						<p class="g-pstyle4">+346</p>
+					</div>
+					<div id="g-ai0-10" class="g-Layer_1 g-aiAbs" style="top:19.8%;left:2.9769%;width:26.8889%;">
+						<p>Colorado Territorial Correctional Facility</p>
+					</div>
+					<div id="g-ai0-11" class="g-Layer_1 g-aiAbs" style="top:23.2%;left:57.2996%;width:3.1111%;">
+						<p class="g-pstyle4">+340</p>
+					</div>
+					<div id="g-ai0-12" class="g-Layer_1 g-aiAbs" style="top:23.4%;left:2.9741%;width:18.3333%;">
+						<p>Albion Correctional Facility</p>
+					</div>
+					<div id="g-ai0-13" class="g-Layer_1 g-aiAbs" style="top:26.8%;left:44.5336%;width:3.1111%;">
+						<p class="g-pstyle4">+218</p>
+					</div>
+					<div id="g-ai0-14" class="g-Layer_1 g-aiAbs" style="top:27%;left:2.9713%;width:21.4444%;">
+						<p>Centennial Correctional Facility</p>
+					</div>
+					<div id="g-ai0-15" class="g-Layer_1 g-aiAbs" style="top:30.4%;left:43.0263%;width:3.2222%;">
+						<p class="g-pstyle4">+192</p>
+					</div>
+					<div id="g-ai0-16" class="g-Layer_1 g-aiAbs" style="top:30.6%;left:2.9685%;width:22.4444%;">
+						<p>Ogdensburg Correctional Facility</p>
+					</div>
+					<div id="g-ai0-17" class="g-Layer_1 g-aiAbs" style="top:34.2%;left:58.9427%;width:3.1111%;">
+						<p class="g-pstyle4">+187</p>
+					</div>
+					<div id="g-ai0-18" class="g-Layer_1 g-aiAbs" style="top:34.2%;left:2.9657%;width:20.2222%;">
+						<p>Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai0-19" class="g-Layer_1 g-aiAbs" style="top:37.6%;left:87.6212%;width:3.2222%;">
+						<p class="g-pstyle4">+186</p>
+					</div>
+					<div id="g-ai0-20" class="g-Layer_1 g-aiAbs" style="top:37.8%;left:2.9629%;width:20%;">
+						<p>Fremont Correctional Facility</p>
+					</div>
+					<div id="g-ai0-21" class="g-Layer_1 g-aiAbs" style="top:41.2%;left:79.6243%;width:3.1111%;">
+						<p class="g-pstyle4">+158</p>
+					</div>
+					<div id="g-ai0-22" class="g-Layer_1 g-aiAbs" style="top:41.4%;left:2.9601%;width:22.5556%;">
+						<p>Bent County Correctional Facility</p>
+					</div>
+					<div id="g-ai0-23" class="g-Layer_1 g-aiAbs" style="top:44.8%;left:59.0441%;width:3.3333%;">
+						<p class="g-pstyle4">+116</p>
+					</div>
+					<div id="g-ai0-24" class="g-Layer_1 g-aiAbs" style="top:45%;left:2.9572%;width:19.1111%;">
+						<p>Cayuga Correctional Facility</p>
+					</div>
+					<div id="g-ai0-25" class="g-Layer_1 g-aiAbs" style="top:48.4%;left:54.8432%;width:3%;">
+						<p class="g-pstyle4">+113</p>
+					</div>
+					<div id="g-ai0-26" class="g-Layer_1 g-aiAbs" style="top:48.6%;left:2.9544%;width:20.8889%;">
+						<p>Riverview Correctional Facility</p>
+					</div>
+					<div id="g-ai0-27" class="g-Layer_1 g-aiAbs" style="top:52%;left:53.5904%;width:3.2222%;">
+						<p class="g-pstyle4">+107</p>
+					</div>
+					<div id="g-ai0-28" class="g-Layer_1 g-aiAbs" style="top:52.2%;left:2.9516%;width:19.5556%;">
+						<p>La Vista Correctional Facility</p>
+					</div>
+					<div id="g-ai0-29" class="g-Layer_1 g-aiAbs" style="top:55.6%;left:45.7012%;width:3.5556%;">
+						<p class="g-pstyle4">+101</p>
+					</div>
+					<div id="g-ai0-30" class="g-Layer_1 g-aiAbs" style="top:55.8%;left:2.9488%;width:20.2222%;">
+						<p>Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai0-31" class="g-Layer_1 g-aiAbs" style="top:59.2%;left:44.8744%;width:2.5556%;">
+						<p class="g-pstyle4">+91</p>
+					</div>
+					<div id="g-ai0-32" class="g-Layer_1 g-aiAbs" style="top:59.4%;left:2.946%;width:21.4444%;">
+						<p>Hale Creek Correctional Facility</p>
+					</div>
+					<div id="g-ai0-33" class="g-Layer_1 g-aiAbs" style="top:62.8%;left:68.3185%;width:2.7778%;">
+						<p class="g-pstyle4">+76</p>
+					</div>
+					<div id="g-ai0-34" class="g-Layer_1 g-aiAbs" style="top:63%;left:2.9432%;width:21.6667%;">
+						<p>Five Points Correctional Facility</p>
+					</div>
+					<div id="g-ai0-35" class="g-Layer_1 g-aiAbs" style="top:67.4%;left:32.6446%;width:2.6667%;">
+						<p class="g-pstyle5">+72</p>
+					</div>
+					<div id="g-ai0-36" class="g-Layer_1 g-aiAbs" style="top:66.6%;left:2.9404%;width:28.2222%;">
+						<p>Hazel D. Plant Women's Treatment Facility</p>
+					</div>
+					<div id="g-ai0-37" class="g-Layer_1 g-aiAbs" style="top:70%;left:37.9133%;width:2.4444%;">
+						<p class="g-pstyle4">+50</p>
+					</div>
+					<div id="g-ai0-38" class="g-Layer_1 g-aiAbs" style="top:70.2%;left:2.9376%;width:21.3333%;">
+						<p>San Carlos Correctional Facility</p>
+					</div>
+					<div id="g-ai0-39" class="g-Layer_1 g-aiAbs" style="top:73.6%;left:35.1856%;width:2.5556%;">
+						<p class="g-pstyle4">+33</p>
+					</div>
+					<div id="g-ai0-40" class="g-Layer_1 g-aiAbs" style="top:73.8%;left:2.9348%;width:20.2222%;">
+						<p>Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai0-41" class="g-Layer_1 g-aiAbs" style="top:77.2%;left:68.6332%;width:2.5556%;">
+						<p class="g-pstyle4">+31</p>
+					</div>
+					<div id="g-ai0-42" class="g-Layer_1 g-aiAbs" style="top:77.4%;left:2.932%;width:18.3333%;">
+						<p>Marcy Correctional Facility</p>
+					</div>
+					<div id="g-ai0-43" class="g-Layer_1 g-aiAbs" style="top:84%;left:28.5687%;width:0.6667%;">
+						<p class="g-pstyle6">0</p>
+					</div>
+					<div id="g-ai0-44" class="g-Layer_1 g-aiAbs" style="top:84%;left:34.9903%;width:2%;">
+						<p class="g-pstyle6">200</p>
+					</div>
+					<div id="g-ai0-45" class="g-Layer_1 g-aiAbs" style="top:84%;left:42.1605%;width:2.5556%;">
+						<p class="g-pstyle6">400</p>
+					</div>
+					<div id="g-ai0-46" class="g-Layer_1 g-aiAbs" style="top:84%;left:49.3308%;width:1.8889%;">
+						<p class="g-pstyle6">600</p>
+					</div>
+					<div id="g-ai0-47" class="g-Layer_1 g-aiAbs" style="top:84%;left:56.5011%;width:1.8889%;">
+						<p class="g-pstyle6">800</p>
+					</div>
+					<div id="g-ai0-48" class="g-Layer_1 g-aiAbs" style="top:84%;left:63.297%;width:2.5556%;">
+						<p class="g-pstyle6">1000</p>
+					</div>
+					<div id="g-ai0-49" class="g-Layer_1 g-aiAbs" style="top:84%;left:70.4672%;width:2.6667%;">
+						<p class="g-pstyle6">1200</p>
+					</div>
+					<div id="g-ai0-50" class="g-Layer_1 g-aiAbs" style="top:84.2%;left:77.6375%;width:2.5556%;">
+						<p class="g-pstyle6">1400</p>
+					</div>
+					<div id="g-ai0-51" class="g-Layer_1 g-aiAbs" style="top:84.2%;left:84.8077%;width:2.6667%;">
+						<p class="g-pstyle6">1600</p>
+					</div>
+					<div id="g-ai0-52" class="g-Layer_1 g-aiAbs" style="top:84.2%;left:91.978%;width:2.6667%;">
+						<p class="g-pstyle6">1800</p>
+					</div>
+					<div id="g-ai0-53" class="g-Layer_1 g-aiAbs" style="top:92.8%;left:2.9319%;width:72.4444%;">
+						<p>Source: U.S. Census 2020 PL 94-171, Redistricting Data Hub, Colorado Independent Redistricting Commissions, NYS LATFOR</p>
+					</div>
+				</div>
+
+				<!-- Artboard: medium -->
+				<div id="g-pj_census_quirks_graph2-medium" class="g-artboard" style="width:730px; height:647px;" data-aspect-ratio="1.128" data-min-width="730" data-max-width="899">
+			<div style=""></div>
+					<img id="g-pj_census_quirks_graph2-medium-img" class="g-aiImg" alt="" src="imgs/pj_census_quirks_graph2-medium.png"/>
+					<div id="g-ai1-1" class="g-Layer_1 g-aiAbs" style="top:5.255%;left:21.9178%;margin-left:-6.4384%;width:12.8767%;">
+						<p class="g-pstyle0">Census Count</p>
+					</div>
+					<div id="g-ai1-2" class="g-Layer_1 g-aiAbs" style="top:5.255%;left:63.3562%;margin-left:-5.411%;width:10.8219%;">
+						<p class="g-pstyle1">DOC Count</p>
+					</div>
+					<div id="g-ai1-3" class="g-Layer_1 g-aiAbs" style="top:7.728%;left:21.5551%;width:0.274%;">
+						<p class="g-pstyle2">|</p>
+					</div>
+					<div id="g-ai1-4" class="g-Layer_1 g-aiAbs" style="top:7.8825%;left:63.0233%;width:0.274%;">
+						<p class="g-pstyle3">|</p>
+					</div>
+					<div id="g-ai1-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:10.9412%;margin-top:-7.8px;left:5.6901%;width:29px;">
+						<p class="g-pstyle4">1</p>
+					</div>
+					<div id="g-ai1-6" class="g-Layer_1 g-aiAbs" style="top:9.8918%;left:64.5197%;width:3.9726%;">
+						<p class="g-pstyle5">+938</p>
+					</div>
+					<div id="g-ai1-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.7233%;margin-top:-7.8px;left:5.6876%;width:29px;">
+						<p class="g-pstyle4">2</p>
+					</div>
+					<div id="g-ai1-8" class="g-Layer_1 g-aiAbs" style="top:12.6739%;left:41.4884%;width:3.8356%;">
+						<p class="g-pstyle5">+375</p>
+					</div>
+					<div id="g-ai1-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:16.5053%;margin-top:-7.8px;left:5.6851%;width:29px;">
+						<p class="g-pstyle6">3</p>
+					</div>
+					<div id="g-ai1-10" class="g-Layer_1 g-aiAbs" style="top:15.456%;left:53.2432%;width:3.8356%;">
+						<p class="g-pstyle5">+346</p>
+					</div>
+					<div id="g-ai1-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:19.2874%;margin-top:-7.8px;left:5.6825%;width:29px;">
+						<p class="g-pstyle4">4</p>
+					</div>
+					<div id="g-ai1-12" class="g-Layer_1 g-aiAbs" style="top:18.238%;left:46.5668%;width:3.9726%;">
+						<p class="g-pstyle5">+340</p>
+					</div>
+					<div id="g-ai1-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:22.0695%;margin-top:-7.8px;left:5.68%;width:29px;">
+						<p class="g-pstyle4">5</p>
+					</div>
+					<div id="g-ai1-14" class="g-Layer_1 g-aiAbs" style="top:21.0201%;left:30.8279%;width:3.9726%;">
+						<p class="g-pstyle5">+218</p>
+					</div>
+					<div id="g-ai1-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:24.8516%;margin-top:-7.8px;left:5.6774%;width:29px;">
+						<p class="g-pstyle4">6</p>
+					</div>
+					<div id="g-ai1-16" class="g-Layer_1 g-aiAbs" style="top:23.8022%;left:28.9696%;width:3.9726%;">
+						<p class="g-pstyle5">+192</p>
+					</div>
+					<div id="g-ai1-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:27.6336%;margin-top:-7.8px;left:5.6748%;width:29px;">
+						<p class="g-pstyle4">7</p>
+					</div>
+					<div id="g-ai1-18" class="g-Layer_1 g-aiAbs" style="top:26.5842%;left:48.5925%;width:3.8356%;">
+						<p class="g-pstyle5">+187</p>
+					</div>
+					<div id="g-ai1-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:30.4157%;margin-top:-7.8px;left:5.6724%;width:29px;">
+						<p class="g-pstyle4">8</p>
+					</div>
+					<div id="g-ai1-20" class="g-Layer_1 g-aiAbs" style="top:29.3663%;left:83.9496%;width:3.9726%;">
+						<p class="g-pstyle5">+186</p>
+					</div>
+					<div id="g-ai1-21" class="g-Layer_1 g-aiAbs" style="top:32.1484%;left:5.6746%;width:0.9589%;">
+						<p>9</p>
+					</div>
+					<div id="g-ai1-22" class="g-Layer_1 g-aiAbs" style="top:32.1484%;left:74.0904%;width:3.8356%;">
+						<p class="g-pstyle5">+158</p>
+					</div>
+					<div id="g-ai1-23" class="g-Layer_1 g-aiAbs" style="top:34.9304%;left:5.6715%;width:2.0548%;">
+						<p>10</p>
+					</div>
+					<div id="g-ai1-24" class="g-Layer_1 g-aiAbs" style="top:34.9304%;left:48.7176%;width:3.9726%;">
+						<p class="g-pstyle5">+116</p>
+					</div>
+					<div id="g-ai1-25" class="g-Layer_1 g-aiAbs" style="top:37.7125%;left:43.5438%;width:3.8356%;">
+						<p class="g-pstyle5">+113</p>
+					</div>
+					<div id="g-ai1-26" class="g-Layer_1 g-aiAbs" style="top:37.7125%;left:5.6685%;width:1.9178%;">
+						<p>11</p>
+					</div>
+					<div id="g-ai1-27" class="g-Layer_1 g-aiAbs" style="top:40.4946%;left:41.9938%;width:3.9726%;">
+						<p class="g-pstyle5">+107</p>
+					</div>
+					<div id="g-ai1-28" class="g-Layer_1 g-aiAbs" style="top:40.4946%;left:5.6655%;width:2.0548%;">
+						<p>12</p>
+					</div>
+					<div id="g-ai1-29" class="g-Layer_1 g-aiAbs" style="top:43.2767%;left:32.2673%;width:3.8356%;">
+						<p class="g-pstyle5">+101</p>
+					</div>
+					<div id="g-ai1-30" class="g-Layer_1 g-aiAbs" style="top:43.2767%;left:5.6625%;width:2.0548%;">
+						<p>13</p>
+					</div>
+					<div id="g-ai1-31" class="g-Layer_1 g-aiAbs" style="top:46.0587%;left:31.2481%;width:3.0137%;">
+						<p class="g-pstyle5">+91</p>
+					</div>
+					<div id="g-ai1-32" class="g-Layer_1 g-aiAbs" style="top:46.0587%;left:5.6594%;width:2.0548%;">
+						<p>14</p>
+					</div>
+					<div id="g-ai1-33" class="g-Layer_1 g-aiAbs" style="top:48.8408%;left:5.6564%;width:2.0548%;">
+						<p>15</p>
+					</div>
+					<div id="g-ai1-34" class="g-Layer_1 g-aiAbs" style="top:48.8408%;left:60.1517%;width:3.0137%;">
+						<p class="g-pstyle5">+76</p>
+					</div>
+					<div id="g-ai1-35" class="g-Layer_1 g-aiAbs" style="top:52.3957%;left:16.1702%;width:3.1507%;">
+						<p class="g-pstyle7">+72</p>
+					</div>
+					<div id="g-ai1-36" class="g-Layer_1 g-aiAbs" style="top:51.6229%;left:5.6533%;width:1.9178%;">
+						<p class="g-pstyle8">16</p>
+					</div>
+					<div id="g-ai1-37" class="g-Layer_1 g-aiAbs" style="top:54.4049%;left:22.6659%;width:3.0137%;">
+						<p class="g-pstyle5">+50</p>
+					</div>
+					<div id="g-ai1-38" class="g-Layer_1 g-aiAbs" style="top:54.4049%;left:5.6503%;width:2.0548%;">
+						<p>17</p>
+					</div>
+					<div id="g-ai1-39" class="g-Layer_1 g-aiAbs" style="top:57.187%;left:19.3029%;width:3.1507%;">
+						<p class="g-pstyle5">+33</p>
+					</div>
+					<div id="g-ai1-40" class="g-Layer_1 g-aiAbs" style="top:57.187%;left:5.6472%;width:2.0548%;">
+						<p>18</p>
+					</div>
+					<div id="g-ai1-41" class="g-Layer_1 g-aiAbs" style="top:59.9691%;left:5.6442%;width:2.0548%;">
+						<p>19</p>
+					</div>
+					<div id="g-ai1-42" class="g-Layer_1 g-aiAbs" style="top:59.9691%;left:60.5397%;width:3.0137%;">
+						<p class="g-pstyle5">+31</p>
+					</div>
+					<div id="g-ai1-43" class="g-Layer_1 g-aiAbs" style="top:64.7604%;left:11.2231%;width:0.8219%;">
+						<p class="g-pstyle9">0</p>
+					</div>
+					<div id="g-ai1-44" class="g-Layer_1 g-aiAbs" style="top:64.7604%;left:19.1401%;width:2.4658%;">
+						<p class="g-pstyle9">200</p>
+					</div>
+					<div id="g-ai1-45" class="g-Layer_1 g-aiAbs" style="top:64.7604%;left:27.9801%;width:3.1507%;">
+						<p class="g-pstyle9">400</p>
+					</div>
+					<div id="g-ai1-46" class="g-Layer_1 g-aiAbs" style="top:64.915%;left:36.8202%;width:2.3288%;">
+						<p class="g-pstyle9">600</p>
+					</div>
+					<div id="g-ai1-47" class="g-Layer_1 g-aiAbs" style="top:64.915%;left:45.6602%;width:2.3288%;">
+						<p class="g-pstyle9">800</p>
+					</div>
+					<div id="g-ai1-48" class="g-Layer_1 g-aiAbs" style="top:64.915%;left:54.0387%;width:3.1507%;">
+						<p class="g-pstyle9">1000</p>
+					</div>
+					<div id="g-ai1-49" class="g-Layer_1 g-aiAbs" style="top:64.915%;left:62.8788%;width:3.2877%;">
+						<p class="g-pstyle9">1200</p>
+					</div>
+					<div id="g-ai1-50" class="g-Layer_1 g-aiAbs" style="top:64.915%;left:71.7188%;width:3.1507%;">
+						<p class="g-pstyle9">1400</p>
+					</div>
+					<div id="g-ai1-51" class="g-Layer_1 g-aiAbs" style="top:64.915%;left:80.5588%;width:3.2877%;">
+						<p class="g-pstyle9">1600</p>
+					</div>
+					<div id="g-ai1-52" class="g-Layer_1 g-aiAbs" style="top:64.915%;left:89.3989%;width:3.2877%;">
+						<p class="g-pstyle9">1800</p>
+					</div>
+					<div id="g-ai1-53" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:72.0081%;margin-top:-7.9px;left:55.3772%;width:228px;">
+						<p class="g-pstyle4">3 Colorado Territorial Correctional Facility</p>
+					</div>
+					<div id="g-ai1-54" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:72.0056%;margin-top:-7.9px;left:29.5963%;width:197px;">
+						<p class="g-pstyle4">2 Bedford Hills Correctional Facility</p>
+					</div>
+					<div id="g-ai1-55" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:72.0043%;margin-top:-7.9px;left:5.6916%;width:180px;">
+						<p class="g-pstyle4">1 Wyoming Correctional Facility</p>
+					</div>
+					<div id="g-ai1-56" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:75.2511%;margin-top:-7.9px;left:50.6825%;width:194px;">
+						<p class="g-pstyle4">6 Ogdensburg Correctional Facility</p>
+					</div>
+					<div id="g-ai1-57" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:75.2504%;margin-top:-7.9px;left:26.9432%;width:186px;">
+						<p class="g-pstyle4">5 Centennial Correctional Facility</p>
+					</div>
+					<div id="g-ai1-58" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:75.2487%;margin-top:-7.9px;left:5.6916%;width:164px;">
+						<p class="g-pstyle4">4 Albion Correctional Facility</p>
+					</div>
+					<div id="g-ai1-59" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:75.2498%;margin-top:-7.9px;left:75.6753%;width:178px;">
+						<p class="g-pstyle4">7 Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai1-60" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:78.4969%;margin-top:-7.9px;left:28.9317%;width:195px;">
+						<p class="g-pstyle4">9 Bent County Correctional Facility</p>
+					</div>
+					<div id="g-ai1-61" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:78.4954%;margin-top:-7.9px;left:5.6916%;width:176px;">
+						<p class="g-pstyle4">8 Fremont Correctional Facility</p>
+					</div>
+					<div id="g-ai1-62" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:78.4954%;margin-top:-7.9px;left:54.9237%;width:176px;">
+						<p class="g-pstyle4">10 Cayuga Correctional Facility</p>
+					</div>
+					<div id="g-ai1-63" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:81.7421%;margin-top:-7.9px;left:5.6916%;width:189px;">
+						<p class="g-pstyle4">11 Riverview Correctional Facility</p>
+					</div>
+					<div id="g-ai1-64" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:81.7418%;margin-top:-7.9px;left:54.127%;width:184px;">
+						<p class="g-pstyle4">13 Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai1-65" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:81.7414%;margin-top:-7.9px;left:30.646%;width:179px;">
+						<p class="g-pstyle4">12 La Vista Correctional Facility</p>
+					</div>
+					<div id="g-ai1-66" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:84.9929%;margin-top:-7.9px;left:56.787%;width:251px;">
+						<p class="g-pstyle4">16 Hazel D. Plant Women's Treatment Facility</p>
+					</div>
+					<div id="g-ai1-67" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:84.9884%;margin-top:-7.9px;left:31.0155%;width:195px;">
+						<p class="g-pstyle4">15 Five Points Correctional Facility</p>
+					</div>
+					<div id="g-ai1-68" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:84.9883%;margin-top:-7.9px;left:5.6916%;width:193px;">
+						<p class="g-pstyle4">14 Hale Creek Correctional Facility</p>
+					</div>
+					<div id="g-ai1-69" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:88.2339%;margin-top:-7.9px;left:5.6916%;width:192px;">
+						<p class="g-pstyle4">17 San Carlos Correctional Facility</p>
+					</div>
+					<div id="g-ai1-70" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:88.2333%;margin-top:-7.9px;left:30.9768%;width:184px;">
+						<p class="g-pstyle4">18 Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai1-71" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:88.2322%;margin-top:-7.9px;left:55.3446%;width:170px;">
+						<p class="g-pstyle4">19 Marcy Correctional Facility</p>
+					</div>
+					<div id="g-ai1-72" class="g-Layer_1 g-aiAbs" style="top:93.6631%;left:5.6442%;width:87.1233%;">
+						<p>Source: U.S. Census 2020 PL 94-171, Redistricting Data Hub, Colorado Independent Redistricting Commissions, NYS LATFOR</p>
+					</div>
+				</div>
+
+				<!-- Artboard: mobile -->
+				<div id="g-pj_census_quirks_graph2-mobile" class="g-artboard" style="max-width: 350px;max-height: 897px" data-aspect-ratio="0.39" data-min-width="0" data-max-width="729">
+			<div style="padding: 0 0 256.2857% 0;"></div>
+					<img id="g-pj_census_quirks_graph2-mobile-img" class="g-aiImg" alt="" src="imgs/
+					pj_census_quirks_graph2-mobile.png"/>
+					<div id="g-ai2-1" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:3.8505%;margin-top:-9.5px;left:23.5968%;margin-left:-51.5px;width:103px;">
+						<p class="g-pstyle0">Census Count</p>
+					</div>
+					<div id="g-ai2-2" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:3.8495%;margin-top:-9.5px;left:64.2592%;margin-left:-43px;width:86px;">
+						<p class="g-pstyle1">DOC Count</p>
+					</div>
+					<div id="g-ai2-3" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:5.7361%;margin-top:-8.5px;left:23.6635%;width:23px;">
+						<p class="g-pstyle2">|</p>
+					</div>
+					<div id="g-ai2-4" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:5.7361%;margin-top:-8.5px;left:64.0809%;width:23px;">
+						<p class="g-pstyle3">|</p>
+					</div>
+					<div id="g-ai2-5" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:7.0011%;margin-top:-7.8px;left:65.6858%;width:49px;">
+						<p class="g-pstyle4">+938</p>
+					</div>
+					<div id="g-ai2-6" class="g-Layer_1 g-aiAbs" style="top:6.243%;left:5.5979%;width:2.5714%;">
+						<p class="g-pstyle5">1</p>
+					</div>
+					<div id="g-ai2-7" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:9.0078%;margin-top:-7.8px;left:43.0781%;width:49px;">
+						<p class="g-pstyle4">+375</p>
+					</div>
+					<div id="g-ai2-8" class="g-Layer_1 g-aiAbs" style="top:8.2497%;left:5.5902%;width:2.5714%;">
+						<p class="g-pstyle5">2</p>
+					</div>
+					<div id="g-ai2-9" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:11.0145%;margin-top:-7.8px;left:54.7377%;width:49px;">
+						<p class="g-pstyle4">+346</p>
+					</div>
+					<div id="g-ai2-10" class="g-Layer_1 g-aiAbs" style="top:10.2564%;left:5.5826%;width:2.5714%;">
+						<p class="g-pstyle5">3</p>
+					</div>
+					<div id="g-ai2-11" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:13.0212%;margin-top:-7.8px;left:48.2416%;width:49px;">
+						<p class="g-pstyle4">+340</p>
+					</div>
+					<div id="g-ai2-12" class="g-Layer_1 g-aiAbs" style="top:12.2631%;left:5.5749%;width:2.5714%;">
+						<p class="g-pstyle5">4</p>
+					</div>
+					<div id="g-ai2-13" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:14.9164%;margin-top:-7.8px;left:33.7003%;width:49px;">
+						<p class="g-pstyle4">+218</p>
+					</div>
+					<div id="g-ai2-14" class="g-Layer_1 g-aiAbs" style="top:14.2698%;left:5.5673%;width:2.5714%;">
+						<p class="g-pstyle5">5</p>
+					</div>
+					<div id="g-ai2-15" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:17.0345%;margin-top:-7.8px;left:30.9671%;width:49px;">
+						<p class="g-pstyle4">+192</p>
+					</div>
+					<div id="g-ai2-16" class="g-Layer_1 g-aiAbs" style="top:16.2765%;left:5.5597%;width:2.5714%;">
+						<p class="g-pstyle5">6</p>
+					</div>
+					<div id="g-ai2-17" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:19.0412%;margin-top:-7.8px;left:50.1808%;width:49px;">
+						<p class="g-pstyle4">+187</p>
+					</div>
+					<div id="g-ai2-18" class="g-Layer_1 g-aiAbs" style="top:18.2832%;left:5.5518%;width:2.5714%;">
+						<p class="g-pstyle5">7</p>
+					</div>
+					<div id="g-ai2-19" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:21.0479%;margin-top:-7.8px;left:84.4969%;width:49px;">
+						<p class="g-pstyle4">+186</p>
+					</div>
+					<div id="g-ai2-20" class="g-Layer_1 g-aiAbs" style="top:20.2899%;left:5.5442%;width:2.5714%;">
+						<p class="g-pstyle5">8</p>
+					</div>
+					<div id="g-ai2-21" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:23.0546%;margin-top:-7.8px;left:75.0765%;width:49px;">
+						<p class="g-pstyle4">+158</p>
+					</div>
+					<div id="g-ai2-22" class="g-Layer_1 g-aiAbs" style="top:22.2965%;left:5.5365%;width:2.5714%;">
+						<p class="g-pstyle5">9</p>
+					</div>
+					<div id="g-ai2-23" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:25.0613%;margin-top:-7.8px;left:50.156%;width:49px;">
+						<p class="g-pstyle4">+116</p>
+					</div>
+					<div id="g-ai2-24" class="g-Layer_1 g-aiAbs" style="top:24.3032%;left:5.5289%;width:5.1429%;">
+						<p class="g-pstyle5">10</p>
+					</div>
+					<div id="g-ai2-25" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:27.068%;margin-top:-7.8px;left:45.0792%;width:49px;">
+						<p class="g-pstyle4">+113</p>
+					</div>
+					<div id="g-ai2-26" class="g-Layer_1 g-aiAbs" style="top:26.3099%;left:5.5213%;width:4.5714%;">
+						<p class="g-pstyle5">11</p>
+					</div>
+					<div id="g-ai2-27" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:29.0747%;margin-top:-7.8px;left:43.5605%;width:49px;">
+						<p class="g-pstyle4">+107</p>
+					</div>
+					<div id="g-ai2-28" class="g-Layer_1 g-aiAbs" style="top:28.3166%;left:5.5136%;width:5.1429%;">
+						<p class="g-pstyle5">12</p>
+					</div>
+					<div id="g-ai2-29" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:31.0814%;margin-top:-7.8px;left:34.1311%;width:49px;">
+						<p class="g-pstyle4">+101</p>
+					</div>
+					<div id="g-ai2-30" class="g-Layer_1 g-aiAbs" style="top:30.3233%;left:5.506%;width:5.1429%;">
+						<p class="g-pstyle5">13</p>
+					</div>
+					<div id="g-ai2-31" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:33.0877%;margin-top:-7.8px;left:32.8624%;width:42px;">
+						<p class="g-pstyle4">+91</p>
+					</div>
+					<div id="g-ai2-32" class="g-Layer_1 g-aiAbs" style="top:32.33%;left:5.4984%;width:5.1429%;">
+						<p class="g-pstyle5">14</p>
+					</div>
+					<div id="g-ai2-33" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:35.0944%;margin-top:-7.8px;left:61.1473%;width:42px;">
+						<p class="g-pstyle4">+76</p>
+					</div>
+					<div id="g-ai2-34" class="g-Layer_1 g-aiAbs" style="top:34.3367%;left:5.4907%;width:5.1429%;">
+						<p class="g-pstyle5">15</p>
+					</div>
+					<div id="g-ai2-35" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:36.9896%;margin-top:-7.8px;left:18.2712%;width:42px;">
+						<p class="g-pstyle4">+72</p>
+					</div>
+					<div id="g-ai2-36" class="g-Layer_1 g-aiAbs" style="top:36.3434%;left:5.4829%;width:4.8571%;">
+						<p class="g-pstyle5">16</p>
+					</div>
+					<div id="g-ai2-37" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:39.1077%;margin-top:-7.8px;left:24.9626%;width:42px;">
+						<p class="g-pstyle4">+50</p>
+					</div>
+					<div id="g-ai2-38" class="g-Layer_1 g-aiAbs" style="top:38.3501%;left:5.4752%;width:5.1429%;">
+						<p class="g-pstyle5">17</p>
+					</div>
+					<div id="g-ai2-39" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:41.1144%;margin-top:-7.8px;left:21.9481%;width:42px;">
+						<p class="g-pstyle4">+33</p>
+					</div>
+					<div id="g-ai2-40" class="g-Layer_1 g-aiAbs" style="top:40.3567%;left:5.4676%;width:5.1429%;">
+						<p class="g-pstyle5">18</p>
+					</div>
+					<div id="g-ai2-41" class="g-Layer_1 g-aiAbs g-aiPointText" style="top:43.1211%;margin-top:-7.8px;left:61.9565%;width:42px;">
+						<p class="g-pstyle4">+31</p>
+					</div>
+					<div id="g-ai2-42" class="g-Layer_1 g-aiAbs" style="top:42.3634%;left:5.46%;width:5.1429%;">
+						<p class="g-pstyle5">19</p>
+					</div>
+					<div id="g-ai2-43" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:53.9042%;width:6.2857%;">
+						<p class="g-pstyle6">1000</p>
+					</div>
+					<div id="g-ai2-44" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:62.4654%;width:6.2857%;">
+						<p class="g-pstyle6">1200</p>
+					</div>
+					<div id="g-ai2-45" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:88.1492%;width:6.2857%;">
+						<p class="g-pstyle6">1800</p>
+					</div>
+					<div id="g-ai2-46" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:71.0267%;width:6.2857%;">
+						<p class="g-pstyle6">1400</p>
+					</div>
+					<div id="g-ai2-47" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:79.588%;width:6.2857%;">
+						<p class="g-pstyle6">1600</p>
+					</div>
+					<div id="g-ai2-48" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:29.0227%;width:4.8571%;">
+						<p class="g-pstyle6">400</p>
+					</div>
+					<div id="g-ai2-49" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:37.584%;width:4.8571%;">
+						<p class="g-pstyle6">600</p>
+					</div>
+					<div id="g-ai2-50" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:20.4614%;width:4.8571%;">
+						<p class="g-pstyle6">200</p>
+					</div>
+					<div id="g-ai2-51" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:46.1452%;width:4.8571%;">
+						<p class="g-pstyle6">800</p>
+					</div>
+					<div id="g-ai2-52" class="g-Layer_1 g-aiAbs" style="top:46.0424%;left:13.5048%;width:1.7143%;">
+						<p class="g-pstyle6">0</p>
+					</div>
+					<div id="g-ai2-53" class="g-Layer_1 g-aiAbs" style="top:50.1672%;left:5.59%;width:53.1429%;">
+						<p>1 Wyoming Correctional Facility</p>
+					</div>
+					<div id="g-ai2-54" class="g-Layer_1 g-aiAbs" style="top:52.1739%;left:5.5828%;width:59.1429%;">
+						<p>2 Bedford Hills Correctional Facility</p>
+					</div>
+					<div id="g-ai2-55" class="g-Layer_1 g-aiAbs" style="top:54.1806%;left:5.5756%;width:69.1429%;">
+						<p>3 Colorado Territorial Correctional Facility</p>
+					</div>
+					<div id="g-ai2-56" class="g-Layer_1 g-aiAbs" style="top:56.1873%;left:5.5684%;width:47.1429%;">
+						<p>4 Albion Correctional Facility</p>
+					</div>
+					<div id="g-ai2-57" class="g-Layer_1 g-aiAbs" style="top:58.194%;left:5.5612%;width:55.1429%;">
+						<p>5 Centennial Correctional Facility</p>
+					</div>
+					<div id="g-ai2-58" class="g-Layer_1 g-aiAbs" style="top:60.2007%;left:5.554%;width:57.7143%;">
+						<p>6 Ogdensburg Correctional Facility</p>
+					</div>
+					<div id="g-ai2-59" class="g-Layer_1 g-aiAbs" style="top:62.2074%;left:5.5466%;width:52%;">
+						<p>7 Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai2-60" class="g-Layer_1 g-aiAbs" style="top:64.214%;left:5.5394%;width:51.4286%;">
+						<p>8 Fremont Correctional Facility</p>
+					</div>
+					<div id="g-ai2-61" class="g-Layer_1 g-aiAbs" style="top:66.2207%;left:5.5322%;width:58%;">
+						<p>9 Bent County Correctional Facility</p>
+					</div>
+					<div id="g-ai2-62" class="g-Layer_1 g-aiAbs" style="top:68.2274%;left:5.525%;width:49.1429%;">
+						<p>10 Cayuga Correctional Facility</p>
+					</div>
+					<div id="g-ai2-63" class="g-Layer_1 g-aiAbs" style="top:70.2341%;left:5.5178%;width:53.7143%;">
+						<p>11 Riverview Correctional Facility</p>
+					</div>
+					<div id="g-ai2-64" class="g-Layer_1 g-aiAbs" style="top:72.2408%;left:5.5106%;width:50.2857%;">
+						<p>12 La Vista Correctional Facility</p>
+					</div>
+					<div id="g-ai2-65" class="g-Layer_1 g-aiAbs" style="top:74.2475%;left:5.5034%;width:52%;">
+						<p>13 Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai2-66" class="g-Layer_1 g-aiAbs" style="top:76.2542%;left:5.4962%;width:55.1429%;">
+						<p>14 Hale Creek Correctional Facility</p>
+					</div>
+					<div id="g-ai2-67" class="g-Layer_1 g-aiAbs" style="top:78.2609%;left:5.489%;width:55.7143%;">
+						<p>15 Five Points Correctional Facility</p>
+					</div>
+					<div id="g-ai2-68" class="g-Layer_1 g-aiAbs" style="top:80.2676%;left:5.4816%;width:72.5714%;">
+						<p>16 Hazel D. Plant Women's Treatment Facility</p>
+					</div>
+					<div id="g-ai2-69" class="g-Layer_1 g-aiAbs" style="top:82.2742%;left:5.4744%;width:54.8571%;">
+						<p>17 San Carlos Correctional Facility</p>
+					</div>
+					<div id="g-ai2-70" class="g-Layer_1 g-aiAbs" style="top:84.2809%;left:5.4672%;width:52%;">
+						<p>18 Midstate Correctional Facility</p>
+					</div>
+					<div id="g-ai2-71" class="g-Layer_1 g-aiAbs" style="top:86.2876%;left:5.46%;width:47.1429%;">
+						<p>19 Marcy Correctional Facility</p>
+					</div>
+					<div id="g-ai2-72" class="g-Layer_1 g-aiAbs" style="top:92.0847%;left:5.46%;width:79.7143%;">
+						<p>Source: U.S. Census 2020 PL 94-171, </p>
+						<p>Colorado Independent Redistricting Commissions, </p>
+						<p>Redistricting Data Hub, NYS LATFOR </p>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- End ai2html - 2022-03-16 22:46 -->
+
+
+
+
+
+
+
+			<br>
+			<br>
+			<span>
+			States’ Documentation
+			</span>	
+			<br>
+			<span>
+			Many states, where re-allocation processes occurred, recorded peculiarities in their process documentation— each state highlighting different challenges and unique inconsistencies. 
+			</span>	
+			<br>
+			<br>
+			<span>
+			New Jersey’s <a href="https://nj.gov/state/assets/2020-census-data/us-census-bureau-2020-census-pub_l_94-171-redistricting-data-and-nj-p_l_2019_c_385-reallocated-redistricting-data.pdf" target="_blank">documentation</a> revealed seven census blocks with population counts of zero where facilities can be found. 
+			</span>	
+			<br>
+			<br>
+			<img src="imgs/census-quirks-img2.png" style="width:600px;">
+
+
+
+
+
+
+
+			<br>
+			<br>
+			<br>
+			<span>
+			The <a href="https://latfor.state.ny.us/data/?sec=2020amendpop/" target="_blank">documentation</a> from the New York State Legislative Task Force on Demographic Research and Reapportionments indicated demographers first subtracted populations from facilities and then added to prior addresses, recording the adjusted populations of each census block before maps could be drawn. In a number of census blocks, negative populations were reported as subtracting more persons listed in DOC’s count from the lower census count yielded negative figures. 
+			</span>	
+			<br>
+			<br>
+			<span>
+			On the subject of Ray Brook Correctional’s zero population, the task force wrote, “without additional guidance or population input from the Census Bureau, the Task Force technical staff are unable to subtract any people from that facility.” 
+			</span>	
+			<br>
+			<br>
+			<span>
+			One concerned resident in Virginia, a professor Charles Kromkowski submitted a <a href="https://www.vacourts.gov/courts/scv/districting/2021_1215_kromkowski_charles.pdf/" target="_blank">public comment</a> to Virginia’s Redistricting Committee highlighting 21 census blocks with negative populations in the state. “Unlike a typographical mistake, an error like this typically indicates a systemic data-processing problem,” he wrote. “If left uncorrected, this datafile will undermine the Court’s effort to comply with the U.S. and Virginia constitutional expectation for election district population equality.”
+			</span>	
+			<br>
+			<br>
+			<img src="imgs/census-quirks-img3.png" style="width:600px;">
+			
+			
+			
+
+
+
+			<br>
+			<br>
+			<span>
+			Washington state GIS analysts listed potential reasons for the negative populations in their <a href="https://ofm.wa.gov/washington-data-research/population-demographics/decennial-census/2020-census-everyone-counts/2020-census-what-you-need-know/2020-census-data-releases/" target="_blank">Adjusted Redistricting Data, Readme file</a>. “The facility data could be temporally out of sync with the Census,” the notes suggested. Other potential reasons included the challenge of facilities being assigned to more than one census block and the inclusion of “Differential Privacy” into the 2020 Count. Also the file simply includes, “the Census data could be incorrect. There could have been counting errors.”
+			</span>	
+			<br>
+			<br>
+			<img src="imgs/census-quirks-img4.png" style="width:600px;">
+
+
+
+
+
+
+			<br>
+			<br>
+			<span>
+			While Washington analysts suggested that the differences could be a result of Differential Privacy, or the disclosure avoidance system added during the 2020 census, the Associate Director and Chief Scientist for the U.S. Census Bureau, John M. Abowd denies this as a possibility. He wrote, “this is not a feature of the disclosure avoidance system” in response to questions about the differences in population counts.
+			</span>	
+			<br>
+			<br>
+			<span>
+			Census Processes
+			</span>	
+			<br>
+			<span>
+			In general, the U.S. Census Bureau monitors the accuracy of the census with the <a href="https://www.census.gov/programs-surveys/decennial-census/about/coverage-measurement/pes.html/" target="_blank">Post-Enumeration Surveys</a>, which check the accuracy of the census in sample blocks. Although, incarcerated populations do not seem to be put through the same rigor.
+			</span>	
+			<br>
+			<br>
+			<span>
+			On March 10th, the Bureau is poised to share results of the 2020 Post-Enumeration Survey, though the <a href="https://www2.census.gov/about/partners/cac/nac/meetings/2021-05/presentation-post-enumeration-survey-overview.pdf/" target="_blank">survey universe</a> did not include group quarters of which incarcerated populations are considered. This follows past actions by the Bureau, which did not include group quarters in <a href="https://www2.census.gov/cac/sac/meetings/2020-09/presentation-post-enumeration-methodology.pdf/" target="_blank">surveys</a> in 2000 nor in 2010. 
+			</span>	
+			<br>
+			<br>
+			<span>
+				The Census Bureau gathered its 2020 data about incarcerated facilities from a number of methods. Most often, the Bureau <a href="https://www2.census.gov/programs-surveys/decennial/2020/program-management/planning-docs/GQ_detailed_operational_plan.pdf/" target="_blank">counted incarcerated populations</a> by self-enumeration, or the swearing in of a DOC officer as a census enumerator, the person taking the census; other methods employed required e-response or paper submissions.
+			</span>	
+			<br>
+			<br>
+			<span>
+			The process for self-enumeration included a step to “Collect Missing Data with the Help of GQ [Group Quarters] Administrator.”
+			</span>	
+			<br>
+			<br>
+			<img src="imgs/census-quirks-img5.png" style="width:600px;">
+
+
+
+
+			<br>
+			<br>
+			<span>
+			Next Step in Project: The Effects
+			</span>	
+
+
+
+			<br>
+			<br>
+			<span>
+			
+			</span>	
+
+			
+
+			<a href="link" target="_blank"></a> 
+
+
+		<br><br><br>
+	</div>
+
+</body>
+
+</head>
