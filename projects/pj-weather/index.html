@@ -1,0 +1,3072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="description" content="data project">
+    <meta name="author" content="Susan Merriam">
+    
+    <title>The Rise and Fall of Weather Words</title>
+
+    <!-- Meta Tags -->
+	<meta property="og:title" content="The Rise and Fall of Weather Words">
+    <meta property="og:description" content="Data Project">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://semerriam.github.io/imgs/snow.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@semerriam">
+
+    <!-- External fonts css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" type='text/css'>
+
+
+	<!-- stylesheets!!!! -->
+	<!-- <link rel="stylesheet" type="text/css" href="../project-stylesheet.css">  -->
+    <link rel="stylesheet" type="text/css" href="project-stylesheet.css"> 
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Pronoia css -->
+    <link href="css/erowidstyle.css" rel="stylesheet">
+    
+    <!-- Javalinks -->
+    <script src="js/d3.min.js"></script>
+    <script src="js/sigma.min.js"></script>
+    <script src="js/fixhover.js"></script>
+    <script src="js/sigma.parsers.json.min.js"></script>
+    <script src="js/sigma.plugins.filter.min.js"></script>
+    <script src="js/favicon.js"></script>
+
+	
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+								
+								
+
+    
+
+	 
+
+
+
+		<style type="text/css" id="wp-custom-css">
+			#section.viz {
+				color: black;
+				font-family: 'Titillium Web';
+				font-size: 18px;
+				font-weight: 900;	}		
+		</style>
+	
+	
+		<style>
+			h3 {
+			font-family: 'Titillium Web';
+			font-size: 12px;
+			font-weight: 600;
+			}
+
+			h4 {
+			font-family: 'Titillium Web';
+			font-size: 12px;
+			font-weight: 300;
+			}
+
+			#player {
+				width: 90%;
+			}​
+
+			#responsive-image {  width: 70%;  height: auto; } 
+		</style>
+
+		<!-- scrollytelling styles1 -->
+		<style>
+			#scrolly {
+			position: relative;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			background-color: #f3f3f3;
+			padding: 1rem;
+			}
+
+			#scrolly > * {
+			-webkit-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			}
+
+			article {
+			position: relative;
+			padding: 0 1rem;
+			max-width: 15rem;
+			}
+
+			.sticky-thing {
+			position: -webkit-sticky;
+			position: sticky;
+			width: 100%;
+			margin: 0;
+			background-color: None;
+			z-index: 0;
+			top: 12.5vh;
+			height: 75vh;
+			/* Center everything inside */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			}
+
+			.sticky-thing p {
+			padding: 1rem;
+			font-size: 8rem;
+			font-weight: 900;
+			color: #fff;
+			}
+
+			.step {
+			margin: 0 auto 2rem auto;
+			background-color: None;
+			color: #fff;
+			}
+
+			.step:last-child {
+			margin-bottom: 0;
+			}
+
+			.step.is-active {
+			background-color: None;
+			color: None;
+			}
+
+			.step p {
+			text-align: center;
+			padding: 1rem;
+			font-size: 1rem;
+			}
+		</style>
+
+</head>
+
+
+<body>
+
+	<div id="main">
+		<h1><a href="../../index.html">Susan Merriam<br></a>
+    </h1>
+	</div>	
+
+	<div class="site-main">
+		<div id="wrapper" class="site-wrapper">
+			
+			<div id="content" class="single single-feature" data-col="2">
+	
+				<div class="single-feature__row">
+					<div id="primary" class="single-feature__col">
+						<div id="article-main">
+
+							<div class="article-header__container">
+
+								<header class="single-post-header">
+									<div class="single-header">
+										<p class="single-metadata-single-topic">
+											<span style="color: #353643">
+												<strong>
+													Data Project Work in Progress
+												</strong>
+											</span>
+										</p>
+										
+										<h1 class="article-title article-title-single entry-title">The Rise and Fall of Weather Terms</h1>
+								
+									
+				
+									</div> <!-- single-header -->
+				
+									<div class="single-header-metadata-and-share-wrap">
+										<div class="single-header-metadata-wrap">
+											<p class="single-metadata-single-byline">
+												<a href="https://github.com/semerriam/spring-2022-data-studio/blob/main/weather-clickbait/analysis/Weather-Buzzwords.ipynb" target="_blank"> <u style="text-decoration-color:#353643">Github Project Repo</u></a>
+											</p>
+											
+											
+
+
+											<p class="topic single-topic">
+												<time class="datetime">Apr. 11, 2022</time>
+				
+										</div><!-- single header info wrap -->
+										
+									</div><!-- single header info -->
+									
+								</header><!-- single post header -->
+
+							</div> <!-- article header container -->
+							<br>
+							<!-- <br> -->
+							<!-- Chart Header Graph Snow-->		
+							<div class="core-html ">
+								<section class="viz">
+								<header class="viz">
+									<h5 class="viz-title">
+										Snow is on the decline. Polar vortex is on the rise. Gustnado is a distant memory.
+									</h5>
+									 <p class="viz-subtitle"> Yearly count of 15-second segments using a weather-related term by CNN, Fox News, or MSNBC
+									 </p>
+							 </header>
+                             
+										 
+                            
+                            
+                            <!-- <div id="scale-legend" class="legend">
+                                <h4>Industries of Economic Dependence</h4>
+                                <div>
+                                <span style="background-color: #723d46"></span>Farming
+                                </div>
+                                <div>
+                                <span style="background-color: #8e646b"></span>Mining</div>
+                                <div><span style="background-color: #a58389"></span>Manufacturing</div>
+                                <div><span style="background-color: #c9cba3"></span>Government</div>
+                                <div><span style="background-color: #858935"></span>Recreation</div>
+                                <div><span style="background-color: #ffe1a8"></span>Nonspecialized</div>
+                            </div> -->
+                            <div class="container-fluid viz" id="section10">
+                            <div class="container">
+                                <div class="row bumpContainer">
+                                    <div class="col-md-2">
+                                        <!-- <h4>Weather Terms</h4> -->
+                                        <div id="bumpList">
+											<p class="bumpList cls-25" style="color: #9f9fa6;  cursor: default;">Storm</p>
+											<p class="bumpList cls-30" style="color: #c2bbb7;  cursor: default;">Weather</p>
+											<p class="bumpList cls-20" style="color: #abb8c5;  cursor: default;">Snow</p>
+											<p class="bumpList cls-15" style="color: #cfd4d9;  cursor: default;">Rain</p>
+											<p class="bumpList cls-7" style="color: #8c969f;  cursor: default;">Flood</p>
+											<p class="bumpList cls-11" style="color: #7e848d;  cursor: default;">Heavy Rain</p>
+											<p class="bumpList cls-27" style="color: #5d7784;  cursor: default;">Superstorm</p>
+											<p class="bumpList cls-12" style="color: #9fb9d2;  cursor: default;">Heavy Snow</p>
+											<p class="bumpList cls-8" style="color: #c5d2d2;  cursor: default;">Flurry</p> 
+											<p class="bumpList cls-9" style="color: #59616a;  cursor: default;">Freezing Rain</p>
+											<p class="bumpList cls-29" style="color: #3c4950;  cursor: default;">Thunderstorm</p>
+											<p class="bumpList cls-14" style="color: #9d968b;  cursor: default;">Polar Vortex</p>
+											<p class="bumpList cls-19" style="color: #b4aca4;  cursor: default;">Sleet</p>
+											<p class="bumpList cls-13" style="color: #344c56;  cursor: default;">Noreaster</p>
+											<p class="bumpList cls-4" style="color: #756d62;  cursor: default;">Deluge</p>
+                                            <p class="bumpList cls-3" style="color: #1a1b1e;  cursor: default;">Bomb Cyclone</p>
+                                            <p class="bumpList cls-5" style="color: #888176;  cursor: default;">Dust Devil</p>
+                                            <p class="bumpList cls-6" style="color: #4a4340;  cursor: default;">Firenado</p> 
+                                            <p class="bumpList cls-10" style="color: #4a453f;  cursor: default;">Gustnado</p>
+                                            <p class="bumpList cls-16" style="color: #b1b1b2;  cursor: default;">Rain Shower</p>
+                                            <p class="bumpList cls-17" style="color: #e7e9ef;  cursor: default;">Rainfall</p>
+                                            <p class="bumpList cls-18" style="color: #acacc1;  cursor: default;">Rainstorm</p>
+                                            <p class="bumpList cls-21" style="color: #a5b2b7;  cursor: default;">Snow Shower</p>
+                                            <p class="bumpList cls-22" style="color: #6e92a0;  cursor: default;">Snow Squall</p>
+                                            <p class="bumpList cls-23" style="color: #51636b;  cursor: default;">Snowmaggeddon</p>
+                                            <p class="bumpList cls-24" style="color: #5a7882;  cursor: default;">Snowpocalypse</p>
+                                            <p class="bumpList cls-26" style="color: #c9b395;  cursor: default;">Sun Shower</p>
+                                            <p class="bumpList cls-28" style="color: #4479b3;  cursor: default;">Thundersnow</p>
+
+                                                    
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-10">
+                                        <div id="bump">
+                                        <!-- wide svg -->
+
+                                        <svg width="100" viewBox="0 0 900 390" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                                            
+                                            <defs>
+                                            <style>
+                                                .cls-1{  }
+                                                .cls-2{
+                                                font-size:12px;
+                                                font-family:TitilliumWeb-Regular, Titillium Web;
+                                                }
+                                                .cls-3{
+                                                fill:#1a1b1e;
+                                                }
+                                                <!-- .cls-10,
+                                                .cls-11,
+                                                .cls-12,
+                                                .cls-13,
+                                                .cls-14,
+                                                .cls-15,
+                                                .cls-16,
+                                                .cls-17,
+                                                .cls-19,
+                                                .cls-20,
+                                                .cls-21,
+                                                .cls-25,
+                                                .cls-27,
+                                                .cls-28,
+                                                .cls-29,
+                                                .cls-3,
+                                                .cls-30,
+                                                .cls-31,
+                                                .cls-4,
+                                                .cls-5,
+                                                .cls-6,
+                                                .cls-7,
+                                                .cls-8,
+                                                .cls-9{
+                                                opacity:0.4;
+                                                } -->
+                                                .cls-4{fill:#756d62;}
+                                                .cls-5{fill:#888176;}
+                                                .cls-6{fill:#4a4340;}
+                                                cls-7{fill:#8c969f;}
+                                                .cls-8{fill:#c5d2d2;}
+                                                .cls-9{fill:#59616a;}
+                                                .cls-10{fill:#4a453f;}
+                                                .cls-11{fill:#7e848d;}
+                                                .cls-12{fill:#9fb9d2;}
+                                                .cls-13{fill:#344c56;}
+                                                .cls-14{fill:#9d968b;}
+                                                .cls-15{fill:#cfd4d9;}
+                                                .cls-16{fill:#b1b1b2;}
+                                                .cls-17{fill:#e7e9ef;}
+                                                .cls-18{fill:#acacc1;}
+                                                .cls-19{fill:#b4aca4;}
+                                                .cls-20{fill:#abb8c5;}
+                                                .cls-21{fill:#a5b2b7;}
+                                                .cls-22{fill:#6e92a0;}
+                                                .cls-23{fill:#51636b;}
+                                                .cls-24{fill:#5a7882;}
+                                                .cls-25{fill:#9f9fa6;}
+                                                .cls-26{fill:#c9b395;}
+                                                .cls-27{fill:#5d7784;}
+                                                .cls-28{fill:#4479b3;}
+                                                .cls-29{fill:#3c4950;}
+                                                .cls-30{fill:#c2bbb7;}
+                                                .cls-31{fill:none;stroke:#c1c1c1;stroke-width:0.25px;}
+                                            </style>
+                                            </defs>
+                                            <g id="Layer_1_copy_4" data-name="Layer 1 copy 4">
+                                            <g class="cls-1">
+                                                <text class="cls-2" transform="translate(869.91 371.32)">2022</text>
+
+                                                <path class="cls-31" d="M24.86,351.22H881.6"/>
+                                                
+                                                <path class="layer cls-3" d="M24.86,351.22H288.48c32.95,0,32.95,0,65.9,0s32.95,0,65.9,0H552.09c32.95,0,32.95-4.05,65.9-4.05s33,2.09,65.9,2.09,33,1.75,65.91,1.75,33-.62,65.9-.62,32.95-1.59,65.9-1.59v.57c-33,0-33,1.25-65.9,1.25s-33,.46-65.9.46-33-1.42-65.91-1.42-32.95-1.78-65.9-1.78-33,3.34-65.9,3.34H24.86Z" title="Bomb Cyclone" style="fill-opacity: 0.8; fill: #1a1b1e;"></path>
+                                                <path class="layer cls-4" d="M24.86,351.08c33,0,33-1,65.91-1s33,.28,65.9.28,33,.41,65.9.41,33-.11,65.91-.11,32.95-.61,65.9-.61,32.95-.23,65.9-.23,33-8.79,65.9-8.79,33,8.64,65.91,8.64,32.95-.23,65.9-.23,33,.57,65.9.57,33-1.74,65.91-1.74,33,.66,65.9.66S848.65,351,881.6,351v0c-33,0-33-1.65-65.9-1.65s-33-.7-65.9-.7-33,1.59-65.91,1.59-32.95-.47-65.9-.47-33,.35-65.9.35-33-7.25-65.91-7.25-32.95,7.26-65.9,7.26-32.95.19-65.9.19-32.95.55-65.9.55-33,.1-65.91.1-32.95-.33-65.9-.33-32.95-.16-65.9-.16-33,.59-65.91.59Z" title="Deluge" style="fill-opacity: 0.8; fill: #756d62;"></path>
+                                                <path class="layer cls-5" d="M24.86,351.21H90.77c33,0,33-.11,65.9-.11h65.9c33,0,33,0,65.91,0s32.95-.05,65.9-.05,32.95,0,65.9,0,33,.1,65.9.1,33,0,65.91,0,32.95,0,65.9,0,33-.06,65.9-.06,33,.1,65.91.1,33,0,65.9,0,32.95,0,65.9,0h0c-33,0-33,0-65.9,0s-33,0-65.9,0-33-.07-65.91-.07-32.95.05-65.9.05h-65.9c-33,0-33,0-65.91,0s-32.95-.08-65.9-.08-32.95,0-65.9,0-32.95,0-65.9,0H156.67c-32.95,0-32.95,0-65.9,0H24.86Z" title="Dust Devil" style="fill-opacity: 0.8; fill: #888176;"></path>
+                                                <path class="layer cls-6" d="M24.86,351.22H288.48c32.95,0,32.95-.26,65.9-.26s32.95.17,65.9.17,33,.08,65.9.08,33,0,65.91,0,32.95-.13,65.9-.13,33,.09,65.9.09,33,0,65.91,0,33,0,65.9,0,32.95,0,65.9,0H815.7c-33,0-33,0-65.9,0s-33,0-65.91,0-32.95-.05-65.9-.05-33,.05-65.9.05H486.18c-32.95,0-32.95,0-65.9,0s-32.95-.12-65.9-.12-32.95.17-65.9.17H24.86Z" title="Firenado" style="fill-opacity: 0.8; fill: #4a4340;"></path>
+                                                <path class="layer cls-7" d="M24.86,336.94c33,0,33-29.49,65.91-29.49s33-8.48,65.9-8.48,33,7.94,65.9,7.94,33-7.14,65.91-7.14,32.95,5.93,65.9,5.93,32.95,1.26,65.9,1.26,33,12.06,65.9,12.06,33-6.75,65.91-6.75,32.95,5.91,65.9,5.91,33,4.08,65.9,4.08S716.84,333,749.8,333s33-11.06,65.9-11.06,32.95,21.83,65.9,21.83v1.91c-33,0-33-11.76-65.9-11.76s-33,5.78-65.9,5.78-33-5.75-65.91-5.75-32.95-1.34-65.9-1.34-33-1.9-65.9-1.9-33,1.76-65.91,1.76-32.95-8.85-65.9-8.85-32.95-4.12-65.9-4.12-32.95-1.61-65.9-1.61-33,5.21-65.91,5.21-32.95.64-65.9.64-32.95,3-65.9,3-33,15.8-65.91,15.8Z" title="Flood" style="fill-opacity: 0.8; fill: #8c969f;"></path>
+                                                <path class="layer cls-8" d="M24.86,349.25c33,0,33-5.19,65.91-5.19s33,1.85,65.9,1.85,33,.64,65.9.64,33-.58,65.91-.58,32.95,0,65.9,0,32.95.24,65.9.24,33-3.22,65.9-3.22,33-.46,65.91-.46,32.95.06,65.9.06,33,1.49,65.9,1.49,33,2.13,65.91,2.13,33-2.33,65.9-2.33,32.95,4.28,65.9,4.28v.67c-33,0-33-3.19-65.9-3.19s-33,2.11-65.9,2.11-33-2.15-65.91-2.15-32.95-1-65.9-1-33,.35-65.9.35-33-.41-65.91-.41-32.95,3.21-65.9,3.21-32.95-.23-65.9-.23-32.95.3-65.9.3-33,0-65.91,0-32.95-.42-65.9-.42-32.95-1.78-65.9-1.78-33,4.18-65.91,4.18Z" title="Flurry" style="fill-opacity: 0.8; fill: #c5d2d2;"></path>
+                                                <path class="layer cls-9" d="M24.86,349.73c33,0,33-4.18,65.91-4.18s33-1.3,65.9-1.3,33,5.59,65.9,5.59,33-15,65.91-15,32.95,5.15,65.9,5.15,32.95-1.71,65.9-1.71,33,9.52,65.9,9.52,33-.43,65.91-.43,32.95,1.06,65.9,1.06,33-.92,65.9-.92,33,3,65.91,3,33-.67,65.9-.67,32.95-3.18,65.9-3.18v.73c-33,0-33,2.75-65.9,2.75s-33,.67-65.9.67-33-2.65-65.91-2.65-32.95.83-65.9.83-33-.8-65.9-.8-33,.5-65.91.5-32.95-8-65.9-8-32.95,1.45-65.9,1.45-32.95-3.56-65.9-3.56-33,11.87-65.91,11.87-32.95-4.52-65.9-4.52-32.95.94-65.9.94-33,3.32-65.91,3.32Z" title="Freezing Rain" style="fill-opacity: 0.8; fill: #59616a;"></path>
+                                                <path class="layer cls-10" d="M24.86,351.22H90.77c33,0,33-.18,65.9-.18s33,.18,65.9.18,33-.13,65.91-.13,32.95.12,65.9.12h0c-32.95,0-32.95-.11-65.9-.11s-33,.11-65.91.11-32.95-.12-65.9-.12-32.95.12-65.9.12Z" title="Gustnado" style="fill-opacity: 0.8; fill: #4a453f;"></path>
+                                                <path class="layer cls-11" d="M24.86,344.58c33,0,33-17.77,65.91-17.77s33,4.14,65.9,4.14,33-.22,65.9-.22,33-6.59,65.91-6.59,32.95,2.16,65.9,2.16,32.95,6.54,65.9,6.54,33,4.65,65.9,4.65,33,1,65.91,1,32.95.35,65.9.35,33,.69,65.9.69,33,3.89,65.91,3.89,33-3.17,65.9-3.17,32.95,10.09,65.9,10.09v.35c-33,0-33-6.82-65.9-6.82s-33,2.33-65.9,2.33-33-2.13-65.91-2.13-32.95-1.49-65.9-1.49-33-.06-65.9-.06-33-1.43-65.91-1.43-32.95-2.75-65.9-2.75-32.95-6.16-65.9-6.16-32.95-1.82-65.9-1.82-33,5.63-65.91,5.63-32.95,1-65.9,1-32.95-4.21-65.9-4.21-33,13.81-65.91,13.81Z" title="Heavy Rain" style="fill-opacity: 0.8; fill: #7e848d;"></path>
+                                                <path class="layer cls-12" d="M24.86,346.55c33,0,33-8.37,65.91-8.37s33,2,65.9,2,33,5.08,65.9,5.08,33-4.12,65.91-4.12,32.95-5.72,65.9-5.72,32.95,7.34,65.9,7.34,33,1.74,65.9,1.74,33,3.7,65.91,3.7,32.95-1.75,65.9-1.75,33,.19,65.9.19,33,2.84,65.91,2.84,33-1.92,65.9-1.92,32.95-1.84,65.9-1.84v.95c-33,0-33,1.6-65.9,1.6s-33,1.57-65.9,1.57-33-2.29-65.91-2.29-32.95-.38-65.9-.38-33,1.8-65.9,1.8-33-3.08-65.91-3.08-32.95-1.35-65.9-1.35-32.95-6.75-65.9-6.75-32.95,5.77-65.9,5.77-33,3-65.91,3-32.95-4.19-65.9-4.19-32.95-1.66-65.9-1.66-33,6.7-65.91,6.7Z" title="Heavy Snow" style="fill-opacity: 0.8; fill: #9fb9d2;"></path>
+                                                <path class="layer cls-13" d="M24.86,348.72c33,0,33-1.87,65.91-1.87s33,.48,65.9.48,33-4.33,65.9-4.33,33,4.78,65.91,4.78,32.95-3.69,65.9-3.69,32.95,4.75,65.9,4.75,33-.14,65.9-.14,33-2.09,65.91-2.09,32.95-2.05,65.9-2.05,33,5.77,65.9,5.77,33-1.59,65.91-1.59,33-.47,65.9-.47,32.95-.87,65.9-.87v.73c-33,0-33,.84-65.9.84s-33,.14-65.9.14-33,1.43-65.91,1.43-32.95-4.09-65.9-4.09-33,1-65.9,1-33,2-65.91,2-32.95,0-65.9,0-32.95-3.43-65.9-3.43-32.95,2.8-65.9,2.8-33-3.48-65.91-3.48-32.95,3.08-65.9,3.08-32.95-.36-65.9-.36-33,1.27-65.91,1.27Z" title="Noreaster" style="fill-opacity: 0.8; fill: #344c56;"></path>
+                                                <path class="layer cls-14" d="M24.86,351.22H222.57c33,0,33,0,65.91,0s32.95-13.4,65.9-13.4,32.95,13.07,65.9,13.07,33-.14,65.9-.14,33,.44,65.91.44S585,351,618,351s33-2.24,65.9-2.24,33,2.32,65.91,2.32,33-.1,65.9-.1,32.95.14,65.9.14v0c-33,0-33,0-65.9,0H749.8c-33,0-33-1.87-65.91-1.87s-32.95,1.83-65.9,1.83-33,.09-65.9.09-33-.27-65.91-.27-32.95.07-65.9.07-32.95-11-65.9-11-32.95,11.17-65.9,11.17H24.86Z" title="Polar Vortex" style="fill-opacity: 0.8; fill: #9d968b;"></path>
+                                                <path class="layer cls-15" d="M24.86,320.61c33,0,33-56.09,65.91-56.09s33-75.81,65.9-75.81,33,34.31,65.9,34.31,33,28.47,65.91,28.47,32.95,10.74,65.9,10.74,32.95.19,65.9.19,33,24.76,65.9,24.76,33-74.07,65.91-74.07,32.95,20.4,65.9,20.4,33,33.08,65.9,33.08,33,31.48,65.91,31.48,33-21.06,65.9-21.06,32.95,62.39,65.9,62.39v4.41c-33,0-33-38.46-65.9-38.46s-33,14.91-65.9,14.91-33-17.86-65.91-17.86-32.95-32.32-65.9-32.32-33-14.19-65.9-14.19S519.14,319,486.18,319,453.23,307,420.28,307s-32.95-1.26-65.9-1.26-32.95-5.93-65.9-5.93-33-31.7-65.91-31.7S189.62,244,156.67,244s-32.95,63.45-65.9,63.45-33,29.49-65.91,29.49Z" title="Rain" style="fill-opacity: 0.8; fill: #cfd4d9;"></path>
+                                                <path class="layer cls-16" d="M24.86,348.09c33,0,33,1,65.91,1s33,.17,65.9.17,33-1.46,65.9-1.46,33,1.94,65.91,1.94,32.95-.16,65.9-.16,32.95-1.82,65.9-1.82,33,2.79,65.9,2.79,33,.06,65.91.06,32.95-.33,65.9-.33,33,.66,65.9.66,33,0,65.91,0,33-.29,65.9-.29,32.95.58,65.9.58h0c-33,0-33-.4-65.9-.4s-33,.2-65.9.2H683.89c-32.95,0-32.95-.52-65.9-.52s-33,.34-65.9.34-33-.12-65.91-.12-32.95-2.43-65.9-2.43-32.95,1.8-65.9,1.8-32.95.28-65.9.28-33-1.88-65.91-1.88-32.95,1.56-65.9,1.56-32.95-.44-65.9-.44-33-.89-65.91-.89Z" title="Rain Shower" style="fill-opacity: 0.8; fill: #b1b1b2;"></path>
+                                                <path class="layer cls-17" d="M24.86,342.61c33,0,33-9.87,65.91-9.87s33-9,65.9-9,33,12.19,65.9,12.19,33-5.63,65.91-5.63,32.95-10.8,65.9-10.8,32.95,4.12,65.9,4.12,33,8.85,65.9,8.85,33-1.76,65.91-1.76,32.95,1.9,65.9,1.9,33,1.34,65.9,1.34,33,5.75,65.91,5.75,33-5.78,65.9-5.78,32.95,16,65.9,16v.41c-33,0-33-10.09-65.9-10.09s-33,3.17-65.9,3.17-33-3.89-65.91-3.89-32.95-.69-65.9-.69-33-.35-65.9-.35-33-1-65.91-1-32.95-4.65-65.9-4.65-32.95-6.54-65.9-6.54-32.95,8.58-65.9,8.58-33,5.67-65.91,5.67-32.95-9.6-65.9-9.6-32.95,7.23-65.9,7.23-33,6.4-65.91,6.4Z" title="Rainfall" style="fill-opacity: 0.8; fill: #e7e9ef;"></path>
+                                                <path class="layer cls-18" d="M24.86,350.93c33,0,33-1.32,65.91-1.32s33,.44,65.9.44,33,.38,65.9.38,33-.06,65.91-.06,32.95,0,65.9,0,32.95-.19,65.9-.19,33,0,65.9,0,33-.06,65.91-.06,32.95-.35,65.9-.35,33-.2,65.9-.2,33,.18,65.91.18,33-4.23,65.9-4.23,32.95,5.48,65.9,5.48v0c-33,0-33-4.43-65.9-4.43s-33,3.5-65.9,3.5-33-.14-65.91-.14-32.95.18-65.9.18-33,.33-65.9.33-33-.06-65.91-.06-32.95.07-65.9.07-32.95.16-65.9.16-32.95,0-65.9,0-33,.11-65.91.11-32.95-.41-65.9-.41-32.95-.28-65.9-.28-33,1-65.91,1Z" title="Rainstorm" style="fill-opacity: 0.8; fill: #acacc1;"></path>
+                                                <path class="layer cls-19" d="M24.86,350.17c33,0,33-7.66,65.91-7.66s33-.15,65.9-.15,33,6.83,65.9,6.83,33-10.63,65.91-10.63,32.95,3.56,65.9,3.56,32.95,2.42,65.9,2.42,33,4.87,65.9,4.87,33-4.5,65.91-4.5S585,349,618,349s33-.83,65.9-.83,33,.94,65.91.94,33,1,65.9,1,32.95-.78,65.9-.78v.54c-33,0-33,.48-65.9.48s-33-.91-65.9-.91-33-.72-65.91-.72-32.95.72-65.9.72-33-3.67-65.9-3.67-33,4.11-65.91,4.11-32.95-3.74-65.9-3.74-32.95-2.09-65.9-2.09-32.95-2.95-65.9-2.95-33,8.7-65.91,8.7-32.95-5.59-65.9-5.59-32.95-.19-65.9-.19-33,6.51-65.91,6.51Z" title="Sleet" style="fill-opacity: 0.8; fill: #b4aca4;"></path>
+                                                <path class="layer cls-20" d="M24.86,300.29c33,0,33-101.55,65.91-101.55s33,45.26,65.9,45.26,33,24.07,65.9,24.07,33-76,65.91-76,32.95,8.56,65.9,8.56,32.95,6.55,65.9,6.55,33,45.4,65.9,45.4,33,39.94,65.91,39.94,32.95,7.95,65.9,7.95,33,1.89,65.9,1.89,33,17.86,65.91,17.86,33-14.91,65.9-14.91,32.95-4,65.9-4V315.9c-33,0-33,6.08-65.9,6.08S782.75,333,749.8,333s-33-10.78-65.91-10.78-32.95-4.08-65.9-4.08-33-5.91-65.9-5.91-33-25.09-65.91-25.09-32.95-24.76-65.9-24.76-32.95-.19-65.9-.19-32.95-10.74-65.9-10.74-33,55.42-65.91,55.42S189.62,299,156.67,299s-32.95-34.45-65.9-34.45-33,56.09-65.91,56.09Z" title="Snow" style="fill-opacity: 0.8; fill: #abb8c5;"></path>
+                                                <path class="layer cls-21" d="M24.86,350.57c33,0,33-2.59,65.91-2.59s33,.36,65.9.36,33,.15,65.9.15,33,.25,65.91.25,32.95.19,65.9.19,32.95-.64,65.9-.64,33,1.63,65.9,1.63,33,1.09,65.91,1.09,32.95-.51,65.9-.51,33,0,65.9,0,33,.28,65.91.28h65.9l65.9,0v.11c-33,0-33,0-65.9,0s-33-.07-65.9-.07-33-.19-65.91-.19H618c-33,0-33,.44-65.9.44s-33-.89-65.91-.89-32.95-1.43-65.9-1.43-32.95.69-65.9.69-32.95.16-65.9.16-33-.5-65.91-.5l-65.9,0c-32.95,0-32.95-.17-65.9-.17s-33,1.89-65.91,1.89Z" title="Snow Shower" style="fill-opacity: 0.8; fill: #a5b2b7;"></path>
+                                                <path class="layer cls-22" d="M24.86,351.16H90.77c33,0,33,0,65.9,0h65.9c33,0,33,0,65.91,0l65.9,0h65.9c33,0,33-.06,65.9-.06s33,.05,65.91.05l65.9,0c33,0,33-.18,65.9-.18s33,.16,65.91.16,33,0,65.9,0,32.95-.21,65.9-.21v.1c-33,0-33,.13-65.9.13l-65.9,0c-33,0-33-.08-65.91-.08s-32.95.11-65.9.11-33,0-65.9,0-33,0-65.91,0-32.95.06-65.9.06-32.95,0-65.9,0l-65.9,0c-33,0-33,0-65.91,0h-65.9l-65.9,0H24.86Z" title="Snow Squall" style="fill-opacity: 0.8; fill: #6e92a0;"></path>
+                                                <path class="layer cls-23" d="M24.86,351.22c33,0,33-.65,65.91-.65s33,.59,65.9.59h65.9c33,0,33,0,65.91,0s32.95-.07,65.9-.07,32.95-.06,65.9-.06,33,0,65.9,0,33,.18,65.91.18h131.8c33,0,33,0,65.91,0l65.9,0c32.95,0,32.95,0,65.9,0h0c-33,0-33,0-65.9,0s-33,0-65.9,0H552.09c-33,0-33-.09-65.91-.09s-32.95-.07-65.9-.07-32.95,0-65.9,0-32.95.05-65.9.05-33,0-65.91,0h-65.9c-32.95,0-32.95-.25-65.9-.25S57.81,351.22,24.86,351.22Z" title="Snowmaggeddon" style="fill-opacity: 0.8; fill: #51636b;"></path>
+                                                <path class="cls-24" d="M24.86,351.21c33,0,33-.15,65.91-.15s33,.15,65.9.15h65.9c33,0,33,0,65.91,0s32.95,0,65.9,0,32.95,0,65.9,0,33,0,65.9,0h65.91c32.95,0,32.95,0,65.9,0h0c-33,0-33,0-65.9,0s-33,0-65.91,0-32.95,0-65.9,0H288.48c-33,0-33,0-65.91,0h-65.9c-32.95,0-32.95-.06-65.9-.06s-33,0-65.91,0Z" title="Snowpocalypse" style="fill-opacity: 0.8; fill: #5a7882;"></path>
+
+                                                <path class="layer cls-25" d="M24.86,277.84c33,0,33-227.61,65.91-227.61s33-31.82,65.9-31.82,33,37.8,65.9,37.8,33-18.5,65.91-18.5,32.95,93.34,65.9,93.34,32.95-47,65.9-47,33,64.09,65.9,64.09,33-55.63,65.91-55.63S585,155.93,618,155.93s33-5.57,65.9-5.57,33,70.34,65.91,70.34,33-50,65.9-50S848.65,328,881.6,328V339.4c-33,0-33-105.74-65.9-105.74s-33,32.88-65.9,32.88S716.84,228,683.89,228s-32.95,5.55-65.9,5.55-33-20.4-65.9-20.4-33,.16-65.91.16-32.95-67.38-65.9-67.38-32.95,54.78-65.9,54.78S321.43,121,288.48,121s-33,38.26-65.91,38.26-32.95-50.15-65.9-50.15-32.95,17.62-65.9,17.62-33,173.58-65.91,173.58Z" title="Storm" style="fill-opacity: 0.8; fill: #9f9fa6;"></path>
+                                                <path class="layer cls-26" d="M24.86,351.22H156.67c33,0,33,0,65.9,0H24.86Z" title="Storm" style="fill-opacity: 0.8; fill: #c9b395;"></path>
+                                                <path class="layer cls-27" d="M24.86,351.2H90.77c33,0,33-.23,65.9-.23s33-27.82,65.9-27.82,33-5.21,65.91-5.21,32.95,29.55,65.9,29.55,32.95,1.89,65.9,1.89,33-2.44,65.9-2.44,33,2,65.91,2,32.95,1.75,65.9,1.75h65.9c33,0,33-.53,65.91-.53s33-.75,65.9-.75,32.95,1.74,65.9,1.74v0c-33,0-33-1.35-65.9-1.35s-33,.67-65.9.67-33,.37-65.91.37H618c-33,0-33-1.18-65.9-1.18s-33-1.87-65.91-1.87-32.95,2-65.9,2-32.95-.93-65.9-.93-32.95-24.79-65.9-24.79-33,6.59-65.91,6.59S189.62,351,156.67,351s-32.95.17-65.9.17H24.86Z" title="Sun Shower" style="fill-opacity: 0.8; fill: #5d7784;"></path>
+                                                <path class="layer cls-28" d="M24.86,351.18c33,0,33-.24,65.91-.24s33-.21,65.9-.21,33,.33,65.9.33,33-.1,65.91-.1,32.95-.23,65.9-.23,32.95-.16,65.9-.16,33,.34,65.9.34,33-.07,65.91-.07,32.95.05,65.9.05,33,.26,65.9.26,33,0,65.91,0h65.9c32.95,0,32.95,0,65.9,0v0c-33,0-33,0-65.9,0H749.8c-33,0-33,0-65.91,0S650.94,351,618,351h-65.9c-33,0-33,0-65.91,0s-32.95-.17-65.9-.17-32.95.08-65.9.08-32.95.15-65.9.15H222.57c-32.95,0-32.95-.14-65.9-.14s-32.95.1-65.9.1-33,.14-65.91.14Z" title="Thundersnow" style="fill-opacity: 0.8; fill: #4479b3;"></path>
+                                                <path class="layer cls-29" d="M24.86,347.4c33,0,33-6.7,65.91-6.7s33-3.75,65.9-3.75,33,3.6,65.9,3.6,33,3,65.91,3,32.95-11.4,65.9-11.4,32.95,8.51,65.9,8.51,33,5.22,65.9,5.22,33-.08,65.91-.08,32.95,2.07,65.9,2.07,33-2.31,65.9-2.31,33,2.15,65.91,2.15,33-1,65.9-1,32.95,4,65.9,4v.16c-33,0-33-3.27-65.9-3.27s-33,.75-65.9.75-33-1.67-65.91-1.67-32.95,1.83-65.9,1.83-33-1.86-65.9-1.86-33,.32-65.91.32-32.95-4.17-65.9-4.17-32.95-7.34-65.9-7.34S321.43,346,288.48,346s-33-3-65.91-3-32.95-2.82-65.9-2.82-32.95,2.33-65.9,2.33-33,5.58-65.91,5.58Z" title="Thunderstorm" style="fill-opacity: 0.8; fill: #3c4950;"></path>
+                                                <path class="layer cls-30" d="M24.86,254c33,0,33-127.29,65.91-127.29s33-17.62,65.9-17.62,33,50.15,65.9,50.15,33-38.26,65.91-38.26,32.95-73.57,65.9-73.57,32.95,98.48,65.9,98.48,33,67.38,65.9,67.38,33,42.62,65.91,42.62S585,270.08,618,270.08s33-42.12,65.9-42.12,33,38.58,65.91,38.58,33-32.88,65.9-32.88,32.95,82.24,65.9,82.24V328c-33,0-33-51-65.9-51s-33,21.06-65.9,21.06-33-31.48-65.91-31.48-32.95,33.92-65.9,33.92-33-7.95-65.9-7.95-33-39.94-65.91-39.94-32.95-45.4-65.9-45.4-32.95-76.17-65.9-76.17-32.95,61.06-65.9,61.06S255.52,223,222.57,223s-32.95-34.31-65.9-34.31-32.95,10-65.9,10-33,79.1-65.91,79.1Z" title="Weather" style="fill-opacity: 0.8; fill: #c2bbb7;"></path>
+
+                                                <path class="cls-31" d="M24.86,351.22H881.6"/>
+
+                                                <text class="cls-2" transform="translate(13.17 371.32)">2009</text>
+                                                <text class="cls-2" transform="translate(79.07 371.32)">2010</text>
+                                                <text class="cls-2" transform="translate(145.29 371.32)">2011</text>
+                                                <text class="cls-2" transform="translate(210.88 371.32)">2012</text>
+                                                <text class="cls-2" transform="translate(276.78 371.32)">2013</text>
+                                                <text class="cls-2" transform="translate(342.69 371.32)">2014</text>
+                                                <text class="cls-2" transform="translate(408.59 371.32)">2015</text>
+                                                <text class="cls-2" transform="translate(474.49 371.32)">2016</text>
+                                                <text class="cls-2" transform="translate(540.39 371.32)">2017</text>
+                                                <text class="cls-2" transform="translate(606.3 371.32)">2018</text>
+                                                <text class="cls-2" transform="translate(672.2 371.32)">2019</text>
+                                                <text class="cls-2" transform="translate(738.1 371.32)">2020</text>
+                                                <text class="cls-2" transform="translate(804.01 371.32)">2021</text>
+                                                <text class="cls-2" transform="translate(869.91 371.32)">2022</text>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            </div> <!-- /container fluid-->
+							</div><!-- /container fluid-->
+
+                            <!-- Chart Footer Graph -->		
+							<div class="core-html">
+								<p class="viz-caption">Source: TV News Archive 
+
+								</p>
+							</div>
+
+							<!-- Chart Ends-->	
+
+							
+							<div class="textblock"> 
+								<!-- <p data-paragraph="main">
+									Snow is on the decline. Polar vortex is on the rise. Snowmageddon is a distant memory.							
+								</p>  -->
+							
+
+								<p data-paragraph="main">
+									The terms the major networks (CNN, Fox News, and MSNBC) use to describe weather events have had their ups and downs over the years.							
+								</p>
+
+								<p data-paragraph="main">
+									As the world embraces the inevitability of climate change, most of us can expect more drastic weather events and with it more dramatic terminology. However, these dramatic terms also come as news networks compete for viewers’ attention and the marketing of these events becomes about increasing KPI’s as well as conveying the latest updates. 					
+								</p>
+
+								<p data-paragraph="main">
+									In 2014, a number of scientists were up in arms over the Weather Channel’s decision to name storms, which many felt was a marketing choice over a scientific one. 					
+								</p>
+
+								<p data-paragraph="main">
+									“I'm sorry, but naming winter storms is a meteorological disgrace and only leads to confusion,” <a href="https://twitter.com/nynjpaweather/status/517280999999565824?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E517280999999565824%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.washingtonpost.com%2Fnews%2Fcapital-weather-gang%2Fwp%2F2014%2F10%2F01%2Fweather-channel-announces-winter-storm-names-reigniting-debate-over-their-value%2F" target="_blank"><u style="text-decoration-color:#353643">wrote meteorologist Steven DiMartino</u></a>. Similarly in 2020, <a href="http://www.damweather.com/2020/07/the-weather-channels-covidcane-branding.html" target="_blank"><u style="text-decoration-color:#353643">some criticized</u></a> the network’s branding of a hurricane during the pandemic as “COVIDCANE 2020”.
+									
+								</p>
+
+								<p data-paragraph="main">
+									More recently, a number of pieces and op-eds have been written on the increase in dramatic terms used by outlets. Jim Duncan from <a href="https://www.washingtonpost.com/weather/2022/02/04/weather-buzzwords-perspective-bomb-cyclone/" target="_blank"><u style="text-decoration-color:#353643">The Washington Post</u></a> wrote in February, “over the past few years, an onslaught of frightening-sounding weather words and phrases has accompanied nearly every major weather happening.” Another columnist from the <a href="https://www.thestar.com/entertainment/opinion/2022/01/28/stop-with-the-bomb-cyclones-and-the-thundersnow-the-world-is-scary-enough-without-alarmist-weather-words.html" target="_blank"><u style="text-decoration-color:#353643">Toronto Star</u></a> wrote, “Stop with the ‘bomb cyclones’ and the ‘thundersnow’ — the world is scary enough without alarmist weather words.”					
+								</p>
+
+								<p data-paragraph="main">
+									I wondered whether these observations were rooted in reality or possibly just recency bias after the latest storm coverage. In an analysis of data from the <a href="https://api.gdeltproject.org/api/v2/summary/summary?d=iatv&t=summary&k=%28%22heavy+rain%22%29&ts=full&fs=station%3ACNN&fs=station%3AFOXNEWS&fs=station%3AMSNBC&fdn=raw&svt=zoom&svts=zoom&svhm=basic&swvt=zoom&sgt=yes&ssc=yes&sshc=yes&swc=yes&stcl=yes&c=1" target="_blank"><u style="text-decoration-color:#353643">TV News Archive</u></a>, I looked at how three major networks — CNN, Fox News, and MSNBC have described weather events since June 2009. Out of 28 terms describing the weather, some trends rose to the surface.
+
+									
+								</p>
+
+
+
+								<!-- <p data-paragraph="main">
+									
+									<em>"text." 
+									<br>
+									—Gaspar Noe</em> 
+
+								</p> -->
+
+								<!-- <p data-paragraph="main">
+									text. 
+									text In an <a href="https://www.salon.com/2003/03/12/noe/" target="_blank"><u style="text-decoration-color:#353643">interview with Salon</u></a>, text
+									
+								</p> -->
+
+								<!-- <h2>
+									subtitle
+								</h2> -->
+
+
+								<!-- <iframe width="85%" height="300px" src="https://www.youtube.com/embed/kiV3J_e977Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<br> -->
+							</div>
+
+							<!-- Chart Header Graph Snow-->		
+							<div class="core-html ">
+								<section class="viz">
+								<header class="viz">
+									<h5 class="viz-title">
+										Weather terms used by major networks varied across seasons and years
+									</h5>
+									 <!-- <p class="viz-subtitle"> subtitle
+									 </p> -->
+							 </header>
+							
+
+							<div id="graph-snow" class="graphs">
+								<!-- GRAPH Snow!!!!!-->		
+							<img src="imgs/weather-words.gif" style="width:1000px;">
+
+							<!-- Chart Footer Graph -->		
+							<div class="core-html">
+								<p class="viz-caption">Source: TV News Archive 
+
+								</p>
+							</div>
+
+							<!-- Chart Ends-->	
+
+
+
+
+
+
+								<script type="text/javascript">
+									(function() {
+										// only want one resizer on the page
+										if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+										document.documentElement.className += " g-resizer-v3-init";
+										// require IE9+
+										if (!("querySelector" in document)) return;
+										function resizer() {
+											var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+												widthById = {};
+											elements.forEach(function(el) {
+												var parent = el.parentNode,
+													width = widthById[parent.id] || parent.getBoundingClientRect().width,
+													minwidth = el.getAttribute("data-min-width"),
+													maxwidth = el.getAttribute("data-max-width");
+												widthById[parent.id] = width;
+								
+												if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+													el.style.display = "block";
+												} else {
+													el.style.display = "none";
+												}
+											});
+											try {
+												if (window.parent && window.parent.$) {
+													window.parent.$("body").trigger("resizedcontent", [window]);
+												}
+												if (window.require) {
+													require(['foundation/main'], function() {
+														require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+															AppCommunicator.triggerResize();
+														});
+													});
+												}
+											} catch(e) { console.log(e); }
+										}
+								
+										document.addEventListener('DOMContentLoaded', resizer);
+										// feel free to replace throttle with _.throttle, if available
+										window.addEventListener('resize', throttle(resizer, 200));    
+								
+										function throttle(func, wait) {
+											// from underscore.js
+											var _now = Date.now || function() { return new Date().getTime(); },
+												context, args, result, timeout = null, previous = 0;
+											var later = function() {
+												previous = _now();
+												timeout = null;
+												result = func.apply(context, args);
+												if (!timeout) context = args = null;
+											};
+											return function() {
+												var now = _now(), remaining = wait - (now - previous);
+												context = this;
+												args = arguments;
+												if (remaining <= 0 || remaining > wait) {
+													if (timeout) {
+														clearTimeout(timeout);
+														timeout = null;
+													}
+													previous = now;
+													result = func.apply(context, args);
+													if (!timeout) context = args = null;
+												} else if (!timeout && options.trailing !== false) {
+													timeout = setTimeout(later, remaining);
+												}
+												return result;
+											};
+										}
+								
+									
+									})();
+								</script>
+
+
+
+								
+								
+								<div class="textblock"> 
+
+									<p data-paragraph="main">
+										Overall, more generic terms such as snow and rain have generally declined from 2010 to April 2022 though there are unsurprisingly seasonal rises and falls. 
+										
+								 </p>
+	
+	
+									<p data-paragraph="main">
+										This decline in coverage seems independent of actual weather patterns as the annual national average of U.S. precipitation peaked in 2015, 2018, and 2019 over the same period according to the <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series/110/pcp/ann/6/2009-2022?base_prd=true&begbaseyear=1901&endbaseyear=2000" target="_blank"><u style="text-decoration-color:#353643">National Oceanic and Atmospheric Administration (NOAA)</u></a>.
+	
+								 </p>
+	
+									<!-- <p data-paragraph="main">
+										text
+	
+									</p> -->
+	
+	
+									
+								</div>
+
+
+							<!-- Chart Header Graph Snow-->		
+							<div class="core-html ">
+								<section class="viz">
+								<header class="viz">
+									<h5 class="viz-title">
+										The use of "Snow" overall declined since 2009
+									</h5>
+									 <!-- <p class="viz-subtitle"> subtitle
+									 </p> -->
+							 </header>
+							
+
+							<div id="graph-snow" class="graphs">
+								<!-- GRAPH Snow!!!!!-->							
+
+							<style>
+								.row-container {
+									display: flex;
+									flex-direction: row;
+									flex-wrap: wrap;
+									width: 100%;
+									gap: 2em;
+								}
+						
+								.column-container {
+									display: flex;
+									flex-direction: column;
+									flex-basis: 100%;
+									flex: 1;
+								}
+						
+
+								@media (min-width: 600px) {
+									#g-ec-graphs-3-17-22-graph6-wide {
+										flex-direction: column;
+									}
+								}
+						
+								@media (min-width: 350px) {
+									#g-ec-graphs-3-17-22-graph6-medium  {
+										flex-direction: column;
+									}
+								}
+
+								@media (max-width: 350px) {
+									#g-ec-graphs-3-17-22-graph6-mobile {
+										flex-direction: column;
+									}
+								}
+								
+							</style>
+
+									<!-- ai2html can go here -->
+
+
+																			
+									<!-- Generated by ai2html v0.106.0 - 2022-04-15 12:26 -->
+									<!-- ai file: weather_buzzwords_graphics_snow.ai -->
+									<style media="screen,print">
+										#g-weather_buzzwords_graphics_snow-box ,
+										#g-weather_buzzwords_graphics_snow-box .g-artboard {
+											margin:0 auto;
+										}
+										#g-weather_buzzwords_graphics_snow-box p {
+											margin:0;
+										}
+										#g-weather_buzzwords_graphics_snow-box .g-aiAbs {
+											position:absolute;
+										}
+										#g-weather_buzzwords_graphics_snow-box .g-aiImg {
+											position:absolute;
+											top:0;
+											display:block;
+											width:100% !important;
+										}
+										#g-weather_buzzwords_graphics_snow-box .g-aiSymbol {
+											position: absolute;
+											box-sizing: border-box;
+										}
+										#g-weather_buzzwords_graphics_snow-box .g-aiPointText p { white-space: nowrap; }
+										#g-weather_buzzwords_graphics_snow-wide {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_snow-wide p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_snow-wide .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_snow-wide .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+										#g-weather_buzzwords_graphics_snow-medium {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_snow-medium p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_snow-medium .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_snow-medium .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+										#g-weather_buzzwords_graphics_snow-mobile {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_snow-mobile p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_snow-mobile .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_snow-mobile .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+
+									</style>
+
+									<div id="g-weather_buzzwords_graphics_snow-box" class="ai2html">
+
+										<!-- Artboard: wide -->
+										<div id="g-weather_buzzwords_graphics_snow-wide" class="g-artboard" style="width:900px; height:255.501395216143px;" data-aspect-ratio="3.522" data-min-width="900">
+									<div style=""></div>
+											<img id="g-weather_buzzwords_graphics_snow-wide-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_snow-wide.png"/>
+											<div id="g-ai0-1" class="g-base_layer g-aiAbs" style="top:0.7828%;left:0.8332%;width:30.8889%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai0-2" class="g-base_layer g-aiAbs" style="top:0.7828%;left:35.713%;width:29.7778%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai0-3" class="g-base_layer g-aiAbs" style="top:10.1761%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai0-4" class="g-layer-a g-aiAbs" style="top:15.2641%;left:0.8332%;width:3.4444%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai0-5" class="g-base_layer g-aiAbs" style="top:30.5282%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai0-6" class="g-layer-a g-aiAbs" style="top:34.0507%;left:0.8332%;width:3.5556%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai0-7" class="g-base_layer g-aiAbs" style="top:50.489%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai0-8" class="g-layer-a g-aiAbs" style="top:53.2287%;left:0.8332%;width:3.5556%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai0-9" class="g-base_layer g-aiAbs" style="top:70.4497%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai0-10" class="g-layer-a g-aiAbs" style="top:71.6239%;left:0.8332%;width:3.5556%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai0-11" class="g-layer-a g-aiAbs" style="top:90.4105%;left:0.8332%;width:1.4444%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai0-12" class="g-base_layer g-aiAbs" style="top:91.1932%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai0-13" class="g-base_layer g-aiAbs" style="top:93.933%;left:8.1993%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai0-14" class="g-base_layer g-aiAbs" style="top:93.933%;left:11.656%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai0-15" class="g-base_layer g-aiAbs" style="top:93.933%;left:15.0775%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai0-16" class="g-base_layer g-aiAbs" style="top:93.933%;left:18.499%;margin-left:-1.5%;width:3%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai0-17" class="g-base_layer g-aiAbs" style="top:93.933%;left:21.9482%;margin-left:-1.5%;width:3%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai0-18" class="g-base_layer g-aiAbs" style="top:93.933%;left:25.3974%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai0-19" class="g-base_layer g-aiAbs" style="top:93.933%;left:28.8466%;margin-left:-1.6111%;width:3.2222%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai0-20" class="g-base_layer g-aiAbs" style="top:93.933%;left:44.4869%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai0-21" class="g-base_layer g-aiAbs" style="top:93.933%;left:48.8209%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2011</p>
+											</div>
+											<div id="g-ai0-22" class="g-base_layer g-aiAbs" style="top:93.933%;left:53.1549%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai0-23" class="g-base_layer g-aiAbs" style="top:93.933%;left:57.4889%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2013</p>
+											</div>
+											<div id="g-ai0-24" class="g-base_layer g-aiAbs" style="top:93.933%;left:61.8229%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai0-25" class="g-base_layer g-aiAbs" style="top:93.933%;left:66.1569%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2015</p>
+											</div>
+											<div id="g-ai0-26" class="g-base_layer g-aiAbs" style="top:93.933%;left:70.4909%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai0-27" class="g-base_layer g-aiAbs" style="top:93.933%;left:74.8249%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2017</p>
+											</div>
+											<div id="g-ai0-28" class="g-base_layer g-aiAbs" style="top:93.933%;left:79.1589%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai0-29" class="g-base_layer g-aiAbs" style="top:93.933%;left:83.4929%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2019</p>
+											</div>
+											<div id="g-ai0-30" class="g-base_layer g-aiAbs" style="top:93.933%;left:87.8269%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai0-31" class="g-base_layer g-aiAbs" style="top:93.933%;left:92.1609%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2021</p>
+											</div>
+											<div id="g-ai0-32" class="g-base_layer g-aiAbs" style="top:93.933%;left:96.4949%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div>
+
+										<!-- Artboard: medium -->
+										<div id="g-weather_buzzwords_graphics_snow-medium" class="g-artboard" style="width:600px; height:254.256295276584px;" data-aspect-ratio="2.36" data-min-width="600" data-max-width="899">
+									<div style=""></div>
+											<img id="g-weather_buzzwords_graphics_snow-medium-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_snow-medium.png"/>
+											<div id="g-ai1-1" class="g-base_layer g-aiAbs" style="top:0.3933%;left:1.2498%;width:46.3333%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai1-2" class="g-base_layer g-aiAbs" style="top:0.3933%;left:50.2361%;width:44.6667%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai1-3" class="g-base_layer g-aiAbs" style="top:9.8326%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai1-4" class="g-layer-a g-aiAbs" style="top:14.9455%;left:1.2498%;width:5.1667%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai1-5" class="g-base_layer g-aiAbs" style="top:30.2844%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai1-6" class="g-layer-a g-aiAbs" style="top:33.8241%;left:1.2498%;width:5.3333%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai1-7" class="g-base_layer g-aiAbs" style="top:50.3429%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai1-8" class="g-layer-a g-aiAbs" style="top:53.096%;left:1.2498%;width:5.3333%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai1-9" class="g-base_layer g-aiAbs" style="top:70.4014%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai1-10" class="g-layer-a g-aiAbs" style="top:71.5813%;left:1.2498%;width:5.3333%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai1-11" class="g-layer-a g-aiAbs" style="top:90.4599%;left:1.2498%;width:2.1667%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai1-12" class="g-base_layer g-aiAbs" style="top:91.6398%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai1-13" class="g-base_layer g-aiAbs" style="top:93.9996%;left:12.2989%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai1-14" class="g-base_layer g-aiAbs" style="top:93.9996%;left:17.4841%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai1-15" class="g-base_layer g-aiAbs" style="top:93.9996%;left:22.6162%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai1-16" class="g-base_layer g-aiAbs" style="top:93.9996%;left:27.7484%;margin-left:-2.25%;width:4.5%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai1-17" class="g-base_layer g-aiAbs" style="top:93.9996%;left:32.9223%;margin-left:-2.25%;width:4.5%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai1-18" class="g-base_layer g-aiAbs" style="top:93.9996%;left:38.0961%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai1-19" class="g-base_layer g-aiAbs" style="top:93.9996%;left:43.2698%;margin-left:-2.4167%;width:4.8333%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai1-20" class="g-base_layer g-aiAbs" style="top:94.3929%;left:59.722%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai1-21" class="g-base_layer g-aiAbs" style="top:94.3929%;left:66.0574%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai1-22" class="g-base_layer g-aiAbs" style="top:94.3929%;left:72.3927%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai1-23" class="g-base_layer g-aiAbs" style="top:94.3929%;left:78.5614%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai1-24" class="g-base_layer g-aiAbs" style="top:94.3929%;left:84.73%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai1-25" class="g-base_layer g-aiAbs" style="top:94.3929%;left:91.0654%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai1-26" class="g-base_layer g-aiAbs" style="top:94.3929%;left:97.234%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div>
+
+										<!-- Artboard: mobile -->
+										<div id="g-weather_buzzwords_graphics_snow-mobile" class="g-artboard" style="max-width: 350px;max-height: 526px" data-aspect-ratio="0.665" data-min-width="0" data-max-width="599">
+									<div style="padding: 0 0 150.3728% 0;"></div>
+											<img id="g-weather_buzzwords_graphics_snow-mobile-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_snow-mobile.png"/>
+											<div id="g-ai2-1" class="g-base_layer g-aiAbs" style="top:0.57%;left:3.4502%;width:94.2857%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai2-2" class="g-layer-a g-aiAbs" style="top:6.6501%;left:3.5819%;width:9.1429%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai2-3" class="g-layer-a g-aiAbs" style="top:15.9603%;left:3.5819%;width:9.4286%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai2-4" class="g-layer-a g-aiAbs" style="top:25.0805%;left:3.5819%;width:9.4286%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai2-5" class="g-layer-a g-aiAbs" style="top:34.2007%;left:3.5819%;width:9.4286%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai2-6" class="g-layer-a g-aiAbs" style="top:43.3209%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai2-7" class="g-base_layer g-aiAbs" style="top:44.8409%;left:25.5884%;margin-left:-3.5714%;width:7.1429%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai2-8" class="g-base_layer g-aiAbs" style="top:44.8409%;left:34.2693%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai2-9" class="g-base_layer g-aiAbs" style="top:44.8409%;left:43.093%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai2-10" class="g-base_layer g-aiAbs" style="top:44.8409%;left:51.8841%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai2-11" class="g-base_layer g-aiAbs" style="top:44.8409%;left:60.7079%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai2-12" class="g-base_layer g-aiAbs" style="top:44.8409%;left:69.6419%;margin-left:-3.5714%;width:7.1429%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai2-13" class="g-base_layer g-aiAbs" style="top:44.8409%;left:78.3554%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai2-14" class="g-base_layer g-aiAbs" style="top:51.1111%;left:3.5819%;width:76.5714%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai2-15" class="g-base_layer g-aiAbs" style="top:55.6712%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai2-16" class="g-base_layer g-aiAbs" style="top:65.5514%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai2-17" class="g-base_layer g-aiAbs" style="top:75.2416%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai2-18" class="g-base_layer g-aiAbs" style="top:84.9318%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai2-19" class="g-base_layer g-aiAbs" style="top:95.192%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai2-20" class="g-base_layer g-aiAbs" style="top:96.522%;left:19.8434%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai2-21" class="g-base_layer g-aiAbs" style="top:96.522%;left:30.704%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai2-22" class="g-base_layer g-aiAbs" style="top:96.522%;left:41.5646%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai2-23" class="g-base_layer g-aiAbs" style="top:96.522%;left:52.1394%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai2-24" class="g-base_layer g-aiAbs" style="top:96.522%;left:62.7143%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai2-25" class="g-base_layer g-aiAbs" style="top:96.522%;left:73.5749%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai2-26" class="g-base_layer g-aiAbs" style="top:96.522%;left:84.1497%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div>
+
+									</div>
+
+									<!-- End ai2html - 2022-04-15 12:26 -->
+
+
+
+
+							</div>
+						</div>	
+
+
+							<!-- Chart Footer Graph -->		
+							<div class="core-html">
+								<p class="viz-caption">Source: TV News Archive 
+
+								</p>
+							</div>
+
+							<!-- Chart Ends-->	
+	
+
+
+
+	
+								
+							<div class="textblock"> 
+
+
+								<p data-paragraph="main">
+									More descriptive and less frequently used phrases such as “heavy rain” and “snow shower” have declined more sharply.
+								</p>
+
+								<!-- <p data-paragraph="main">
+									Text
+								</p> -->
+
+									
+								</div>
+
+													<!-- Chart Header Graph Heavy Rain-->		
+							<!-- <div class="core-html ">
+								<section class="viz">
+								<header class="viz">
+									<h5 class="viz-title">
+										Heavy Rain
+									</h5>
+									 <p class="viz-subtitle"> subtitle
+									 </p>
+							 </header> -->
+							
+
+							<!-- <div id="graph-heavy-rain" class="graphs"> -->
+								<!-- GRAPH 2!!!!!-->							
+
+							<!-- <style>
+								.row-container {
+									display: flex;
+									flex-direction: row;
+									flex-wrap: wrap;
+									width: 100%;
+									gap: 2em;
+								}
+						
+								.column-container {
+									display: flex;
+									flex-direction: column;
+									flex-basis: 100%;
+									flex: 1;
+								}
+						
+
+								@media (min-width: 600px) {
+									#g-ec-graphs-3-17-22-graph6-wide {
+										flex-direction: column;
+									}
+								}
+						
+								@media (min-width: 350px) {
+									#g-ec-graphs-3-17-22-graph6-medium  {
+										flex-direction: column;
+									}
+								}
+
+								@media (max-width: 350px) {
+									#g-ec-graphs-3-17-22-graph6-mobile {
+										flex-direction: column;
+									}
+								}
+								
+							</style> -->
+
+									<!-- ai2html can go here -->
+
+
+									<!-- Generated by ai2html v0.106.0 - 2022-04-15 12:28 -->
+									<!-- ai file: weather_buzzwords_graphics_heavy_rain.ai -->
+									<!-- <style media="screen,print">
+										#g-weather_buzzwords_graphics_heavy_rain-box ,
+										#g-weather_buzzwords_graphics_heavy_rain-box .g-artboard {
+											margin:0 auto;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-box p {
+											margin:0;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-box .g-aiAbs {
+											position:absolute;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-box .g-aiImg {
+											position:absolute;
+											top:0;
+											display:block;
+											width:100% !important;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-box .g-aiSymbol {
+											position: absolute;
+											box-sizing: border-box;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-box .g-aiPointText p { white-space: nowrap; }
+										#g-weather_buzzwords_graphics_heavy_rain-wide {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-wide p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-wide .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-wide .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-medium {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-medium p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-medium .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-medium .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-mobile {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-mobile p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-mobile .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_heavy_rain-mobile .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+
+									</style> -->
+
+									<!-- <div id="g-weather_buzzwords_graphics_heavy_rain-box" class="ai2html">
+
+										<!-- Artboard: wide -->
+										<!-- <div id="g-weather_buzzwords_graphics_heavy_rain-wide" class="g-artboard" style="width:900px; height:256.30293787309px;" data-aspect-ratio="3.511" data-min-width="900">
+									<div style=""></div>
+											<img id="g-weather_buzzwords_graphics_heavy_rain-wide-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_heavy_rain-wide.png"/>
+											<div id="g-ai0-1" class="g-base_layer g-aiAbs" style="top:0.7803%;left:0.8332%;width:30.8889%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai0-2" class="g-base_layer g-aiAbs" style="top:0.7803%;left:35.713%;width:29.7778%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai0-3" class="g-base_layer g-aiAbs" style="top:10.5344%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai0-4" class="g-layer-a g-aiAbs" style="top:30.4327%;left:0.814%;width:2.8889%;">
+												<p class="g-pstyle0">1,500</p>
+											</div>
+											<div id="g-ai0-5" class="g-base_layer g-aiAbs" style="top:30.8229%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai0-6" class="g-layer-a g-aiAbs" style="top:50.3311%;left:0.814%;width:2.8889%;">
+												<p class="g-pstyle0">1,000</p>
+											</div>
+											<div id="g-ai0-7" class="g-base_layer g-aiAbs" style="top:50.7212%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai0-8" class="g-layer-a g-aiAbs" style="top:70.2294%;left:0.814%;width:2.8889%;">
+												<p class="g-pstyle0">500</p>
+											</div>
+											<div id="g-ai0-9" class="g-base_layer g-aiAbs" style="top:70.6196%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai0-10" class="g-layer-a g-aiAbs" style="top:90.1277%;left:0.814%;width:2.5556%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai0-11" class="g-base_layer g-aiAbs" style="top:91.2982%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai0-12" class="g-base_layer g-aiAbs" style="top:94.0294%;left:8.1993%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai0-13" class="g-base_layer g-aiAbs" style="top:94.0294%;left:11.656%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai0-14" class="g-base_layer g-aiAbs" style="top:94.0294%;left:15.0775%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai0-15" class="g-base_layer g-aiAbs" style="top:94.0294%;left:18.499%;margin-left:-1.5%;width:3%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai0-16" class="g-base_layer g-aiAbs" style="top:94.0294%;left:21.9482%;margin-left:-1.5%;width:3%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai0-17" class="g-base_layer g-aiAbs" style="top:94.0294%;left:25.3974%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai0-18" class="g-base_layer g-aiAbs" style="top:94.0294%;left:28.8466%;margin-left:-1.6111%;width:3.2222%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai0-19" class="g-base_layer g-aiAbs" style="top:94.0294%;left:44.4869%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai0-20" class="g-base_layer g-aiAbs" style="top:94.0294%;left:48.8209%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2011</p>
+											</div>
+											<div id="g-ai0-21" class="g-base_layer g-aiAbs" style="top:94.0294%;left:53.1549%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai0-22" class="g-base_layer g-aiAbs" style="top:94.0294%;left:57.4889%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2013</p>
+											</div>
+											<div id="g-ai0-23" class="g-base_layer g-aiAbs" style="top:94.0294%;left:61.8229%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai0-24" class="g-base_layer g-aiAbs" style="top:94.0294%;left:66.1569%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2015</p>
+											</div>
+											<div id="g-ai0-25" class="g-base_layer g-aiAbs" style="top:94.0294%;left:70.4909%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai0-26" class="g-base_layer g-aiAbs" style="top:94.0294%;left:74.8249%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2017</p>
+											</div>
+											<div id="g-ai0-27" class="g-base_layer g-aiAbs" style="top:94.0294%;left:79.1589%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai0-28" class="g-base_layer g-aiAbs" style="top:94.0294%;left:83.4929%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2019</p>
+											</div>
+											<div id="g-ai0-29" class="g-base_layer g-aiAbs" style="top:94.0294%;left:87.8269%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai0-30" class="g-base_layer g-aiAbs" style="top:94.0294%;left:92.1609%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2021</p>
+											</div>
+											<div id="g-ai0-31" class="g-base_layer g-aiAbs" style="top:94.0294%;left:96.4949%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div> -->
+
+										<!-- Artboard: medium -->
+										<!-- <div id="g-weather_buzzwords_graphics_heavy_rain-medium" class="g-artboard" style="width:600px; height:255.880923430479px;" data-aspect-ratio="2.345" data-min-width="600" data-max-width="899">
+									<div style=""></div>
+											<img id="g-weather_buzzwords_graphics_heavy_rain-medium-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_heavy_rain-medium.png"/>
+											<div id="g-ai1-1" class="g-base_layer g-aiAbs" style="top:0.7816%;left:1.2498%;width:46.3333%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai1-2" class="g-base_layer g-aiAbs" style="top:0.7816%;left:50.2361%;width:44.6667%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai1-3" class="g-base_layer g-aiAbs" style="top:10.5518%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai1-4" class="g-layer-a g-aiAbs" style="top:30.4829%;left:1.2577%;width:4.3333%;">
+												<p class="g-pstyle0">1,500</p>
+											</div>
+											<div id="g-ai1-5" class="g-base_layer g-aiAbs" style="top:30.8737%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai1-6" class="g-layer-a g-aiAbs" style="top:50.4141%;left:1.2577%;width:4.3333%;">
+												<p class="g-pstyle0">1,000</p>
+											</div>
+											<div id="g-ai1-7" class="g-base_layer g-aiAbs" style="top:50.8049%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai1-8" class="g-layer-a g-aiAbs" style="top:70.3452%;left:1.2577%;width:4.3333%;">
+												<p class="g-pstyle0">500</p>
+											</div>
+											<div id="g-ai1-9" class="g-base_layer g-aiAbs" style="top:70.736%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai1-10" class="g-layer-a g-aiAbs" style="top:90.2764%;left:1.2577%;width:3.8333%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai1-11" class="g-base_layer g-aiAbs" style="top:91.4488%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai1-12" class="g-base_layer g-aiAbs" style="top:94.1844%;left:12.2989%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai1-13" class="g-base_layer g-aiAbs" style="top:94.1844%;left:17.4841%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai1-14" class="g-base_layer g-aiAbs" style="top:94.1844%;left:22.6162%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai1-15" class="g-base_layer g-aiAbs" style="top:94.1844%;left:27.7484%;margin-left:-2.25%;width:4.5%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai1-16" class="g-base_layer g-aiAbs" style="top:94.1844%;left:32.9223%;margin-left:-2.25%;width:4.5%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai1-17" class="g-base_layer g-aiAbs" style="top:94.1844%;left:38.0961%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai1-18" class="g-base_layer g-aiAbs" style="top:94.1844%;left:43.2698%;margin-left:-2.4167%;width:4.8333%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai1-19" class="g-base_layer g-aiAbs" style="top:94.1844%;left:59.722%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai1-20" class="g-base_layer g-aiAbs" style="top:94.1844%;left:66.0574%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai1-21" class="g-base_layer g-aiAbs" style="top:94.1844%;left:72.3927%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai1-22" class="g-base_layer g-aiAbs" style="top:94.1844%;left:78.5614%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai1-23" class="g-base_layer g-aiAbs" style="top:94.1844%;left:84.73%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai1-24" class="g-base_layer g-aiAbs" style="top:94.1844%;left:91.0654%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai1-25" class="g-base_layer g-aiAbs" style="top:94.1844%;left:97.234%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div> -->
+
+										<!-- Artboard: mobile -->
+										<!-- <div id="g-weather_buzzwords_graphics_heavy_rain-mobile" class="g-artboard" style="max-width: 350px;max-height: 526px" data-aspect-ratio="0.665" data-min-width="0" data-max-width="599">
+									<div style="padding: 0 0 150.3834% 0;"></div>
+											<img id="g-weather_buzzwords_graphics_heavy_rain-mobile-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_heavy_rain-mobile.png"/>
+											<div id="g-ai2-1" class="g-base_layer g-aiAbs" style="top:0.57%;left:3.4502%;width:94.2857%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai2-2" class="g-layer-a g-aiAbs" style="top:13.8693%;left:3.6686%;width:7.4286%;">
+												<p class="g-pstyle0">1,500</p>
+											</div>
+											<div id="g-ai2-3" class="g-layer-a g-aiAbs" style="top:23.5588%;left:3.6686%;width:7.4286%;">
+												<p class="g-pstyle0">1,000</p>
+											</div>
+											<div id="g-ai2-4" class="g-layer-a g-aiAbs" style="top:33.4383%;left:3.6686%;width:7.4286%;">
+												<p class="g-pstyle0">500</p>
+											</div>
+											<div id="g-ai2-5" class="g-layer-a g-aiAbs" style="top:43.1279%;left:3.6686%;width:6.5714%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai2-6" class="g-base_layer g-aiAbs" style="top:45.0278%;left:25.5884%;margin-left:-3.5714%;width:7.1429%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai2-7" class="g-base_layer g-aiAbs" style="top:45.0278%;left:34.2693%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai2-8" class="g-base_layer g-aiAbs" style="top:45.0278%;left:43.093%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai2-9" class="g-base_layer g-aiAbs" style="top:45.0278%;left:51.8841%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai2-10" class="g-base_layer g-aiAbs" style="top:45.0278%;left:60.7079%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai2-11" class="g-base_layer g-aiAbs" style="top:45.0278%;left:69.6419%;margin-left:-3.5714%;width:7.1429%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai2-12" class="g-base_layer g-aiAbs" style="top:45.0278%;left:78.3554%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai2-13" class="g-base_layer g-aiAbs" style="top:51.1075%;left:3.5819%;width:76.5714%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai2-14" class="g-base_layer g-aiAbs" style="top:55.6672%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai2-15" class="g-base_layer g-aiAbs" style="top:65.5467%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai2-16" class="g-base_layer g-aiAbs" style="top:75.2363%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai2-17" class="g-base_layer g-aiAbs" style="top:84.9258%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai2-18" class="g-base_layer g-aiAbs" style="top:95.1853%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai2-19" class="g-base_layer g-aiAbs" style="top:96.5152%;left:19.8434%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai2-20" class="g-base_layer g-aiAbs" style="top:96.5152%;left:30.704%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai2-21" class="g-base_layer g-aiAbs" style="top:96.5152%;left:41.5646%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai2-22" class="g-base_layer g-aiAbs" style="top:96.5152%;left:52.1394%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai2-23" class="g-base_layer g-aiAbs" style="top:96.5152%;left:62.7143%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai2-24" class="g-base_layer g-aiAbs" style="top:96.5152%;left:73.5749%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai2-25" class="g-base_layer g-aiAbs" style="top:96.5152%;left:84.1497%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div> -->
+
+									<!-- </div> -->
+
+									<!-- End ai2html - 2022-04-15 12:28 -->
+                                   
+
+
+
+
+
+
+
+							</div>	
+
+
+							<!-- Chart Footer Graph -->		
+							<!-- <div class="core-html">
+								<p class="viz-caption">Source: TV News Archive 
+
+								</p>
+							</div> -->
+
+							<!-- Chart Ends-->	
+
+
+
+
+							</div>	
+
+
+							
+
+
+
+								
+								
+							<div class="textblock"> 
+
+
+								<p data-paragraph="main">
+									Inversely, terms like bomb cyclone and polar vortex have been mentioned more frequently in recent years though still dwarf in comparison to common terms like snow and rain or even heavy rain. Due to a <a href="https://archive.org/details/MSNBCW_20220130_170000_Alex_Witt_Reports/start/172/end/207" target="_blank"><u style="text-decoration-color:#353643">blizzard in January</u></a>, bomb cyclone was used in 173 15-second blocks across the three networks so far this year, which is not too far behind the historically more popular term nor’easter at 223. 
+								</p>
+
+								<!-- <p data-paragraph="main">
+									Text
+								</p> -->
+
+									
+								</div>
+
+
+
+							<!-- Chart Header Graph Bomb cyclone-->		
+							<div class="core-html ">
+								<section class="viz">
+								<header class="viz">
+									<h5 class="viz-title">
+										"Bomb Cyclone" joined the network's lexicon with storm coverage in Jan. 2018
+									</h5>
+									 <!-- <p class="viz-subtitle"> subtitle
+									 </p> -->
+							 </header>
+							
+
+							<div id="graph-bomb-cyclone" class="graphs">
+								<!-- GRAPH bomb cyclone-->							
+
+								<!-- ai2html can go here -->
+
+
+								<!-- Generated by ai2html v0.106.0 - 2022-04-15 12:28 -->
+								<!-- ai file: weather_buzzwords_graphics_bomb_cyclone.ai -->
+								<style media="screen,print">
+									#g-weather_buzzwords_graphics_bomb_cyclone-box ,
+									#g-weather_buzzwords_graphics_bomb_cyclone-box .g-artboard {
+										margin:0 auto;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-box p {
+										margin:0;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-box .g-aiAbs {
+										position:absolute;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-box .g-aiImg {
+										position:absolute;
+										top:0;
+										display:block;
+										width:100% !important;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-box .g-aiSymbol {
+										position: absolute;
+										box-sizing: border-box;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-box .g-aiPointText p { white-space: nowrap; }
+									#g-weather_buzzwords_graphics_bomb_cyclone-wide {
+										position:relative;
+										overflow:hidden;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-wide p {
+										font-weight:500;
+										line-height:14px;
+										opacity:1;
+										letter-spacing:0em;
+										font-size:12px;
+										text-align:left;
+										color:rgb(0,0,0);
+										text-transform:none;
+										padding-bottom:0;
+										padding-top:0;
+										mix-blend-mode:normal;
+										font-style:normal;
+										height:auto;
+										position:static;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-wide .g-pstyle0 {
+										font-weight:700;
+										line-height:17px;
+										font-size:14px;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-wide .g-pstyle1 {
+										line-height:12px;
+										font-size:10px;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-wide .g-pstyle2 {
+										line-height:12px;
+										font-size:10px;
+										text-align:center;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-medium {
+										position:relative;
+										overflow:hidden;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-medium p {
+										font-weight:500;
+										line-height:14px;
+										opacity:1;
+										letter-spacing:0em;
+										font-size:12px;
+										text-align:left;
+										color:rgb(0,0,0);
+										text-transform:none;
+										padding-bottom:0;
+										padding-top:0;
+										mix-blend-mode:normal;
+										font-style:normal;
+										height:auto;
+										position:static;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-medium .g-pstyle0 {
+										font-weight:700;
+										line-height:17px;
+										font-size:14px;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-medium .g-pstyle1 {
+										line-height:12px;
+										font-size:10px;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-medium .g-pstyle2 {
+										line-height:12px;
+										font-size:10px;
+										text-align:center;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-mobile {
+										position:relative;
+										overflow:hidden;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-mobile p {
+										font-weight:500;
+										line-height:14px;
+										opacity:1;
+										letter-spacing:0em;
+										font-size:12px;
+										text-align:left;
+										color:rgb(0,0,0);
+										text-transform:none;
+										padding-bottom:0;
+										padding-top:0;
+										mix-blend-mode:normal;
+										font-style:normal;
+										height:auto;
+										position:static;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-mobile .g-pstyle0 {
+										line-height:12px;
+										font-size:10px;
+									}
+									#g-weather_buzzwords_graphics_bomb_cyclone-mobile .g-pstyle1 {
+										line-height:12px;
+										font-size:10px;
+										text-align:center;
+									}
+
+								</style>
+
+								<div id="g-weather_buzzwords_graphics_bomb_cyclone-box" class="ai2html">
+
+									<!-- Artboard: wide -->
+									<div id="g-weather_buzzwords_graphics_bomb_cyclone-wide" class="g-artboard" style="width:900px; height:257.311157517317px;" data-aspect-ratio="3.498" data-min-width="900">
+								<div style=""></div>
+										<img id="g-weather_buzzwords_graphics_bomb_cyclone-wide-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_bomb_cyclone-wide.png"/>
+										<div id="g-ai0-1" class="g-base_layer g-aiAbs" style="top:-5.8295%;left:0.8332%;width:19%;">
+											<p class="g-pstyle0">Bomb Cyclone</p>
+										</div>
+										<div id="g-ai0-2" class="g-base_layer g-aiAbs" style="top:1.5545%;left:0.8332%;width:30.8889%;">
+											<p>Count of 15-second segments using the term yearly </p>
+										</div>
+										<div id="g-ai0-3" class="g-base_layer g-aiAbs" style="top:1.5545%;left:35.713%;width:29.7778%;">
+											<p>In comparison to other weather terms monthly</p>
+										</div>
+										<div id="g-ai0-4" class="g-base_layer g-aiAbs" style="top:10.8818%;left:35.713%;width:3.7778%;">
+											<p class="g-pstyle1">20,000</p>
+										</div>
+										<div id="g-ai0-5" class="g-layer-a g-aiAbs" style="top:21.3749%;left:0.8332%;width:2.1111%;">
+											<p class="g-pstyle1">200</p>
+										</div>
+										<div id="g-ai0-6" class="g-layer-a g-aiAbs" style="top:21.3749%;left:0.8332%;width:2.1111%;">
+											<p class="g-pstyle1">200</p>
+										</div>
+										<div id="g-ai0-7" class="g-base_layer g-aiAbs" style="top:31.0908%;left:35.713%;width:3.7778%;">
+											<p class="g-pstyle1">15,000</p>
+										</div>
+										<div id="g-ai0-8" class="g-layer-a g-aiAbs" style="top:38.0862%;left:0.8332%;width:2.1111%;">
+											<p class="g-pstyle1">150</p>
+										</div>
+										<div id="g-ai0-9" class="g-layer-a g-aiAbs" style="top:38.0862%;left:0.8332%;width:2.1111%;">
+											<p class="g-pstyle1">150</p>
+										</div>
+										<div id="g-ai0-10" class="g-base_layer g-aiAbs" style="top:50.9111%;left:35.713%;width:3.7778%;">
+											<p class="g-pstyle1">10,000</p>
+										</div>
+										<div id="g-ai0-11" class="g-layer-a g-aiAbs" style="top:55.5747%;left:0.8332%;width:2.1111%;">
+											<p class="g-pstyle1">100</p>
+										</div>
+										<div id="g-ai0-12" class="g-layer-a g-aiAbs" style="top:55.5747%;left:0.8332%;width:2.1111%;">
+											<p class="g-pstyle1">100</p>
+										</div>
+										<div id="g-ai0-13" class="g-base_layer g-aiAbs" style="top:70.7315%;left:35.713%;width:3.7778%;">
+											<p class="g-pstyle1">5,000</p>
+										</div>
+										<div id="g-ai0-14" class="g-layer-a g-aiAbs" style="top:73.0633%;left:0.8332%;width:2.1111%;">
+											<p class="g-pstyle1">50</p>
+										</div>
+										<div id="g-ai0-15" class="g-layer-a g-aiAbs" style="top:73.0633%;left:0.8332%;width:2.1111%;">
+											<p class="g-pstyle1">50</p>
+										</div>
+										<div id="g-ai0-16" class="g-layer-a g-aiAbs" style="top:90.1632%;left:0.8332%;width:1.4444%;">
+											<p class="g-pstyle1">0</p>
+										</div>
+										<div id="g-ai0-17" class="g-layer-a g-aiAbs" style="top:90.1632%;left:0.8332%;width:1.4444%;">
+											<p class="g-pstyle1">0</p>
+										</div>
+										<div id="g-ai0-18" class="g-base_layer g-aiAbs" style="top:91.3291%;left:35.713%;width:3.7778%;">
+											<p class="g-pstyle1">0</p>
+										</div>
+										<div id="g-ai0-19" class="g-base_layer g-aiAbs" style="top:94.0496%;left:8.1993%;margin-left:-1.5556%;width:3.1111%;">
+											<p class="g-pstyle2">2010</p>
+										</div>
+										<div id="g-ai0-20" class="g-base_layer g-aiAbs" style="top:94.0496%;left:11.656%;margin-left:-1.5556%;width:3.1111%;">
+											<p class="g-pstyle2">2012</p>
+										</div>
+										<div id="g-ai0-21" class="g-base_layer g-aiAbs" style="top:94.0496%;left:15.0775%;margin-left:-1.5556%;width:3.1111%;">
+											<p class="g-pstyle2">2014</p>
+										</div>
+										<div id="g-ai0-22" class="g-base_layer g-aiAbs" style="top:94.0496%;left:18.499%;margin-left:-1.5%;width:3%;">
+											<p class="g-pstyle2">2016</p>
+										</div>
+										<div id="g-ai0-23" class="g-base_layer g-aiAbs" style="top:94.0496%;left:21.9482%;margin-left:-1.5%;width:3%;">
+											<p class="g-pstyle2">2018</p>
+										</div>
+										<div id="g-ai0-24" class="g-base_layer g-aiAbs" style="top:94.0496%;left:25.3974%;margin-left:-1.5556%;width:3.1111%;">
+											<p class="g-pstyle2">2020</p>
+										</div>
+										<div id="g-ai0-25" class="g-base_layer g-aiAbs" style="top:94.0496%;left:28.8466%;margin-left:-1.6111%;width:3.2222%;">
+											<p class="g-pstyle2">2022</p>
+										</div>
+										<div id="g-ai0-26" class="g-base_layer g-aiAbs" style="top:94.0496%;left:44.4869%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2010</p>
+										</div>
+										<div id="g-ai0-27" class="g-base_layer g-aiAbs" style="top:94.0496%;left:48.8209%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2011</p>
+										</div>
+										<div id="g-ai0-28" class="g-base_layer g-aiAbs" style="top:94.0496%;left:53.1549%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2012</p>
+										</div>
+										<div id="g-ai0-29" class="g-base_layer g-aiAbs" style="top:94.0496%;left:57.4889%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2013</p>
+										</div>
+										<div id="g-ai0-30" class="g-base_layer g-aiAbs" style="top:94.0496%;left:61.8229%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2014</p>
+										</div>
+										<div id="g-ai0-31" class="g-base_layer g-aiAbs" style="top:94.0496%;left:66.1569%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2015</p>
+										</div>
+										<div id="g-ai0-32" class="g-base_layer g-aiAbs" style="top:94.0496%;left:70.4909%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2016</p>
+										</div>
+										<div id="g-ai0-33" class="g-base_layer g-aiAbs" style="top:94.0496%;left:74.8249%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2017</p>
+										</div>
+										<div id="g-ai0-34" class="g-base_layer g-aiAbs" style="top:94.0496%;left:79.1589%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2018</p>
+										</div>
+										<div id="g-ai0-35" class="g-base_layer g-aiAbs" style="top:94.0496%;left:83.4929%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2019</p>
+										</div>
+										<div id="g-ai0-36" class="g-base_layer g-aiAbs" style="top:94.0496%;left:87.8269%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2020</p>
+										</div>
+										<div id="g-ai0-37" class="g-base_layer g-aiAbs" style="top:94.0496%;left:92.1609%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2021</p>
+										</div>
+										<div id="g-ai0-38" class="g-base_layer g-aiAbs" style="top:94.0496%;left:96.4949%;margin-left:-1.8889%;width:3.7778%;">
+											<p class="g-pstyle2">2022</p>
+										</div>
+									</div>
+
+									<!-- Artboard: medium -->
+									<div id="g-weather_buzzwords_graphics_bomb_cyclone-medium" class="g-artboard" style="width:600px; height:257.45986400286px;" data-aspect-ratio="2.33" data-min-width="600" data-max-width="899">
+								<div style=""></div>
+										<img id="g-weather_buzzwords_graphics_bomb_cyclone-medium-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_bomb_cyclone-medium.png"/>
+										<div id="g-ai1-1" class="g-base_layer g-aiAbs" style="top:-5.8262%;left:1.2438%;width:28.5%;">
+											<p class="g-pstyle0">Bomb Cyclone</p>
+										</div>
+										<div id="g-ai1-2" class="g-base_layer g-aiAbs" style="top:1.5536%;left:1.2498%;width:46.3333%;">
+											<p>Count of 15-second segments using the term yearly </p>
+										</div>
+										<div id="g-ai1-3" class="g-base_layer g-aiAbs" style="top:1.5536%;left:50.2361%;width:44.6667%;">
+											<p>In comparison to other weather terms monthly</p>
+										</div>
+										<div id="g-ai1-4" class="g-base_layer g-aiAbs" style="top:11.2639%;left:50.2361%;width:5.6667%;">
+											<p class="g-pstyle1">20,000</p>
+										</div>
+										<div id="g-ai1-5" class="g-layer-a g-aiAbs" style="top:21.751%;left:1.2498%;width:3.1667%;">
+											<p class="g-pstyle1">200</p>
+										</div>
+										<div id="g-ai1-6" class="g-layer-a g-aiAbs" style="top:21.751%;left:1.2498%;width:3.1667%;">
+											<p class="g-pstyle1">200</p>
+										</div>
+										<div id="g-ai1-7" class="g-base_layer g-aiAbs" style="top:31.0728%;left:50.2361%;width:5.6667%;">
+											<p class="g-pstyle1">15,000</p>
+										</div>
+										<div id="g-ai1-8" class="g-layer-a g-aiAbs" style="top:38.4526%;left:1.2498%;width:3.1667%;">
+											<p class="g-pstyle1">150</p>
+										</div>
+										<div id="g-ai1-9" class="g-layer-a g-aiAbs" style="top:38.4526%;left:1.2498%;width:3.1667%;">
+											<p class="g-pstyle1">150</p>
+										</div>
+										<div id="g-ai1-10" class="g-base_layer g-aiAbs" style="top:51.2701%;left:50.2361%;width:5.6667%;">
+											<p class="g-pstyle1">10,000</p>
+										</div>
+										<div id="g-ai1-11" class="g-layer-a g-aiAbs" style="top:55.931%;left:1.2498%;width:3.1667%;">
+											<p class="g-pstyle1">100</p>
+										</div>
+										<div id="g-ai1-12" class="g-layer-a g-aiAbs" style="top:55.931%;left:1.2498%;width:3.1667%;">
+											<p class="g-pstyle1">100</p>
+										</div>
+										<div id="g-ai1-13" class="g-base_layer g-aiAbs" style="top:70.6906%;left:50.2361%;width:5.6667%;">
+											<p class="g-pstyle1">5,000</p>
+										</div>
+										<div id="g-ai1-14" class="g-layer-a g-aiAbs" style="top:73.4095%;left:1.2498%;width:3.1667%;">
+											<p class="g-pstyle1">50</p>
+										</div>
+										<div id="g-ai1-15" class="g-layer-a g-aiAbs" style="top:73.4095%;left:1.2498%;width:3.1667%;">
+											<p class="g-pstyle1">50</p>
+										</div>
+										<div id="g-ai1-16" class="g-layer-a g-aiAbs" style="top:90.4995%;left:1.2498%;width:2.1667%;">
+											<p class="g-pstyle1">0</p>
+										</div>
+										<div id="g-ai1-17" class="g-layer-a g-aiAbs" style="top:90.4995%;left:1.2498%;width:2.1667%;">
+											<p class="g-pstyle1">0</p>
+										</div>
+										<div id="g-ai1-18" class="g-base_layer g-aiAbs" style="top:91.6648%;left:50.2361%;width:5.6667%;">
+											<p class="g-pstyle1">0</p>
+										</div>
+										<div id="g-ai1-19" class="g-base_layer g-aiAbs" style="top:94.3836%;left:12.2989%;margin-left:-2.3333%;width:4.6667%;">
+											<p class="g-pstyle2">2010</p>
+										</div>
+										<div id="g-ai1-20" class="g-base_layer g-aiAbs" style="top:94.3836%;left:17.4841%;margin-left:-2.3333%;width:4.6667%;">
+											<p class="g-pstyle2">2012</p>
+										</div>
+										<div id="g-ai1-21" class="g-base_layer g-aiAbs" style="top:94.3836%;left:22.6162%;margin-left:-2.3333%;width:4.6667%;">
+											<p class="g-pstyle2">2014</p>
+										</div>
+										<div id="g-ai1-22" class="g-base_layer g-aiAbs" style="top:94.3836%;left:27.7484%;margin-left:-2.25%;width:4.5%;">
+											<p class="g-pstyle2">2016</p>
+										</div>
+										<div id="g-ai1-23" class="g-base_layer g-aiAbs" style="top:94.3836%;left:32.9223%;margin-left:-2.25%;width:4.5%;">
+											<p class="g-pstyle2">2018</p>
+										</div>
+										<div id="g-ai1-24" class="g-base_layer g-aiAbs" style="top:94.3836%;left:38.0961%;margin-left:-2.3333%;width:4.6667%;">
+											<p class="g-pstyle2">2020</p>
+										</div>
+										<div id="g-ai1-25" class="g-base_layer g-aiAbs" style="top:94.3836%;left:43.2698%;margin-left:-2.4167%;width:4.8333%;">
+											<p class="g-pstyle2">2022</p>
+										</div>
+										<div id="g-ai1-26" class="g-base_layer g-aiAbs" style="top:94.3836%;left:59.722%;margin-left:-2.8333%;width:5.6667%;">
+											<p class="g-pstyle2">2010</p>
+										</div>
+										<div id="g-ai1-27" class="g-base_layer g-aiAbs" style="top:94.3836%;left:66.0574%;margin-left:-2.8333%;width:5.6667%;">
+											<p class="g-pstyle2">2012</p>
+										</div>
+										<div id="g-ai1-28" class="g-base_layer g-aiAbs" style="top:94.3836%;left:72.3927%;margin-left:-2.8333%;width:5.6667%;">
+											<p class="g-pstyle2">2014</p>
+										</div>
+										<div id="g-ai1-29" class="g-base_layer g-aiAbs" style="top:94.3836%;left:78.5614%;margin-left:-2.8333%;width:5.6667%;">
+											<p class="g-pstyle2">2016</p>
+										</div>
+										<div id="g-ai1-30" class="g-base_layer g-aiAbs" style="top:94.3836%;left:84.73%;margin-left:-2.8333%;width:5.6667%;">
+											<p class="g-pstyle2">2018</p>
+										</div>
+										<div id="g-ai1-31" class="g-base_layer g-aiAbs" style="top:94.3836%;left:91.0654%;margin-left:-2.8333%;width:5.6667%;">
+											<p class="g-pstyle2">2020</p>
+										</div>
+										<div id="g-ai1-32" class="g-base_layer g-aiAbs" style="top:94.3836%;left:97.234%;margin-left:-2.8333%;width:5.6667%;">
+											<p class="g-pstyle2">2022</p>
+										</div>
+									</div>
+
+									<!-- Artboard: mobile -->
+									<div id="g-weather_buzzwords_graphics_bomb_cyclone-mobile" class="g-artboard" style="max-width: 350px;max-height: 527px" data-aspect-ratio="0.664" data-min-width="0" data-max-width="599">
+								<div style="padding: 0 0 150.6791% 0;"></div>
+										<img id="g-weather_buzzwords_graphics_bomb_cyclone-mobile-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_bomb_cyclone-mobile.png"/>
+										<div id="g-ai2-1" class="g-base_layer g-aiAbs" style="top:0.7585%;left:3.4502%;width:94.2857%;">
+											<p>Count of 15-second segments using the term yearly </p>
+										</div>
+										<div id="g-ai2-2" class="g-layer-a g-aiAbs" style="top:9.4809%;left:3.4652%;width:5.7143%;">
+											<p class="g-pstyle0">200</p>
+										</div>
+										<div id="g-ai2-3" class="g-layer-a g-aiAbs" style="top:9.4809%;left:3.4652%;width:5.7143%;">
+											<p class="g-pstyle0">200</p>
+										</div>
+										<div id="g-ai2-4" class="g-layer-a g-aiAbs" style="top:17.8241%;left:3.4652%;width:5.7143%;">
+											<p class="g-pstyle0">150</p>
+										</div>
+										<div id="g-ai2-5" class="g-layer-a g-aiAbs" style="top:17.8241%;left:3.4652%;width:5.7143%;">
+											<p class="g-pstyle0">150</p>
+										</div>
+										<div id="g-ai2-6" class="g-layer-a g-aiAbs" style="top:26.3569%;left:3.4652%;width:5.7143%;">
+											<p class="g-pstyle0">100</p>
+										</div>
+										<div id="g-ai2-7" class="g-layer-a g-aiAbs" style="top:26.3569%;left:3.4652%;width:5.7143%;">
+											<p class="g-pstyle0">100</p>
+										</div>
+										<div id="g-ai2-8" class="g-layer-a g-aiAbs" style="top:34.7%;left:3.4652%;width:3.7143%;">
+											<p class="g-pstyle0">50</p>
+										</div>
+										<div id="g-ai2-9" class="g-layer-a g-aiAbs" style="top:34.7%;left:3.4652%;width:3.7143%;">
+											<p class="g-pstyle0">50</p>
+										</div>
+										<div id="g-ai2-10" class="g-layer-a g-aiAbs" style="top:43.2328%;left:3.4652%;width:3.7143%;">
+											<p class="g-pstyle0">0</p>
+										</div>
+										<div id="g-ai2-11" class="g-layer-a g-aiAbs" style="top:43.2328%;left:3.4652%;width:3.7143%;">
+											<p class="g-pstyle0">0</p>
+										</div>
+										<div id="g-ai2-12" class="g-base_layer g-aiAbs" style="top:45.129%;left:25.5884%;margin-left:-3.5714%;width:7.1429%;">
+											<p class="g-pstyle1">2010</p>
+										</div>
+										<div id="g-ai2-13" class="g-base_layer g-aiAbs" style="top:45.129%;left:34.2693%;margin-left:-3.4286%;width:6.8571%;">
+											<p class="g-pstyle1">2012</p>
+										</div>
+										<div id="g-ai2-14" class="g-base_layer g-aiAbs" style="top:45.129%;left:43.093%;margin-left:-3.4286%;width:6.8571%;">
+											<p class="g-pstyle1">2014</p>
+										</div>
+										<div id="g-ai2-15" class="g-base_layer g-aiAbs" style="top:45.129%;left:51.8841%;margin-left:-3.4286%;width:6.8571%;">
+											<p class="g-pstyle1">2016</p>
+										</div>
+										<div id="g-ai2-16" class="g-base_layer g-aiAbs" style="top:45.129%;left:60.7079%;margin-left:-3.4286%;width:6.8571%;">
+											<p class="g-pstyle1">2018</p>
+										</div>
+										<div id="g-ai2-17" class="g-base_layer g-aiAbs" style="top:45.129%;left:69.6419%;margin-left:-3.5714%;width:7.1429%;">
+											<p class="g-pstyle1">2020</p>
+										</div>
+										<div id="g-ai2-18" class="g-base_layer g-aiAbs" style="top:45.129%;left:78.3554%;margin-left:-3.4286%;width:6.8571%;">
+											<p class="g-pstyle1">2022</p>
+										</div>
+										<div id="g-ai2-19" class="g-base_layer g-aiAbs" style="top:51.1968%;left:3.5819%;width:76.5714%;">
+											<p>In comparison to other weather terms monthly</p>
+										</div>
+										<div id="g-ai2-20" class="g-base_layer g-aiAbs" style="top:55.7476%;left:3.5819%;width:9.7143%;">
+											<p class="g-pstyle0">20,000</p>
+										</div>
+										<div id="g-ai2-21" class="g-base_layer g-aiAbs" style="top:65.6077%;left:3.5819%;width:9.7143%;">
+											<p class="g-pstyle0">15,000</p>
+										</div>
+										<div id="g-ai2-22" class="g-base_layer g-aiAbs" style="top:75.2782%;left:3.5819%;width:9.7143%;">
+											<p class="g-pstyle0">10,000</p>
+										</div>
+										<div id="g-ai2-23" class="g-base_layer g-aiAbs" style="top:84.9487%;left:3.5819%;width:9.7143%;">
+											<p class="g-pstyle0">5,000</p>
+										</div>
+										<div id="g-ai2-24" class="g-base_layer g-aiAbs" style="top:95.1881%;left:3.5819%;width:9.7143%;">
+											<p class="g-pstyle0">0</p>
+										</div>
+										<div id="g-ai2-25" class="g-base_layer g-aiAbs" style="top:96.5154%;left:19.8434%;margin-left:-4.8571%;width:9.7143%;">
+											<p class="g-pstyle1">2010</p>
+										</div>
+										<div id="g-ai2-26" class="g-base_layer g-aiAbs" style="top:96.5154%;left:30.704%;margin-left:-4.8571%;width:9.7143%;">
+											<p class="g-pstyle1">2012</p>
+										</div>
+										<div id="g-ai2-27" class="g-base_layer g-aiAbs" style="top:96.5154%;left:41.5646%;margin-left:-4.8571%;width:9.7143%;">
+											<p class="g-pstyle1">2014</p>
+										</div>
+										<div id="g-ai2-28" class="g-base_layer g-aiAbs" style="top:96.5154%;left:52.1394%;margin-left:-4.8571%;width:9.7143%;">
+											<p class="g-pstyle1">2016</p>
+										</div>
+										<div id="g-ai2-29" class="g-base_layer g-aiAbs" style="top:96.5154%;left:62.7143%;margin-left:-4.8571%;width:9.7143%;">
+											<p class="g-pstyle1">2018</p>
+										</div>
+										<div id="g-ai2-30" class="g-base_layer g-aiAbs" style="top:96.5154%;left:73.5749%;margin-left:-4.8571%;width:9.7143%;">
+											<p class="g-pstyle1">2020</p>
+										</div>
+										<div id="g-ai2-31" class="g-base_layer g-aiAbs" style="top:96.5154%;left:84.1497%;margin-left:-4.8571%;width:9.7143%;">
+											<p class="g-pstyle1">2022</p>
+										</div>
+									</div>
+
+								</div>
+
+								<!-- End ai2html - 2022-04-15 12:28 -->
+
+
+
+	
+
+
+
+							</div>	
+
+
+							<!-- Chart Footer Graph -->		
+							<div class="core-html">
+								<p class="viz-caption">Source: TV News Archive 
+
+								</p>
+							</div>
+
+							<!-- Chart Ends-->	
+
+
+
+								
+								
+							<div class="textblock"> 
+
+
+								<p data-paragraph="main">
+									Some terms have become synonymous with consequential weather events in history such as superstorm and snowmageddon, which have sharp increases and then trail off in the years following. Superstorm, in particular, jumped significantly during coverage of Hurricane Sandy in the fall of 2012 and has lingered since.
+								</p>
+
+								
+
+									
+								</div>
+
+
+
+							<!-- Chart Header Graph Superstorm-->		
+							<div class="core-html ">
+								<section class="viz">
+								<header class="viz">
+									<h5 class="viz-title">
+										Hurricane Sandy coverage caused the term "Superstorm" to surge
+									</h5>
+									 <!-- <p class="viz-subtitle"> subtitle
+									 </p> -->
+							 </header>
+							
+
+							<div id="graph-superstorm" class="graphs">
+								<!-- GRAPH 2!!!!!-->							
+
+									<!-- ai2html can go here -->
+
+
+									<!-- Generated by ai2html v0.106.0 - 2022-04-15 12:46 -->
+									<!-- ai file: weather_buzzwords_graphics_superstorm.ai -->
+									<style media="screen,print">
+										#g-weather_buzzwords_graphics_superstorm-box ,
+										#g-weather_buzzwords_graphics_superstorm-box .g-artboard {
+											margin:0 auto;
+										}
+										#g-weather_buzzwords_graphics_superstorm-box p {
+											margin:0;
+										}
+										#g-weather_buzzwords_graphics_superstorm-box .g-aiAbs {
+											position:absolute;
+										}
+										#g-weather_buzzwords_graphics_superstorm-box .g-aiImg {
+											position:absolute;
+											top:0;
+											display:block;
+											width:100% !important;
+										}
+										#g-weather_buzzwords_graphics_superstorm-box .g-aiSymbol {
+											position: absolute;
+											box-sizing: border-box;
+										}
+										#g-weather_buzzwords_graphics_superstorm-box .g-aiPointText p { white-space: nowrap; }
+										#g-weather_buzzwords_graphics_superstorm-wide {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_superstorm-wide p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_superstorm-wide .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_superstorm-wide .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+										#g-weather_buzzwords_graphics_superstorm-medium {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_superstorm-medium p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_superstorm-medium .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_superstorm-medium .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+										#g-weather_buzzwords_graphics_superstorm-mobile {
+											position:relative;
+											overflow:hidden;
+										}
+
+									</style>
+
+									<div id="g-weather_buzzwords_graphics_superstorm-box" class="ai2html">
+
+										<!-- Artboard: wide -->
+										<div id="g-weather_buzzwords_graphics_superstorm-wide" class="g-artboard" style="width:900px; height:256.493970200186px;" data-aspect-ratio="3.509" data-min-width="900">
+									<div style=""></div>
+											<img id="g-weather_buzzwords_graphics_superstorm-wide-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_superstorm-wide.png"/>
+											<div id="g-ai0-1" class="g-base_layer g-aiAbs" style="top:1.1696%;left:0.8332%;width:30.8889%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai0-2" class="g-base_layer g-aiAbs" style="top:1.1696%;left:35.713%;width:29.7778%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai0-3" class="g-base_layer g-aiAbs" style="top:10.5266%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai0-4" class="g-layers-a g-aiAbs" style="top:25.3417%;left:0.8332%;width:3%;">
+												<p class="g-pstyle0">2,000</p>
+											</div>
+											<div id="g-ai0-5" class="g-base_layer g-aiAbs" style="top:30.7999%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai0-6" class="g-layers-a g-aiAbs" style="top:41.7164%;left:0.8332%;width:2.8889%;">
+												<p class="g-pstyle0">1,500</p>
+											</div>
+											<div id="g-ai0-7" class="g-base_layer g-aiAbs" style="top:50.6835%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai0-8" class="g-layers-a g-aiAbs" style="top:58.091%;left:0.8332%;width:3.3333%;">
+												<p class="g-pstyle0">1,000</p>
+											</div>
+											<div id="g-ai0-9" class="g-base_layer g-aiAbs" style="top:70.567%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai0-10" class="g-layers-a g-aiAbs" style="top:74.0758%;left:0.8332%;width:2%;">
+												<p class="g-pstyle0">500</p>
+											</div>
+											<div id="g-ai0-11" class="g-layers-a g-aiAbs" style="top:90.4505%;left:0.8332%;width:2%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai0-12" class="g-base_layer g-aiAbs" style="top:91.2302%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai0-13" class="g-base_layer g-aiAbs" style="top:93.9593%;left:8.1993%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai0-14" class="g-base_layer g-aiAbs" style="top:93.9593%;left:11.656%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai0-15" class="g-base_layer g-aiAbs" style="top:93.9593%;left:15.0775%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai0-16" class="g-base_layer g-aiAbs" style="top:93.9593%;left:18.499%;margin-left:-1.5%;width:3%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai0-17" class="g-base_layer g-aiAbs" style="top:93.9593%;left:21.9482%;margin-left:-1.5%;width:3%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai0-18" class="g-base_layer g-aiAbs" style="top:93.9593%;left:25.3974%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai0-19" class="g-base_layer g-aiAbs" style="top:93.9593%;left:28.8466%;margin-left:-1.6111%;width:3.2222%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai0-20" class="g-base_layer g-aiAbs" style="top:93.9593%;left:44.4869%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai0-21" class="g-base_layer g-aiAbs" style="top:93.9593%;left:48.8209%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2011</p>
+											</div>
+											<div id="g-ai0-22" class="g-base_layer g-aiAbs" style="top:93.9593%;left:53.1549%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai0-23" class="g-base_layer g-aiAbs" style="top:93.9593%;left:57.4889%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2013</p>
+											</div>
+											<div id="g-ai0-24" class="g-base_layer g-aiAbs" style="top:93.9593%;left:61.8229%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai0-25" class="g-base_layer g-aiAbs" style="top:93.9593%;left:66.1569%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2015</p>
+											</div>
+											<div id="g-ai0-26" class="g-base_layer g-aiAbs" style="top:93.9593%;left:70.4909%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai0-27" class="g-base_layer g-aiAbs" style="top:93.9593%;left:74.8249%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2017</p>
+											</div>
+											<div id="g-ai0-28" class="g-base_layer g-aiAbs" style="top:93.9593%;left:79.1589%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai0-29" class="g-base_layer g-aiAbs" style="top:93.9593%;left:83.4929%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2019</p>
+											</div>
+											<div id="g-ai0-30" class="g-base_layer g-aiAbs" style="top:93.9593%;left:87.8269%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai0-31" class="g-base_layer g-aiAbs" style="top:93.9593%;left:92.1609%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2021</p>
+											</div>
+											<div id="g-ai0-32" class="g-base_layer g-aiAbs" style="top:93.9593%;left:96.4949%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div>
+
+										<!-- Artboard: medium -->
+										<div id="g-weather_buzzwords_graphics_superstorm-medium" class="g-artboard" style="width:600px; height:254.090118275046px;" data-aspect-ratio="2.361" data-min-width="600" data-max-width="899">
+									<div style=""></div>
+											<img id="g-weather_buzzwords_graphics_superstorm-medium-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_superstorm-medium.png"/>
+											<div id="g-ai1-1" class="g-base_layer g-aiAbs" style="top:0.3936%;left:1.2498%;width:46.3333%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai1-2" class="g-base_layer g-aiAbs" style="top:0.3936%;left:50.2361%;width:44.6667%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai1-3" class="g-base_layer g-aiAbs" style="top:9.839%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai1-4" class="g-layers-a g-aiAbs" style="top:24.4008%;left:1.2866%;width:4.5%;">
+												<p class="g-pstyle0">2,000</p>
+											</div>
+											<div id="g-ai1-5" class="g-base_layer g-aiAbs" style="top:30.3042%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai1-6" class="g-layers-a g-aiAbs" style="top:41.3239%;left:1.2866%;width:4.3333%;">
+												<p class="g-pstyle0">1,500</p>
+											</div>
+											<div id="g-ai1-7" class="g-base_layer g-aiAbs" style="top:50.3758%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai1-8" class="g-layers-a g-aiAbs" style="top:57.4599%;left:1.2866%;width:5%;">
+												<p class="g-pstyle0">1,000</p>
+											</div>
+											<div id="g-ai1-9" class="g-base_layer g-aiAbs" style="top:70.4474%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai1-10" class="g-layers-a g-aiAbs" style="top:73.5959%;left:1.2866%;width:3%;">
+												<p class="g-pstyle0">500</p>
+											</div>
+											<div id="g-ai1-11" class="g-layers-a g-aiAbs" style="top:90.1255%;left:1.2866%;width:3%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai1-12" class="g-base_layer g-aiAbs" style="top:91.3062%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai1-13" class="g-base_layer g-aiAbs" style="top:94.0611%;left:12.2989%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai1-14" class="g-base_layer g-aiAbs" style="top:94.0611%;left:17.4841%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai1-15" class="g-base_layer g-aiAbs" style="top:94.0611%;left:22.6162%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai1-16" class="g-base_layer g-aiAbs" style="top:94.0611%;left:27.7484%;margin-left:-2.25%;width:4.5%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai1-17" class="g-base_layer g-aiAbs" style="top:94.0611%;left:32.9223%;margin-left:-2.25%;width:4.5%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai1-18" class="g-base_layer g-aiAbs" style="top:94.0611%;left:38.0961%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai1-19" class="g-base_layer g-aiAbs" style="top:94.0611%;left:43.2698%;margin-left:-2.4167%;width:4.8333%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai1-20" class="g-base_layer g-aiAbs" style="top:94.0611%;left:59.722%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai1-21" class="g-base_layer g-aiAbs" style="top:94.0611%;left:66.0574%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai1-22" class="g-base_layer g-aiAbs" style="top:94.0611%;left:72.3927%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai1-23" class="g-base_layer g-aiAbs" style="top:94.0611%;left:78.5614%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai1-24" class="g-base_layer g-aiAbs" style="top:94.0611%;left:84.73%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai1-25" class="g-base_layer g-aiAbs" style="top:94.0611%;left:91.0654%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai1-26" class="g-base_layer g-aiAbs" style="top:94.0611%;left:97.234%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div>
+
+										<!-- Artboard: mobile -->
+										<div id="g-weather_buzzwords_graphics_superstorm-mobile" class="g-artboard" style="max-width: 350px;max-height: 527px" data-aspect-ratio="0.664" data-min-width="0" data-max-width="599">
+									<div style="padding: 0 0 150.5299% 0;"></div>
+											<img id="g-weather_buzzwords_graphics_superstorm-mobile-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_superstorm-mobile.png"/>
+										</div>
+
+									</div>
+
+									<!-- End ai2html - 2022-04-15 12:46 -->
+
+
+
+							</div>	
+
+
+							<!-- Chart Footer Graph -->		
+							<div class="core-html">
+								<p class="viz-caption">Source: TV News Archive 
+
+								</p>
+							</div>
+
+							<!-- Chart Ends-->	
+
+
+
+								
+								
+							<div class="textblock"> 
+
+
+								<p data-paragraph="main">
+									Naming storms in this way is not new. Dubbed the <a href="https://www.washingtonpost.com/weather/2019/11/15/looking-back-washington-dcs-top-snowstorms/" target="_blank"><u style="text-decoration-color:#353643">Knickerbocker Storm</u></a>, reporting from January of 1922 described a <a href="https://timesmachine.nytimes.com/timesmachine/1922/01/30/109834162.html?pageNumber=3" target="_blank"><u style="text-decoration-color:#353643">“million dollar snowstorm”</u></a> that forced the Knickerbocker Theatre’s roof to collapse and the name to stick. In more recent years media outlets have labeled storms <a href="https://www.washingtonpost.com/news/capital-weather-gang/wp/2016/01/21/poll-name-this-winter-storm/" target="_blank"><u style="text-decoration-color:#353643">“snowzilla”</u></a> or <a href="https://www.wmar2news.com/weather/weather-blogs/the-12th-anniversary-of-the-historic-snowpocalypse" target="_blank"><u style="text-decoration-color:#353643">“snowpocalypse”</u></a>. 
+								</p>
+
+								<p data-paragraph="main">
+									In February 2010, one of the snowiest days on record in D.C. earned the name Snowmageddon. <a href="https://www.washingtonpost.com/weather/2020/02/04/ten-years-later-enormity-snowmaggedon-is-still-difficult-comprehend/" target="_blank"><u style="text-decoration-color:#353643">The Washington Post</u></a> used a slew of terms to describe snowstorms around that time— snowpocalypse, snoverkill, and snow bonanza. 
+								</p>
+
+									
+								</div>
+
+
+
+							<!-- Chart Header Graph snowmageddon-->		
+							<div class="core-html ">
+								<section class="viz">
+								<header class="viz">
+									<h5 class="viz-title">
+										"Snowmageddon" soared in 2010 but has been adopted on occasion since
+									</h5>
+									 <!-- <p class="viz-subtitle"> subtitle
+									 </p> -->
+							 </header>
+							
+
+							<div id="graph-snowmageddon" class="graphs">
+								<!-- GRAPH snowmageddon-->							
+
+
+									<!-- ai2html can go here -->
+
+
+
+									<!-- Generated by ai2html v0.106.0 - 2022-04-15 12:27 -->
+									<!-- ai file: weather_buzzwords_graphics_snowmaggeddon.ai -->
+									<style media="screen,print">
+										#g-weather_buzzwords_graphics_snowmaggeddon-box ,
+										#g-weather_buzzwords_graphics_snowmaggeddon-box .g-artboard {
+											margin:0 auto;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-box p {
+											margin:0;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-box .g-aiAbs {
+											position:absolute;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-box .g-aiImg {
+											position:absolute;
+											top:0;
+											display:block;
+											width:100% !important;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-box .g-aiSymbol {
+											position: absolute;
+											box-sizing: border-box;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-box .g-aiPointText p { white-space: nowrap; }
+										#g-weather_buzzwords_graphics_snowmaggeddon-wide {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-wide p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-wide .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-wide .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-medium {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-medium p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-medium .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-medium .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-mobile {
+											position:relative;
+											overflow:hidden;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-mobile p {
+											font-weight:500;
+											line-height:14px;
+											opacity:1;
+											letter-spacing:0em;
+											font-size:12px;
+											text-align:left;
+											color:rgb(0,0,0);
+											text-transform:none;
+											padding-bottom:0;
+											padding-top:0;
+											mix-blend-mode:normal;
+											font-style:normal;
+											height:auto;
+											position:static;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-mobile .g-pstyle0 {
+											line-height:12px;
+											font-size:10px;
+										}
+										#g-weather_buzzwords_graphics_snowmaggeddon-mobile .g-pstyle1 {
+											line-height:12px;
+											font-size:10px;
+											text-align:center;
+										}
+
+									</style>
+
+									<div id="g-weather_buzzwords_graphics_snowmaggeddon-box" class="ai2html">
+
+										<!-- Artboard: wide -->
+										<div id="g-weather_buzzwords_graphics_snowmaggeddon-wide" class="g-artboard" style="width:900px; height:256.03960333889px;" data-aspect-ratio="3.515" data-min-width="900">
+									<div style=""></div>
+											<img id="g-weather_buzzwords_graphics_snowmaggeddon-wide-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_snowmaggeddon-wide.png"/>
+											<div id="g-ai0-1" class="g-base_layer g-aiAbs" style="top:0.7811%;left:0.8332%;width:30.8889%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai0-2" class="g-base_layer g-aiAbs" style="top:0.7811%;left:35.713%;width:29.7778%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai0-3" class="g-base_layer g-aiAbs" style="top:10.5452%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai0-4" class="g-snowmaggeddon g-aiAbs" style="top:19.9188%;left:0.7221%;width:1.8889%;">
+												<p class="g-pstyle0">105</p>
+											</div>
+											<div id="g-ai0-5" class="g-snowmaggeddon g-aiAbs" style="top:30.0735%;left:0.8332%;width:1.4444%;">
+												<p class="g-pstyle0">90</p>
+											</div>
+											<div id="g-ai0-6" class="g-base_layer g-aiAbs" style="top:30.464%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai0-7" class="g-snowmaggeddon g-aiAbs" style="top:40.2282%;left:0.8332%;width:1.4444%;">
+												<p class="g-pstyle0">75</p>
+											</div>
+											<div id="g-ai0-8" class="g-snowmaggeddon g-aiAbs" style="top:49.9923%;left:0.8332%;width:1.4444%;">
+												<p class="g-pstyle0">60</p>
+											</div>
+											<div id="g-ai0-9" class="g-base_layer g-aiAbs" style="top:50.7734%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai0-10" class="g-snowmaggeddon g-aiAbs" style="top:60.1469%;left:0.8332%;width:1.4444%;">
+												<p class="g-pstyle0">45</p>
+											</div>
+											<div id="g-ai0-11" class="g-snowmaggeddon g-aiAbs" style="top:70.3016%;left:0.8332%;width:1.4444%;">
+												<p class="g-pstyle0">30</p>
+											</div>
+											<div id="g-ai0-12" class="g-base_layer g-aiAbs" style="top:70.3016%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai0-13" class="g-snowmaggeddon g-aiAbs" style="top:80.0657%;left:0.8332%;width:1.4444%;">
+												<p class="g-pstyle0">15</p>
+											</div>
+											<div id="g-ai0-14" class="g-snowmaggeddon g-aiAbs" style="top:90.2204%;left:0.8332%;width:1.4444%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai0-15" class="g-base_layer g-aiAbs" style="top:91.3921%;left:35.713%;width:3.7778%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai0-16" class="g-base_layer g-aiAbs" style="top:94.1261%;left:8.1993%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai0-17" class="g-base_layer g-aiAbs" style="top:94.1261%;left:11.656%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai0-18" class="g-base_layer g-aiAbs" style="top:94.1261%;left:15.0775%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai0-19" class="g-base_layer g-aiAbs" style="top:94.1261%;left:18.499%;margin-left:-1.5%;width:3%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai0-20" class="g-base_layer g-aiAbs" style="top:94.1261%;left:21.9482%;margin-left:-1.5%;width:3%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai0-21" class="g-base_layer g-aiAbs" style="top:94.1261%;left:25.3974%;margin-left:-1.5556%;width:3.1111%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai0-22" class="g-base_layer g-aiAbs" style="top:94.1261%;left:28.8466%;margin-left:-1.6111%;width:3.2222%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai0-23" class="g-base_layer g-aiAbs" style="top:94.1261%;left:44.4869%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai0-24" class="g-base_layer g-aiAbs" style="top:94.1261%;left:48.8209%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2011</p>
+											</div>
+											<div id="g-ai0-25" class="g-base_layer g-aiAbs" style="top:94.1261%;left:53.1549%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai0-26" class="g-base_layer g-aiAbs" style="top:94.1261%;left:57.4889%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2013</p>
+											</div>
+											<div id="g-ai0-27" class="g-base_layer g-aiAbs" style="top:94.1261%;left:61.8229%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai0-28" class="g-base_layer g-aiAbs" style="top:94.1261%;left:66.1569%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2015</p>
+											</div>
+											<div id="g-ai0-29" class="g-base_layer g-aiAbs" style="top:94.1261%;left:70.4909%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai0-30" class="g-base_layer g-aiAbs" style="top:94.1261%;left:74.8249%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2017</p>
+											</div>
+											<div id="g-ai0-31" class="g-base_layer g-aiAbs" style="top:94.1261%;left:79.1589%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai0-32" class="g-base_layer g-aiAbs" style="top:94.1261%;left:83.4929%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2019</p>
+											</div>
+											<div id="g-ai0-33" class="g-base_layer g-aiAbs" style="top:94.1261%;left:87.8269%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai0-34" class="g-base_layer g-aiAbs" style="top:94.1261%;left:92.1609%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2021</p>
+											</div>
+											<div id="g-ai0-35" class="g-base_layer g-aiAbs" style="top:94.1261%;left:96.4949%;margin-left:-1.8889%;width:3.7778%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div>
+
+										<!-- Artboard: medium -->
+										<div id="g-weather_buzzwords_graphics_snowmaggeddon-medium" class="g-artboard" style="width:600px; height:257.081674618599px;" data-aspect-ratio="2.334" data-min-width="600" data-max-width="899">
+									<div style=""></div>
+											<img id="g-weather_buzzwords_graphics_snowmaggeddon-medium-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_snowmaggeddon-medium.png"/>
+											<div id="g-ai1-1" class="g-base_layer g-aiAbs" style="top:1.5559%;left:1.2498%;width:46.3333%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai1-2" class="g-base_layer g-aiAbs" style="top:1.5559%;left:50.2361%;width:44.6667%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai1-3" class="g-base_layer g-aiAbs" style="top:10.8915%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai1-4" class="g-snowmaggeddon g-aiAbs" style="top:20.227%;left:1.2866%;width:2.8333%;">
+												<p class="g-pstyle0">105</p>
+											</div>
+											<div id="g-ai1-5" class="g-snowmaggeddon g-aiAbs" style="top:30.3406%;left:1.4533%;width:2.1667%;">
+												<p class="g-pstyle0">90</p>
+											</div>
+											<div id="g-ai1-6" class="g-base_layer g-aiAbs" style="top:31.1185%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai1-7" class="g-snowmaggeddon g-aiAbs" style="top:40.4541%;left:1.4533%;width:2.1667%;">
+												<p class="g-pstyle0">75</p>
+											</div>
+											<div id="g-ai1-8" class="g-snowmaggeddon g-aiAbs" style="top:50.1786%;left:1.4533%;width:2.1667%;">
+												<p class="g-pstyle0">60</p>
+											</div>
+											<div id="g-ai1-9" class="g-base_layer g-aiAbs" style="top:50.9566%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai1-10" class="g-snowmaggeddon g-aiAbs" style="top:60.2921%;left:1.4533%;width:2.1667%;">
+												<p class="g-pstyle0">45</p>
+											</div>
+											<div id="g-ai1-11" class="g-snowmaggeddon g-aiAbs" style="top:70.4056%;left:1.4533%;width:2.1667%;">
+												<p class="g-pstyle0">30</p>
+											</div>
+											<div id="g-ai1-12" class="g-base_layer g-aiAbs" style="top:70.7946%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai1-13" class="g-snowmaggeddon g-aiAbs" style="top:80.1302%;left:1.4533%;width:2.1667%;">
+												<p class="g-pstyle0">15</p>
+											</div>
+											<div id="g-ai1-14" class="g-snowmaggeddon g-aiAbs" style="top:90.2437%;left:1.4533%;width:2.1667%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai1-15" class="g-base_layer g-aiAbs" style="top:91.4106%;left:50.2361%;width:5.6667%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai1-16" class="g-base_layer g-aiAbs" style="top:94.1335%;left:12.2989%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai1-17" class="g-base_layer g-aiAbs" style="top:94.1335%;left:17.4841%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai1-18" class="g-base_layer g-aiAbs" style="top:94.1335%;left:22.6162%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai1-19" class="g-base_layer g-aiAbs" style="top:94.1335%;left:27.7484%;margin-left:-2.25%;width:4.5%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai1-20" class="g-base_layer g-aiAbs" style="top:94.1335%;left:32.9223%;margin-left:-2.25%;width:4.5%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai1-21" class="g-base_layer g-aiAbs" style="top:94.1335%;left:38.0961%;margin-left:-2.3333%;width:4.6667%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai1-22" class="g-base_layer g-aiAbs" style="top:94.1335%;left:43.2698%;margin-left:-2.4167%;width:4.8333%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai1-23" class="g-base_layer g-aiAbs" style="top:94.1335%;left:59.722%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai1-24" class="g-base_layer g-aiAbs" style="top:94.1335%;left:66.0574%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai1-25" class="g-base_layer g-aiAbs" style="top:94.1335%;left:72.3927%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai1-26" class="g-base_layer g-aiAbs" style="top:94.1335%;left:78.5614%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai1-27" class="g-base_layer g-aiAbs" style="top:94.1335%;left:84.73%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai1-28" class="g-base_layer g-aiAbs" style="top:94.1335%;left:91.0654%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai1-29" class="g-base_layer g-aiAbs" style="top:94.1335%;left:97.234%;margin-left:-2.8333%;width:5.6667%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div>
+
+										<!-- Artboard: mobile -->
+										<div id="g-weather_buzzwords_graphics_snowmaggeddon-mobile" class="g-artboard" style="max-width: 350px;max-height: 528px" data-aspect-ratio="0.663" data-min-width="0" data-max-width="599">
+									<div style="padding: 0 0 150.8402% 0;"></div>
+											<img id="g-weather_buzzwords_graphics_snowmaggeddon-mobile-img" class="g-aiImg" alt="" src="imgs/weather_buzzwords_graphics_snowmaggeddon-mobile.png"/>
+											<div id="g-ai2-1" class="g-base_layer g-aiAbs" style="top:0.9471%;left:3.4502%;width:94.2857%;">
+												<p>Count of 15-second segments using the term yearly </p>
+											</div>
+											<div id="g-ai2-2" class="g-snowmaggeddon g-aiAbs" style="top:14.2061%;left:3.4502%;width:3.7143%;">
+												<p class="g-pstyle0">90</p>
+											</div>
+											<div id="g-ai2-3" class="g-snowmaggeddon g-aiAbs" style="top:24.0557%;left:3.4502%;width:3.7143%;">
+												<p class="g-pstyle0">60</p>
+											</div>
+											<div id="g-ai2-4" class="g-snowmaggeddon g-aiAbs" style="top:33.7159%;left:3.4502%;width:3.7143%;">
+												<p class="g-pstyle0">30</p>
+											</div>
+											<div id="g-ai2-5" class="g-snowmaggeddon g-aiAbs" style="top:43.3761%;left:3.4502%;width:8.8571%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai2-6" class="g-base_layer g-aiAbs" style="top:45.0808%;left:25.5884%;margin-left:-3.5714%;width:7.1429%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai2-7" class="g-base_layer g-aiAbs" style="top:45.0808%;left:34.2693%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai2-8" class="g-base_layer g-aiAbs" style="top:45.0808%;left:43.093%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai2-9" class="g-base_layer g-aiAbs" style="top:45.0808%;left:51.8841%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai2-10" class="g-base_layer g-aiAbs" style="top:45.0808%;left:60.7079%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai2-11" class="g-base_layer g-aiAbs" style="top:45.0808%;left:69.6419%;margin-left:-3.5714%;width:7.1429%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai2-12" class="g-base_layer g-aiAbs" style="top:45.0808%;left:78.3554%;margin-left:-3.4286%;width:6.8571%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+											<div id="g-ai2-13" class="g-base_layer g-aiAbs" style="top:51.3315%;left:3.5819%;width:76.5714%;">
+												<p>In comparison to other weather terms monthly</p>
+											</div>
+											<div id="g-ai2-14" class="g-base_layer g-aiAbs" style="top:55.8775%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">20,000</p>
+											</div>
+											<div id="g-ai2-15" class="g-base_layer g-aiAbs" style="top:65.7271%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">15,000</p>
+											</div>
+											<div id="g-ai2-16" class="g-base_layer g-aiAbs" style="top:75.3873%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">10,000</p>
+											</div>
+											<div id="g-ai2-17" class="g-base_layer g-aiAbs" style="top:85.0474%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">5,000</p>
+											</div>
+											<div id="g-ai2-18" class="g-base_layer g-aiAbs" style="top:95.0865%;left:3.5819%;width:9.7143%;">
+												<p class="g-pstyle0">0</p>
+											</div>
+											<div id="g-ai2-19" class="g-base_layer g-aiAbs" style="top:96.4124%;left:19.8434%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2010</p>
+											</div>
+											<div id="g-ai2-20" class="g-base_layer g-aiAbs" style="top:96.4124%;left:30.704%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2012</p>
+											</div>
+											<div id="g-ai2-21" class="g-base_layer g-aiAbs" style="top:96.4124%;left:41.5646%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2014</p>
+											</div>
+											<div id="g-ai2-22" class="g-base_layer g-aiAbs" style="top:96.4124%;left:52.1394%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2016</p>
+											</div>
+											<div id="g-ai2-23" class="g-base_layer g-aiAbs" style="top:96.4124%;left:62.7143%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2018</p>
+											</div>
+											<div id="g-ai2-24" class="g-base_layer g-aiAbs" style="top:96.4124%;left:73.5749%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2020</p>
+											</div>
+											<div id="g-ai2-25" class="g-base_layer g-aiAbs" style="top:96.4124%;left:84.1497%;margin-left:-4.8571%;width:9.7143%;">
+												<p class="g-pstyle1">2022</p>
+											</div>
+										</div>
+
+									</div>
+
+									<!-- End ai2html - 2022-04-15 12:27 -->
+
+
+
+	
+
+
+
+							</div>	
+
+
+							<!-- Chart Footer Graph -->		
+							<div class="core-html">
+								<p class="viz-caption">Source: TV News Archive 
+
+								</p>
+							</div>
+
+							<!-- Chart Ends-->	
+
+
+
+								
+								
+							<div class="textblock"> 
+
+
+								<!-- <p data-paragraph="main">
+									Text
+								</p> -->
+
+								<!-- <p data-paragraph="main">
+									Text
+								</p> -->
+
+									
+								</div>
+
+
+
+									
+
+
+								<div class="textblock"> 
+
+									<!-- <h2>
+										subtitle
+									</h2> -->
+
+									<!-- <p data-paragraph="main">
+										text
+									</p>
+
+									<p data-paragraph="main">
+										text
+										<br>
+										<br>
+										
+										
+									</p> -->
+
+
+									 <!-- <iframe width="85%" height="300px" src="https://www.youtube.com/embed/nbvVvMyM4vk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+									<br>
+									<br>
+
+
+								</div>
+
+
+								<!-- <img src="imgs/ec-8.png" style="width:800px;">	 -->
+								
+								
+								<hr style="width:5%" color:"#9EB777">
+
+			<div id="description">
+				<h3>
+					<br>
+					<br>
+					<em>
+					Tools Used:
+		
+					Data: Python –⁠ Pandas<br>
+					Graphs: Python –⁠ plotnine, ggplot, Illustrator <br>
+					
+
+					<br>
+					<br>
+					<a href="https://github.com/semerriam/spring-2022-data-studio/blob/main/weather-clickbait/analysis/Weather-Buzzwords.ipynb" target="_blank"><u style="text-decoration-color:#353643" >Github Project Repo</u></a>
+					<br>
+					<br>
+					<a href="../../index.html" target="_blank"> <u style="text-decoration-color:#353643">Home</u></a>
+					
+					<br>
+					</em>
+				</h3>
+
+	
+
+	
+
+
+
+						</div><!-- article main -->
+					</div><!-- primary single-feature_col -->
+				</div><!-- single-feature__row -->
+
+			</div><!-- .single single-feature -->
+			<br>
+			<br>
+			
+			
+			</div>
+		</div><!-- #wrapper .site-wrapper -->
+	</div><!-- .site-main -->
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/typeahead.bundle.min.js"></script>
+    <script src="js/pronoia.js"></script>
+    <script src="js/treemap.js"></script>
+    <script src="js/network.js"></script>
+    <script src="js/bump.js"></script>
+    <script>
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//visualizeerowid.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-73425386-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+
+
+    <!-- D3 Interaction Viz code -->
+    <script>
+            // console.log("hello 1")
+            var g = d3.select('#Layer_1_copy_4')
+            var test = d3.select("#bumpList").selectAll('.bumpList')
+            .on('mouseover', function(d){
+                var term = this.classList[1]
+
+                g.selectAll('path.layer')
+                .transition()
+                .style('fill-opacity', function(e){
+                var path_element = d3.select(this)
+                // console.log(path_element.classed(term))  
+                if(path_element.classed(term)){ //checking is selected item
+                    return '1'
+                  }else{
+                    return '.1'
+                  }
+                })
+
+                d3.select('#bumpList').selectAll('.bumpList') //bumplist opacity
+                .transition()
+                .style('opacity', function(e){
+                var text_element = d3.select(this)
+                if(text_element.classed(term)){ //checking is selected item
+                    return '1'
+                  }else{
+                    return '.1'
+                  }
+                })
+            })
+
+            .on('mouseout', function(d){
+              g.selectAll('path.layer')
+                .transition()
+                .style('fill-opacity', 1)
+
+              d3.select('#bumpList').selectAll('.bumpList')
+                .transition()
+                .style('opacity', 1)
+            })
+
+            //part 2
+            var test = g.selectAll("path.layer")
+            .on('mouseover', function(d){
+                var term = this.classList[1]
+                
+                g.selectAll('path.layer')
+                .transition()
+                .style('fill-opacity', function(e){
+                var path_element = d3.select(this)
+                // console.log(path_element.classed(term))  
+                if(path_element.classed(term)){ //checking is selected item
+                    return '1'
+                  }else{
+                    return '.25'
+                  }
+                })
+                
+
+                d3.select('#bumpList').selectAll('.bumpList') //bumplist opacity
+                .transition()
+                .style('opacity', function(e){
+                var text_element = d3.select(this)
+                if(text_element.classed(term)){ //checking is selected item
+                    return '1'
+                  }else{
+                    return '.25'
+                  }
+                })
+
+                var bumpListEl = document.querySelector(`.bumpList.${term}`);
+                bumpListEl.scrollIntoView({behavior: "smooth", block: "nearest"});
+
+            })
+
+            .on('mouseout', function(d){
+              g.selectAll('path.layer')
+                .transition()
+                .style('fill-opacity', 0.8)
+
+              d3.select('#bumpList').selectAll('.bumpList')
+                .transition()
+                .style('opacity', .8)
+            })
+
+
+    </script>
+
+
+</body>
+
