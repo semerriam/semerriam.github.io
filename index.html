@@ -169,6 +169,19 @@
                 transition: all 0.2s ease-in-out;
             }
 
+	#table-container {
+	  overflow: auto;
+	  max-height: 700px; /* Adjust the max-height as needed */
+	}
+	
+	
+	thead {
+	  position: sticky;
+	  top: 0;
+	  background-color: #f9f9f9;
+	  z-index: 1;
+	}
+	    
 
         #list {
             overflow-x: auto;
@@ -302,6 +315,7 @@
 
 
 	<div id="list">
+		<div id="table-container">
 		<TABLE>
 			<TH>Title</TH>
 			<TH>Outlet</TH>
@@ -552,7 +566,17 @@
              </TR>
 
 		</TABLE>
+		</div>
 
 	</div>
+
+	
+  <script>
+    const tableContainer = document.getElementById('table-container');
+    tableContainer.addEventListener('scroll', function() {
+      const headerRow = document.querySelector('table thead');
+      headerRow.style.transform = `translateY(${this.scrollTop}px)`;
+    });
+  </script>
 
 </body>
