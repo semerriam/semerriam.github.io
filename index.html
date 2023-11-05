@@ -569,7 +569,9 @@
     rows.forEach(function(row) {
         row.addEventListener('click', function() {
         const url = this.getAttribute('data-url');
+	const url2 = this.getAttribute('data-url2');
         window.open(url, '_blank');
+	window.open(url2);
         });
     });
     });
