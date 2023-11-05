@@ -152,7 +152,8 @@ img {
 color: black;
 font-family: 'Titillium Web';
 font-size: 22px;
-font-weight: 700;	
+font-weight: 700;
+margin-bottom: 3px;
 }
 
 .viz-subtitle{
@@ -161,6 +162,7 @@ font-family: 'Titillium Web';
 font-size: 16px;
 font-weight: 300;
 max-width: 800px;
+margin-top: 0px;
 }
 
 .viz-caption{
@@ -169,7 +171,8 @@ font-family: 'Titillium Web';
 font-size: 12px;
 font-weight: normal;
 padding-bottom: 20px;
-max-width: 800px;	
+max-width: 800px;
+margin-top: 5px;
 }
 
 .section-subtitle{
