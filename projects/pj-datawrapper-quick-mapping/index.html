@@ -6,20 +6,60 @@
   <title>Create Datawrapper Map</title>
 </head>
 <body>
-  <h1>Create Your Own Datawrapper Map</h1>
+  <h1>Create Your Own (Quick) Datawrapper Point Map</h1>
   
-  <form id="mapForm">
-    <label for="title">Map Title:</label>
-    <input type="text" id="title" name="title" required><br><br>
+  <form id="mapForm" method="POST">
+    <!-- Removed the API key input as it's now hard-coded -->
+    
+    <label for="coordinates">GPS Coordinates (longitude, latitude):</label>
+    <input type="text" id="coordinates" name="coordinates" required><br><br>
 
-    <label for="description">Map Description:</label>
-    <textarea id="description" name="description" required></textarea><br><br>
+    <label for="folder_id">Datawrapper Folder ID (optional):</label>
+    <input type="text" id="folder_id" name="folder_id"><br><br>
 
-    <label for="data">Data (CSV format):</label>
-    <textarea id="data" name="data" required></textarea><br><br>
+    <label for="marker_title">Marker Title (optional):</label>
+    <input type="text" id="marker_title" name="marker_title"><br><br>
+
+    <label for="tooltip_text">Tooltip Text (optional):</label>
+    <input type="text" id="tooltip_text" name="tooltip_text"><br><br>
+
+    <label for="zoom_level">Zoom Level (optional):</label>
+    <input type="number" id="zoom_level" name="zoom_level"><br><br>
+
+    <label for="point_color">Point Color (optional):</label>
+    <input type="text" id="point_color" name="point_color"><br><br>
+
+    <label for="point_size">Point Size (optional):</label>
+    <input type="number" step="0.1" id="point_size" name="point_size"><br><br>
+
+    <label for="map_title">Map Title (optional):</label>
+    <input type="text" id="map_title" name="map_title"><br><br>
+
+    <label for="description">Description (optional):</label>
+    <textarea id="description" name="description"></textarea><br><br>
+
+    <label for="notes">Notes (optional):</label>
+    <textarea id="notes" name="notes"></textarea><br><br>
+
+    <label for="byline_input">Byline (optional):</label>
+    <input type="text" id="byline_input" name="byline_input"><br><br>
+
+    <label for="data_source">Data Source (optional):</label>
+    <input type="text" id="data_source" name="data_source"><br><br>
+
+    <label for="data_source_link">Data Source Link (optional):</label>
+    <input type="text" id="data_source_link" name="data_source_link"><br><br>
+
+    <label for="alt_text_input">Alt Text (optional):</label>
+    <input type="text" id="alt_text_input" name="alt_text_input"><br><br>
 
     <button type="submit">Create Map</button>
   </form>
+
+  <div id="embedCodeContainer">
+    <h2>Embed Code</h2>
+    <textarea id="embedCode" rows="6" cols="80"></textarea>
+  </div>
 
   <div id="preview">
     <h2>Map Preview</h2>
@@ -29,24 +69,26 @@
   <script>
     document.getElementById('mapForm').addEventListener('submit', function(event) {
       event.preventDefault();
-
+  
       // Collect form data
       const formData = new FormData(this);
-      
-      // Send data to backend (Python)
-      fetch('/create_map', {
+  
+      // Send data to the backend (Python Flask)
+      fetch('/', {
         method: 'POST',
         body: formData
       })
       .then(response => response.json())
       .then(data => {
+        // Display the embed code
+        document.getElementById('embedCode').value = data.embed_code;
+  
         // Display the map preview by embedding the Datawrapper map
         document.getElementById('mapPreview').src = data.map_url;
       })
       .catch(error => console.error('Error:', error));
     });
   </script>
+  
 </body>
 </html>
-
-
