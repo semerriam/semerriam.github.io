@@ -32,13 +32,14 @@
             text-rendering: optimizeLegibility;
             font-feature-settings: "kern";
         }
+        
 
         #nav {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 10;
-            padding-bottom: 15px;
+            /* padding-bottom: 15px; */
             /* background: white; */
             /* background: #0F1521; */
             background: #111019;
@@ -58,6 +59,7 @@
             font-weight: 600;
             line-height: 16px;
             color: rgb(248, 238, 238);
+            padding-bottom: 40px;
         }
 
         #nav h1 a, #nav h2 a {
@@ -73,32 +75,34 @@
             background-color: #373348;
         }
 
+        hr {
+            margin: 0 0 0 0;
+        }
+
+
         #content {
             margin-top: 100px;
+        }
+        
+        div#list {
+            padding-top: 16px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             color: rgb(248, 238, 238);
-        }
-
-        thead {
-            position: sticky;
-            top: 0;
-            /* background-color: #f9f9f9; */
-            background-color: #111019;
-        }
-
-        th, td {
-            /* border-bottom: 1px solid black; */
-            border-bottom: 1px solid rgb(237, 237, 237);
-            /* padding: 15px; */
-            text-align: left;
+            font-size: 15px;
+            line-height: 1.4;
+            
         }
 
         .series-title {
-            font-size: 12px;
+            font-size: 15px;
+            /* font-weight: 600; */
+            /* font-weight: 100; */
+            /* text-transform: uppercase;
+            letter-spacing: 3px; */
             /* color: red; */
             /* color: #9092ae; */
         }
@@ -106,14 +110,32 @@
         .role {
             font-size: 12px;
             color: #9092ae;
-            /* line-height: 40px; */
         }
 
         .awards {
             font-size: 12px;
             color: rgb(121 155 191);
-            /* color: rgb(244, 215, 121); */
-            /* line-height: 40px; */
+            line-height: 1.2;
+            /* margin-top: 6px; */
+
+        }
+
+
+        thead {
+            position: sticky;
+            top: 0;
+            /* background-color: #f9f9f9; */
+            background-color: #111019;
+            z-index: 2;
+        }
+
+        th, td {
+            /* border-bottom: 1px solid black; */
+            border-bottom: 1px solid rgb(237, 237, 237);
+            /* padding: 15px; */
+            text-align: left;
+            vertical-align: top; /* Align content to the top */
+            
         }
 
 
@@ -123,21 +145,19 @@
         }
 
         img {
-            max-height: 145px;
+            max-height: 150px;
             width: auto;
             margin-top: -1px;
             margin-bottom: -7px;
         }
 
-
-        /* @media (max-width: 770px) {
-            #list table th:nth-child(1),
-            #list table td:nth-child(1) {
-                display: none !important;
+        @media (max-width: 600px) {
+            td {
+                    font-size: 13px;
+                }
             }
-        } */
 
-        @media (max-width: 770px) {
+        @media (max-width: 800px) {
             img {
                 max-height: 100px;
                 width: auto;
@@ -151,10 +171,6 @@
 
             .role {
                 display: none;
-            }
-
-            td {
-                font-size: 12px;
             }
 
             #list table th:nth-child(2) {
@@ -182,7 +198,6 @@
                 display: none;
             }
 
-
         }
 
         
@@ -196,6 +211,7 @@
 
         #list table td:nth-child(2) {
             padding-left: 15px;
+            padding-top: 20px;
             /* padding-right: 15px; */
         }
 
@@ -207,6 +223,9 @@
         #list table td:nth-child(3) {
             padding-left: 15px;
             padding-right: 10px;
+            /* padding-top: 45px; */
+            padding-top: 20px;
+            /* display: none; */
         }
 
         #list table th:nth-child(3) {
@@ -214,19 +233,16 @@
             padding-right: 10px;
         }
 
-        /* #list table {
-            table-layout: fixed;
-            width: 100%;
-
-        } */
-/* 
-        #list {
-            padding-left: 15px;
+        #list table td:nth-child(4) {
+            /* padding-top: 45px; */
+            padding-top: 20px;
         }
 
-        #table-container {
-            padding-left: 15px;
-        } */
+
+
+
+        
+        
 
 
 
@@ -238,25 +254,28 @@
     <div id="nav">
         <h1><a href="index.html">Susan Merriam</a></h1>
         <h2><a href="index.html">Projects</a> | <a href="sem_about.html">About</a></h2>
+        <!-- <br> -->
+        <hr>
     </div>
+    
 
     <div id="content">
         <div id="list">
             <table>
-                <thead>
+                <!-- <thead>
                     <tr>
                         <th>Project</th>
                         <th> </th>
                         <th>Outlet</th>
-                        <!-- <th>Role</th> -->
                         <th>Year</th>
                     </tr>
-                </thead>
+                </thead> -->
+                <!-- <hr> -->
                 <tbody>
                     <tr data-url="https://www.miamiherald.com/news/politics-government/article282921823.html">
                         <td><img src="imgs/miami-shakedown-city-1.png" alt="visualization of diagram relating to controversies at Miami's City Hall"></td>
                         <td>
-                            <span class="series-title">Shakedown City</span><br>
+                            Shakedown City | 
                             Investigations, lawsuits and the anatomy of Miami’s political scandals
                             <br>
                             <span class="awards">National Headliner Award, Semifinalist for Goldsmith Prize</span>
@@ -269,7 +288,7 @@
                     <tr data-url="https://www.miamiherald.com/news/politics-government/article282921853.html">
                         <td><img src="imgs/miami_shakedown_city_thumbnail2.jpg" alt="image relating to controversies at Miami's City Hall"></td>
                         <td>
-                            <span class="series-title">Shakedown City</span><br>
+                            Shakedown City | 
                             The kingdom and I: How Miami’s mayor helped Saudi Arabia rehab its bloody reputation
                             <br>
                             <span class="awards">National Headliner Award, Semifinalist for Goldsmith Prize</span>
@@ -283,8 +302,8 @@
                     <tr data-url="https://www.thestate.com/news/local/environment/article276103146.html">
                         <td><img src="imgs/toxic_deals_thumbnail_b1.png" alt="map of permitted sludge sites, PFAS measurements, and drinking water intakes near the Galey and Lord plant"></td>
                         <td>
-                            <span class="series-title">Toxic Deals</span><br>
-                             SC community used sludge fertilizer, then residents got sick. Are they connected?
+                            <!-- <span class="series-title">Toxic Deals</span><br> -->
+                            Toxic Deals | SC community used sludge fertilizer, then residents got sick. Are they connected?
                              <br>
                              <span class="awards">The Green Eyeshade Award, SND Award of Excellence</span>
                              <br>
@@ -297,8 +316,8 @@
                     <tr data-url="https://www.thestate.com/news/local/environment/article276102856.html">
                         <td><img src="imgs/toxic_deals_thumbnail1.png" alt="map of permitted sludge sites, PFAS measurements, and drinking water intakes near Whitmire, SC"></td>
                         <td>
-                            <span class="series-title">Toxic Deals</span><br>
-                            For decades, SC farmers have fertilized fields with sludge. It could be having toxic impacts
+                            <!-- <span class="series-title">Toxic Deals</span><br> -->
+                            Toxic Deals | For decades, SC farmers have fertilized fields with sludge. It could be having toxic impacts
                             <br>
                             <span class="awards">The Green Eyeshade Award</span>
                             <br>
@@ -312,8 +331,8 @@
                     <tr data-url="https://www.charlotteobserver.com/news/state/north-carolina/article267894887.html">
                         <td><img src="imgs/poultry_farm_county_level.png" alt="map of poultry farm locations and possible effects"></td>
                         <td>
-                            <span class="series-title">Big Poultry </span><br>
-                            With no power to fend off poultry farms, neighbors live with stench and nuisances
+                            <!-- <span class="series-title">Big Poultry </span><br> -->
+                            Big Poultry | With no power to fend off poultry farms, neighbors live with stench and nuisances
                             <br>
                             <span class="awards">IRE Award, National Press Foundation Award, MIT Knight Science Journalism Award, SND Award of Excellence</span>
                             <br>
@@ -336,8 +355,8 @@
                     <tr data-url="https://www.newsobserver.com/news/state/north-carolina/article286920890.html">
                         <td><img src="imgs/private_eyes_thumbnail.png" alt="network graphic of connections between agencies"></td>
                         <td>
-                            <span class="series-title">Private Eyes</span><br>
-                            Camera by camera, North Carolina police build growing network to track vehicles<br>
+                            <!-- <span class="series-title">Private Eyes</span><br> -->
+                            Private Eyes | Camera by camera, North Carolina police build growing network to track vehicles<br>
                             <span class="role">data analysis, design</span>
                         </td>
                         <td>The News & Observer</td>
@@ -346,6 +365,7 @@
                     <tr data-url="https://www.miamiherald.com/news/politics-government/article278456264.html">
                         <td><img src="imgs/miami_desantis_thumbnail1.png" alt="visualization of story relating to media coverage of DeSantis"></td>
                         <td>
+                            <!-- <span class="series-title"></span><br> -->
                             From backbench congressman to debate limelight: The rise of Ron DeSantis, soundbite by soundbite<br>
                             <span class="role">data analysis, reporting, design</span>
                         </td>
@@ -355,8 +375,8 @@
                     <tr data-url="https://www.kansascity.com/news/local/article274276485.html">
                         <td><img src="imgs/nfl_draft_thumbnail1.png" alt="map of site in North Carolina with high density of pollution permits"></td>
                         <td>
-                            <span class="series-title">NFL Draft Event Coverage</span><br>
-                            Kansas City's 2023 NFL Draft Interactive Map
+                            <!-- <span class="series-title">NFL Draft Event Coverage</span><br> -->
+                            2023 NFL Draft Event Coverage | Interactive Map
                             <br>
                             <span class="awards">AP Sports Editors Contest Winner</span>
                             <br>
@@ -369,8 +389,8 @@
                     <tr data-url="https://www.kansascity.com/news/local/article281002308.html">
                         <td><img src="imgs/kc_fentanylthumbnail1.png" alt="graphic of fentanyl-related fatalities"></td>
                         <td>
-                            <span class="series-title">Deadly Dose</span><br>
-                            Fentanyl has killed more than 850 in KC area. Here are the stories of 26 lives cut short
+                            <!-- <span class="series-title">Deadly Dose</span><br> -->
+                            Deadly Dose | Fentanyl has killed more than 850 in KC area. Here are the stories of 26 lives cut short
                             <br>
                             <span class="awards">IRE Finalist </span>
                             <br>
@@ -383,8 +403,8 @@
                     <tr data-url="https://www.kansascity.com/news/local/article281001098.html">
                         <td><img src="imgs/kc_fentanylthumbnail2.png" alt="graphic of fentanyl compared to heroin"></td>
                         <td>
-                            <span class="series-title">Deadly Dose</span><br>
-                            ‘It’s wiping our youth out.’ How fentanyl has killed hundreds in the Kansas City area
+                            <!-- <span class="series-title">Deadly Dose</span><br> -->
+                            Deadly Dose | ‘It’s wiping our youth out.’ How fentanyl has killed hundreds in the Kansas City area
                             <br>
                             <span class="awards">IRE Finalist</span>
                             <br>
@@ -397,8 +417,8 @@
                     <tr data-url="https://www.miamiherald.com/news/business/real-estate-news/article273093600.html">
                         <td><img src="imgs/foreclosure_franchise_thumbnail1.png" alt="visualization of story relating to foreclosures in Florida"></td>
                         <td>
-                            <span class="series-title">The Foreclosure Franchise</span><br>
-                            Families lose homes after Florida cities turbocharge development enforcement foreclosures
+                            <!-- <span class="series-title">The Foreclosure Franchise</span><br> -->
+                            The Foreclosure Franchise | Families lose homes after Florida cities turbocharge development enforcement foreclosures
                             <br>
                             <span class="awards">National Press Foundation Economic Justice Journalism  Award, Scripps Howard Journalism Award Finalist
                             </span>
@@ -411,6 +431,7 @@
                     <tr data-url="https://www.sacbee.com/news/investigations/article275722096.html">
                         <td><img src="imgs/sacbee_hit_and_runs_thumbnail1.png" alt="map of hit and run fatalities in Sacramento County 2018-2022"></td>
                         <td>
+                            <!-- <span class="series-title"></span><br> -->
                             Sacramento hit-and-run drivers leave staggering death toll, Bee investigation reveals<br>
                             <span class="role">spatial analysis, design</span>
                         </td>
@@ -420,8 +441,8 @@
                     <tr data-url="https://www.newsobserver.com/news/politics-government/article275479706.html">
                         <td><img src="imgs/overexposed_thumbnail1.png" alt="map of site in North Carolina with high density of pollution permits"></td>
                         <td>
-                            <span class="series-title">Exposed & Overlooked</span><br>
-                            Invisible peril? Some NC communities stuck with higher pollution exposure risks<br>
+                            <!-- <span class="series-title">Exposed & Overlooked</span><br> -->
+                            Exposed & Overlooked | Invisible peril? Some NC communities stuck with higher pollution exposure risks<br>
                             <span class="role">design</span>
                         </td>
                         <td>The News & Observer</td>
@@ -430,8 +451,8 @@
                     <tr data-url="https://www.sanluisobispo.com/news/california/article278704969.html">
                         <td><img src="imgs/slo_dirty_cleaners_thumbnail1.png" alt="map of PCE Plume in South Lake Tahoe"></td>
                         <td>
-                            <span class="series-title">Dirty Cleaners</span><br>
-                            How pollution from dry cleaners left California sitting on cancer-linked ‘time bombs’
+                            <!-- <span class="series-title">Dirty Cleaners</span><br> -->
+                            Dirty Cleaners | How pollution from dry cleaners left California sitting on cancer-linked ‘time bombs’
                             <br>
                             <span class="role">design, development</span>
                         </td>
@@ -441,6 +462,7 @@
                     <tr data-url="https://www.miamiherald.com/news/local/community/miami-dade/coconut-grove/article269749251.html">
                         <td><img src="imgs/cocogrove_thumbnail1.png" alt="map highlighting 24 properties of Doug Cox and Pearl, real estate developers in Coconut Grove"></td>
                         <td>
+                            <!-- <span class="series-title"></span><br> -->
                             They bought their dream homes from the ‘King of Coconut Grove.’ They still can’t move in<br>
                             <span class="role">design</span>
                         </td>
@@ -450,6 +472,7 @@
                     <tr data-url="https://www.miamiherald.com/news/local/environment/climate-change/article272559742.html">
                         <td><img src="imgs/miami_high_ground.png" alt="map highlighting areas of higher elevation within Miami-Dade county"></td>
                         <td>
+                            <!-- <span class="series-title"></span><br> -->
                             Cliffs, bunkers, mammoth bones: Miami-Dade County's most intriguing high points<br>
                             <span class="role">design</span>
                         </td>
@@ -459,6 +482,7 @@
                     <tr data-url="https://www.newsobserver.com/news/politics-government/article280779530.html">
                         <td><img src="imgs/causey_thumbnail1.png" alt="map of North Carolina Insurance District shifts"></td>
                         <td>
+                            <!-- <span class="series-title"></span><br> -->
                             NC insurance commissioner ran against ‘good ol boy’ politics. Critics say he embraced it<br>
                             <span class="role">design</span>
                         </td>
@@ -468,8 +492,8 @@
                     <tr data-url="https://www.miamiherald.com/news/local/community/miami-dade/article294443479.html">
                         <td><img src="imgs/guilty_of_grief_thumbnail.png" alt="police body camera photo used as part of the series"></td>
                         <td>
-                            <span class="series-title">Guilty of Grief</span><br>
-                            Tragedy on body cam: Miami-Dade police killed her son. Her questions cost her everything<br>
+                            <!-- <span class="series-title">Guilty of Grief</span><br> -->
+                            Guilty of Grief | Tragedy on body cam: Miami-Dade police killed her son. Her questions cost her everything<br>
                             <span class="role">design</span>
                         </td>
                         <td>Miami Herald</td>
@@ -479,18 +503,20 @@
                     <tr data-url="https://www.sacbee.com/news/politics-government/capitol-alert/article279537269.html">
                         <td><img src="imgs/sacbee_migrant_farmworkers_thumbnail1.jpg" alt="photo taken as part of the series"></td>
                         <td>
-                            <span class="series-title">Migrant Farmworker Housing</span><br>
+                            <!-- <span class="series-title">Migrant Farmworker Housing</span><br> -->
                             California forces migrant farmworker students to move every year. ‘We need to survive’<br>
                             <span class="role">design</span>
                         </td>
-                        <td>The Sacramento Bee</td>
+                        <td>
+                            <span class="series-title"></span><br>
+                            The Sacramento Bee</td>
                         <td>2023</td>
                     </tr>
                     <tr data-url="https://www.miamiherald.com/news/politics-government/article292577779.html">
                         <td><img src="imgs/trump_attempt_thumbnail.png" alt="datawrapper map created for the breaking story"></td>
                         <td>
-                            <span class="series-title">Attempted Trump Assassination Breaking News Coverage</span><br>
-                            How close was golf course gunman to Trump?<br>
+                            <!-- <span class="series-title">Attempted Trump Assassination Breaking News Coverage</span><br> -->
+                            Breaking News | How close was golf course gunman to Trump?<br>
                             <span class="role">design, reporting</span>
                         </td>
                         <td>Miami Herald</td>
@@ -499,99 +525,28 @@
                     <tr data-url="projects/pj-capd/index.html">
                         <td><img src="imgs/capd.jpg" alt="center for american politics and design logo"></td>
                         <td>
+                            <!-- <span class="series-title">CAPD</span><br> -->
                             Center for American Politics and Design<br>
                             <span class="role">archiving, reporting, design</span>
                         </td>
                         <td>Project</td>
                         <td>2018-2024</td>
                     </tr>
-
-                    <!-- CJS -->
-                    <!-- <tr data-url="projects/pj-census-quirks/index.html">
-                        <td><img src="imgs/census-quirks-thumbnail.png" alt="dot plot demonstrating difference in DOC and Census count of incarcerated populations"></td>
-                        <td>
-                            Investigating Census Peculiarities<br>
-                            <span class="role">data analysis, design</span>
-                        </td>
-                        <td>CJS</td>
-                        <td>2022</td>
-                    </tr> -->
-                    <!-- <tr data-url="projects/pj-litigation-funding/index.html">
-                        <td><img src="imgs/pj-litigation-funding-thumbnail.png" alt="step line chart showing growth of litigation funding industry"></td>
-                        <td>
-                            Investigating Litigation Funding<br>
-                            <span class="role">reporting, design</span>
-                        </td>
-                        <td>CJS</td>
-                        <td>2022</td>
-                    </tr> -->
-                    <!-- <tr data-url="projects/pj-ec-schools/index.html">
-                        <td><img src="imgs/ec-thumbnail.png" alt="series of slope graphs comparing income disparities and distance"></td>
-                        <td>
-                            Essex County Demographics Exploration<br>
-                            <span class="role">data analysis, design</span>
-                        </td>
-                        <td>CJS</td>
-                        <td>2022</td>
-                    </tr> -->
-                    <!-- <tr data-url="projects/pj-infrasound/index.html">
-                        <td><img src="imgs/pj-infrasound-thumbnail.png" alt="line graphs showing infrasound in horror films"></td>
-                        <td>
-                            Infrasound in Horror Films<br>
-                            <span class="role">data analysis, design</span>
-                        </td>
-                        <td>CJS</td>
-                        <td>2022</td>
-                    </tr> -->
-                    <!-- <tr data-url="https://pointsunknown.nyc/final-projects/JSchool-Summer-2022/Climate-2/index.html">
-                        <td><img src="imgs/cjs_critical_habitats.png" alt="map of critical habitats"></td>
-                        <td>
-                            Critical Habitats in Question<br>
-                            <span class="role">spatial analysis, design</span>
-                        </td>
-                        <td>CJS</td>
-                        <td>2022</td>
-                    </tr> -->
                     <tr data-url="points-unknown/index.html">
                         <td><img src="imgs/pj-turbulence-thumbnail.png" alt="map of flight routes and C02 emissions"></td>
                         <td>
+                            <!-- <span class="series-title"></span><br> -->
                             Columbia Journalism School Projects<br>
                             <span class="role">spatial analysis, data analysis, reporting, design</span>
                         </td>
                         <td>CJS</td>
                         <td>2022</td>
                     </tr>
-                   
-                    <!-- <tr data-url="projects/pj-weather/index.html">
-                        <td><img src="imgs/pj-weather-thumbnail.png" alt="graph of snow compared to other weather terms used on major networks"></td>
-                        <td>
-                            The Rise and Fall of Weather Words<br>
-                            <span class="role">data analysis, design, development</span>
-                        </td>
-                        <td>CJS</td>
-                        <td>2022</td>
-                    </tr> -->
-                    <!-- <tr data-url="projects/pj-women-entrepreneurs/index.html">
-                        <td><img src="projects/pj-women-entrepreneurs/imgs/pj-women-entrepreneurs-thumbnail.png" alt="Askanya chocolates photograph"></td>
-                        <td>
-                            Haitian women entrepreneurs weather challenges operating between Haiti and the U.S.<br>
-                            <span class="role">reporting</span>
-                        </td>
-                        <td>CJS</td>
-                        <td>2021</td>
-                    </tr> -->
-                    <!-- <tr data-url="projects/pj-mylla/index.html">
-                        <td><img src="projects/pj-mylla/imgs/pj-mylla4-thumbnail.png" alt="photograph of racks in Brooklyn parking lot"></td>
-                        <td>
-                            The invisible side of American retail in a Brooklyn parking lot<br>
-                            <span class="role">reporting</span>
-                        </td>
-                        <td>CJS</td>
-                        <td>2021</td>
-                    </tr> -->
+                
                     <tr data-url="https://www.nplusonemag.com/online-only/online-only/working-the-polls/">
                         <td><img src="imgs/election_2020polls_sm.jpg" alt="people waiting at polls"></td>
                         <td>
+                            <!-- <span class="series-title"></span><br> -->
                             Working the Polls<br>
                             <span class="role">photography</span>
                         </td>
