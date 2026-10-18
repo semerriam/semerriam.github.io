@@ -76,7 +76,6 @@
 
 
         <link rel="shortcut icon" href="favicon.ico">
-	<style>.center{text-align: center;}</style>
 
         <style>
 
@@ -105,18 +104,6 @@
                 color: #bfe6ff; 
                 background: transparent;
             }
-	#main h1 {
-                font-weight: 600;
-                color: black;	
-		font-family: 'Titillium Web';
-            }
-
-	h1 {
-             
-                font-weight: 600;
-                color: black;	
-		font-family: 'Titillium Web';
-            }
 
 
         #nav {		
@@ -135,25 +122,22 @@
                 font-size: 20px;
                 line-height: 26px;
                 font-weight: 600;
-                color: black;	
-		font-family: 'Titillium Web';
+                color: black;			
             }
 
                 #nav h1 a, h2 a {
                     text-decoration: none;
                     transition: all 0.2s ease-in-out;	
-                    color: black;
-			font-family: 'Titillium Web';
+                    color: black;		
                 }
 
-                #nav h1 a:hover, h2 a:hover {
-                 	text-decoration: none;
-                	color: black;
+                    #nav h1 a:hover, h2 a:hover {
+                        text-decoration: none;
+                        color: black;
 				        background-color: #bfe6ff;
                         transition: all 0.2s ease-in-out;
                         font-weight: 600;
-			font-family: 'Titillium Web';
-                }
+                    }
 
             #nav h2 {
                 z-index: 500;
@@ -165,8 +149,7 @@
                 font-size: 20px;
                 line-height: 26px;
                 font-weight: 600;
-                color: black;
-		font-family: 'Titillium Web';
+                color: black;		
             }
 
 
@@ -259,7 +242,6 @@
                 font-weight: 600;
         }
     </style>
-	<style>.center{text-align: center;}</style>
 
     
 
@@ -559,26 +541,6 @@
 
 	</div>
     </div>
-	<br>
-	<br>
-	<hr style="width:5%" color:"#9eb777"="">
-	<div id="description" class="center"> 
-				<h3>
-					<br>
-					<br>
-					<em>
-					
-					<div class="center">
-					<a href="../../index.html" target="_blank"> <u style="text-decoration-color:#8d99ae">Home</u></a>
-						</div>
-					
-					<br>
-					</em>
-				</h3>
-
-	
-
-	</div>
 
 </body>
 
@@ -596,29 +558,43 @@
         padding-bottom: 70px;
     }
 
-    #nav h1 {
-        vertical-align: center;
-        text-align: left;
+    /* Name link back to the homepage: a fixed white bar like the homepage nav,
+       so the page scrolls underneath it instead of through the name.
+       (The <svg> filter in the head still provides the space above the header.) */
+    #nav {
         position: fixed;
-        z-index: 15;
-        margin-top: -140px;
-        margin-left: 15px;
+        top: 0;
+        left: 0;
         width: 100%;
+        z-index: 15;
+        background: white;
+    }
+
+    #nav h1 {
+        position: static;
+        text-align: left;
+        margin: 15px;
         font-size: 20px;
         line-height: 26px;
-        font-weight: normal;
-        color: black;			
+        font-weight: 600;
+        color: black;
     }
 
     #nav h1 a, h2 a {
         text-decoration: none;
-        transition: all 0.2s ease-in-out;	
-        color: black;		
+        transition: all 0.2s ease-in-out;
+        color: black;
     }
 
-    #nav h1 a:hover, h2 a:hover {
+    #nav h1 a:hover {
+        color: black;
+        background-color: #bfe6ff;
+        transition: all 0.2s ease-in-out;
+    }
+
+    h2 a:hover {
         text-decoration: none;
-        color: white;  
+        color: white;
         transition: all 0.2s ease-in-out;
     }
 
