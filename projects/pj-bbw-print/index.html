@@ -69,24 +69,30 @@
             text-decoration: none;
         }
 
-        /* Name link back to the homepage. Pinned to the top-left like the
-           other project pages; the nav block reserves the space above the header. */
+        /* Name link back to the homepage: a fixed white bar like the homepage nav,
+           so the page scrolls underneath it instead of through the name. */
+        body {
+            padding-top: 150px;
+        }
+
         #nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 15;
             margin: 0px;
             padding: 0px;
-            height: 150px;
+            background: white;
         }
 
             #nav h1 {
+                position: static;
                 text-align: left;
-                position: fixed;
-                top: 0;
-                z-index: 15;
-                margin: 16px 0 0 15px;
-                width: 100%;
+                margin: 15px;
                 font-size: 20px;
                 line-height: 26px;
-                font-weight: normal;
+                font-weight: 600;
                 color: black;
             }
 
@@ -327,7 +333,7 @@
         <figure class="spread">
             <img src="2026-10-in-view-curiosity-gap.png" alt="Bloomberg Businessweek Curiosity Gap spread on working-class representation in legislatures, with a bar chart by country and scatter plots" loading="lazy">
             <figcaption>
-                <div class="title">Curiosity Gap: Working-class candidates</div>
+                <div class="title">Curiosity Gap: Why politicians from the working class are rare around the world</div>
                 <div>
                     <p class="details">
                         <span class="issue">October 2026</span>
