@@ -1,1 +1,384 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-139426391-1');
+    </script>
+
+        <title>Susan Merriam Portfolio</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Bloomberg Businessweek in print">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <meta property="og:title" content="Susan Merriam Portfolio — Bloomberg Businessweek Print">
+        <meta property="og:description" content="Print graphics for Bloomberg Businessweek">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://semerriam.github.io/imgs/main_pg_social.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@semerriam">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" type='text/css'>
+
+        <link rel="stylesheet" type="text/css" href="../project-stylesheet.css">
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-9449922-4', 'auto');
+        ga('send', 'pageview');
+        </script>
+
+        <link rel="shortcut icon" href="favicon.ico">
+
+        <style>
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            font-family: "Titillium Web","Helvetica Neue",Helvetica,Arial,sans-serif;
+            color: #222;
+            text-align: left;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: "kern";
+            overflow-x: hidden;
+        }
+
+            ::-moz-selection { /* Code for Firefox */
+                color: #bfe6ff;
+                background: transparent;
+            }
+
+            ::selection {
+                color: #bfe6ff;
+                background: transparent;
+            }
+
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        #nav {
+            margin: 0px;
+            padding: 0px;
+        }
+
+            #nav h1 {
+                text-align: left;
+                position: fixed;
+                z-index: 15;
+                margin-top: -140px;
+                margin-left: 15px;
+                width: 100%;
+                font-size: 20px;
+                line-height: 26px;
+                font-weight: 600;
+                color: black;
+            }
+
+                #nav h1 a {
+                    text-decoration: none;
+                    transition: all 0.2s ease-in-out;
+                    color: black;
+                }
+
+                #nav h1 a:hover {
+                    color: black;
+                    background-color: #bfe6ff;
+                    transition: all 0.2s ease-in-out;
+                }
+
+
+        /* Header — same treatment as the other project pages */
+
+        .single-metadata-single-topic,
+        .single-metadata-single-byline,
+        .single-topic,
+        .article-title-single,
+        .textblock {
+            max-width: 700px;
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .article-title-single {
+            font-size: 22px;
+            line-height: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        @media (min-width:600px){.article-title-single{font-size:26px;line-height:36px;}}
+
+        .datetime {
+            color: #999;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-family: DecimaMono,Consolas,Monaco,monospace;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+
+        /* Print layouts — one wide spread per row, caption underneath */
+
+        .spreads {
+            max-width: 1000px;
+            padding-left: 5%;
+            padding-right: 5%;
+            margin: 40px auto 0;
+        }
+
+            .spread {
+                margin: 0 0 70px 0;
+            }
+
+                .spread img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    border: 1px solid #e5e5e5;
+                    box-sizing: border-box;
+                }
+
+                /* Caption: title on the left, details + credits on the right */
+                .spread figcaption {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    column-gap: 30px;
+                    margin-top: 14px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                    .spread .title {
+                        font-size: 18px;
+                        line-height: 24px;
+                        font-weight: 600;
+                    }
+
+                    .spread .details,
+                    .spread .credits {
+                        margin: 0;
+                    }
+
+                    .spread .details span {
+                        display: block;
+                    }
+
+                    .spread .details .issue {
+                        color: #999;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        font-family: DecimaMono,Consolas,Monaco,monospace;
+                    }
+
+                    .spread .credits {
+                        margin-top: 10px;
+                        color: #6d6f71;
+                    }
+
+                        .spread .credits dt {
+                            display: inline;
+                        }
+
+                        .spread .credits dt::after {
+                            content: ": ";
+                        }
+
+                        .spread .credits dd {
+                            display: inline;
+                            margin: 0;
+                            color: #222;
+                        }
+
+                        .spread .credits dd::after {
+                            content: "";
+                            display: block;
+                        }
+
+                    .spread a:hover {
+                        background-color: #bfe6ff;
+                        transition: all 0.2s ease-in-out;
+                    }
+
+                @media screen and (max-width:600px){
+                    .spread figcaption { grid-template-columns: 1fr; row-gap: 6px; }
+                }
+
+
+        hr {
+            height: 1px;
+            border-top: 0;
+            border-style: solid;
+            border-color: #d1d3d4;
+            background-color: #d1d3d4;
+        }
+
+        #description h3 {
+            color: black;
+            font-size: 18px;
+            font-weight: 500;
+            max-width: 700px;
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .center { text-align: center; }
+
+        </style>
+
+</head>
+
+
+<body>
+
+	<div id="nav">
+		<h1><a href="../../index.html">Susan Merriam<br></a></h1>
+	</div>
+
+
+    <div class="article-header__container">
+
+        <header class="single-post-header">
+            <div class="single-header">
+                <p class="single-metadata-single-topic">
+                    <span style="color: blue">
+                        <strong>
+                            Print
+                        </strong>
+                    </span>
+                </p>
+
+                <h1 class="article-title article-title-single entry-title">Bloomberg Businessweek Print Layouts</h1>
+
+            </div> <!-- single-header -->
+
+            <div class="single-header-metadata-and-share-wrap">
+                <div class="single-header-metadata-wrap">
+                    <p class="single-metadata-single-byline">
+                        <a href="https://www.bloomberg.com/businessweek" target="_blank"> <u style="text-decoration-color:blue">Bloomberg Businessweek</u></a>
+                    </p>
+
+                    <p class="topic single-topic">
+                        <time class="datetime">2026 — Present</time>
+                    </p>
+                </div><!-- single header info wrap -->
+            </div><!-- single header info -->
+
+        </header><!-- single post header -->
+
+    </div> <!-- article header container -->
+
+
+    <!-- <div class="textblock">
+        <br>
+        <p data-paragraph="main">
+            A selection of graphics and page layouts I've made for the print edition of
+            <a href="https://www.bloomberg.com/businessweek" target="_blank"><u style="text-decoration-color:blue">Bloomberg Businessweek</u></a>.
+        </p>
+    </div> -->
+
+    <div class="spreads">
+
+        
+        <!-- <figure class="spread">
+            <img src="2026-11-in-depth-womens-sports.png" alt="Bloomberg Businessweek print spread on the women's sports boom and flag football" loading="lazy">
+            <figcaption>
+                <div class="title">Women’s Sports Boom</div>
+                <div>
+                    <p class="details">
+                        <span class="issue">November 2026</span>
+                        <span>Bloomberg Businessweek, In-Depth, pp. XX–XX</span>
+                        <span>Graphics</span>
+                        <span><a href="https://www.bloomberg.com/news/features/2026-10-08/flag-football-participation-soars-as-nfl-spearheads-investment-push" target="_blank" rel="noopener noreferrer"><u style="text-decoration-color:blue">Read the story</u></a></span>
+                    </p>
+                    <dl class="credits">
+                        <dt>Writer</dt><dd>Amanda Mull</dd>
+                        <dt>Editor</dt><dd>Julia Rubin</dd>
+                        <dt>Art Director</dt><dd>Jordi Ng</dd>
+                        <dt>Photo Editor</dt><dd>Donna Cohen</dd>
+                    </dl>
+                </div>
+            </figcaption>
+        </figure> -->
+
+        <figure class="spread">
+            <img src="2026-10-in-view-curiosity-gap.png" alt="Bloomberg Businessweek Curiosity Gap spread on working-class representation in legislatures, with a bar chart by country and scatter plots" loading="lazy">
+            <figcaption>
+                <div class="title">Curiosity Gap</div>
+                <div>
+                    <p class="details">
+                        <span class="issue">October 2026</span>
+                        <span>Bloomberg Businessweek, In View, pp. 36–37</span>
+                        <span>Graphics</span>
+                        <span><a href="https://www.bloomberg.com/features/2026-working-class-candidates/" target="_blank" rel="noopener noreferrer"><u style="text-decoration-color:blue">Read the story</u></a></span>
+                    </p>
+                    <dl class="credits">
+                        <dt>Writers</dt><dd>Nicholas Carnes, Noam Lupu</dd>
+                        <dt>Editors</dt><dd>Cristina Lindblad, Laura Bliss</dd>
+                        <dt>Art Director</dt><dd>Alexander Shoukas</dd>
+                    </dl>
+                </div>
+            </figcaption>
+        </figure>
+
+        <figure class="spread">
+            <img src="2026-10-in-view-yields.png" alt="Bloomberg Businessweek print spread on the US Treasury bond market, with charts of 10- and 30-year yields, debt costs and inflation" loading="lazy">
+            <figcaption>
+                <div class="title">In View</div>
+                <div>
+                    <p class="details">
+                        <span class="issue">October 2026</span>
+                        <span>Bloomberg Businessweek, In View, pp. 30–31</span>
+                        <span>Graphics</span>
+                        <span><a href="https://www.bloomberg.com/news/articles/2026-09-16/fed-decision-inflation-war-and-ai-feed-into-bond-market-s-toxic-stew" target="_blank" rel="noopener noreferrer"><u style="text-decoration-color:blue">Read the story</u></a></span>
+                    </p>
+                    <dl class="credits">
+                        <dt>Writer</dt><dd>Stacey Vanek Smith</dd>
+                        <dt>Editor</dt><dd>Cristina Lindblad</dd>
+                        <dt>Art Director</dt><dd>Alexander Shoukas</dd>
+                    </dl>
+                </div>
+            </figcaption>
+        </figure>
+
+    </div>
+
+
+	<br>
+	<br>
+	<hr style="width:5%">
+	<div id="description" class="center">
+		<h3>
+			<br>
+			<br>
+			<em>
+			<div class="center">
+				<a href="../../index.html"> <u style="text-decoration-color:#8d99ae">Home</u></a>
+			</div>
+			<br>
+			</em>
+		</h3>
+	</div>
+
+</body>
+</html>
